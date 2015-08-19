@@ -13,12 +13,18 @@
 /* 通用 */
 
 body {
-	background: #1d1d1b;
-	padding-top: 60px;
+  color: #a5a9ab;
+	background-color: #1d1d1b;
+	padding-top: 160px;
 	font-size: 15px;
 	font-family: Microsoft JhengHei;
-	color: #a5a9ab;
+  background-color: #1d1d1b;
+	background-image: image-url("rails.jpg");
+	background-size: cover;
+	background-repeat:no-repeat;
+
 }
+
 
 h1 {
 	color: #666666;
@@ -54,10 +60,11 @@ h2 {
 	text-decoration: none;
 	}
   &:active {
-  color:blue;
+  color: darken(#e68523,10%);
 	text-decoration: none;
   }
 }
+
 
 
 
@@ -65,8 +72,14 @@ h2 {
 
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width: 100%;
 	margin-bottom: 15px;
   height: auto !important;
+  @include box_sizing 
+}
+
+.form-control {
+	background: #d7d7d8;
+
+
 }
 
