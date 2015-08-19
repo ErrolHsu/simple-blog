@@ -1,0 +1,72 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@mixin box_sizing { 
+  -moz-box-sizing:    border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+
+/* 通用 */
+
+body {
+	background: #1d1d1b;
+	padding-top: 60px;
+	font-size: 15px;
+	font-family: Microsoft JhengHei;
+	color: #a5a9ab;
+}
+
+h1 {
+	color: #666666;
+	text-align: center;
+}
+
+h2 {
+	
+	text-align: center;
+}
+
+
+
+/* navbar */
+
+.navbar {
+
+	font-weight: bold;
+}
+
+#logo {
+	
+	float: left;
+	font-size: 30px;
+	color: #000000;
+	letter-spacing: -2.5px;
+	padding-top: 3px;
+	font-weight: 3000;
+	margin-left: 5px;
+
+	&:hover {
+	color: #e68523;
+	text-decoration: none;
+	}
+  &:active {
+  color:blue;
+	text-decoration: none;
+  }
+}
+
+
+
+/* 表單 */
+
+input, textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+  height: auto !important;
+}
+
