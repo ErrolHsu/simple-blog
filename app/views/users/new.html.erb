@@ -1,9 +1,8 @@
-
-<div class="row">
-	<div class="col-md-6 col-xs-6 col-xs-offset-3 col-md-offset-3">
+<div class="background">
+  <div class="col-md-6 col-xs-6 col-xs-offset-3 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'form', f: f %>
-      <%= f.submit "建立帳號", class: "btn btn-default btn-custom" %>
+      <%= f.submit "確認送出", class: "btn btn-default btn-custom" %>
     <% end %>
   </div>  
 </div>

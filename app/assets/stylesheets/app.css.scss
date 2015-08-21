@@ -8,6 +8,16 @@
   box-sizing:         border-box;
 }
 
+html, body{ margin:0; height:100%; }
+
+/* else */
+
+.gravatar {
+  background: #e8e9d7;
+  padding: 2px;
+  border: 2px solid #595a5c;
+  border-radius: 50%;
+}
 
 
 /* 通用 */
@@ -15,15 +25,31 @@
 body {
   color: #a5a9ab;
 	background-color: #1d1d1b;
-	padding-top: 160px;
 	font-size: 15px;
 	font-family: Microsoft JhengHei;
-  background-color: #1d1d1b;
+	padding-top: 70px;
+	@include box_sizing;
+	.container {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+  }
+}
+
+.background {
+	margin-top: -20px;
+	color: #f9ebdf;
+	padding-top: 120px;
+	height: 100%;
+	width: 100%;
+	border: none;
+	background-color: #1d1d1b;
 	background-image: image-url("rails.jpg");
 	background-size: cover;
 	background-repeat:no-repeat;
-
+	background-position: center;
 }
+
 
 
 h1 {
@@ -49,18 +75,17 @@ h2 {
 	
 	float: left;
 	font-size: 30px;
-	color: #000000;
+	color: #eeeeee;
 	letter-spacing: -2.5px;
 	padding-top: 3px;
 	font-weight: 3000;
 	margin-left: 5px;
-
 	&:hover {
 	color: #e68523;
 	text-decoration: none;
 	}
   &:active {
-  color: darken(#e68523,10%);
+  color: darken(#e68523,15%);
 	text-decoration: none;
   }
 }
@@ -79,7 +104,26 @@ input, textarea, select, .uneditable-input {
 
 .form-control {
 	background: #d7d7d8;
-
-
 }
+
+
+/* 訊息 */
+
+
+.alert-success {
+	color: #f9ebdf;
+	background-color: transparent;
+	border: none;
+}
+
+.alert-danger {
+	margin-top: -40px;
+	color: #dd5143;
+	background-color: black;
+}
+
+.field_with_errors {
+	color: #dd5143;
+}
+
 
