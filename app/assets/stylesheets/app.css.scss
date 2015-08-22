@@ -29,7 +29,7 @@ body {
 	font-family: Microsoft JhengHei;
 	padding-top: 70px;
 	@include box_sizing;
-	.container {
+	.container-fluid {
 	height: 100%;
 	width: 100%;
 	padding: 0;
@@ -67,8 +67,11 @@ h2 {
 /* navbar */
 
 .navbar {
-
 	font-weight: bold;
+	padding-left: 15px;
+	.nav {
+	margin-right: 5px;
+	}
 }
 
 #logo {
