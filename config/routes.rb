@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
 
-  patch 'login' => 'sessions#create'
+  post 'login' => 'sessions#create'
 
   resources :users 
 
