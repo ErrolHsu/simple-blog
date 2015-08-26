@@ -36,25 +36,28 @@ body {
 	padding-top: 50px;
 	@include box_sizing;
 	.container-fluid {
-	height: 100%;
-	width: 100%;
-	padding: 0;
+	  height: 100%;
+	  width: 100%;
+	  margin: 0px;
+	  padding: 0;
+	  .background {
+	
+	    color: #f9ebdf;
+	    margin: 0px;
+	    padding-top: 120px;
+	    height: 100%;
+	    width: 100%;
+	    border: none;
+	    background-color: #1d1d1b;
+	    background-image: image-url("rails.jpg");
+	    background-size: cover;
+	    background-repeat:no-repeat;
+	    background-position: center;
+    }
   }
 }
 
-.background {
-	
-	color: #f9ebdf;
-	padding-top: 120px;
-	height: 100%;
-	width: 100%;
-	border: none;
-	background-color: #1d1d1b;
-	background-image: image-url("rails.jpg");
-	background-size: cover;
-	background-repeat:no-repeat;
-	background-position: center;
-}
+
 
 
 
@@ -122,17 +125,23 @@ input, textarea, select, .uneditable-input {
 
 /* 訊息 */
 
+.alert {	
+	margin-buttom: 20px;
+	padding: 0px;
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+}
 
 .alert-success {
+
 	color: #f9ebdf;
-	background-color: transparent;
+	background-color: green;
 	border: none;
 }
 
 .alert-danger {
-	margin-top: -40px;
 	color: #dd5143;
-	background-color: black;
 }
 
 .field_with_errors {
