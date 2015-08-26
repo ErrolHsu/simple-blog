@@ -1,0 +1,21 @@
+<nav class="navbar navbar-fixed-top navbar-default" id="user-nav">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+				<%= gravatar_for(current_user, size:35)%>
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<%= link_to current_user.name, user_path(current_user) %>
+					</li>
+					<li class="divider"></li>
+					<li >
+						<%= link_to "登出", "#"%>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>

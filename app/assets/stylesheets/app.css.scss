@@ -19,15 +19,21 @@ html, body{ margin:0; height:100%; }
   border-radius: 50%;
 }
 
+.dropdown-toggle {
+	background-color: white;
+	margin-right: 20px;
+}
+
+
 
 /* 通用 */
 
 body {
   color: #a5a9ab;
-	background-color: #1d1d1b;
+
 	font-size: 15px;
 	font-family: Microsoft JhengHei;
-	padding-top: 70px;
+	padding-top: 50px;
 	@include box_sizing;
 	.container-fluid {
 	height: 100%;
@@ -37,7 +43,7 @@ body {
 }
 
 .background {
-	margin-top: -20px;
+	
 	color: #f9ebdf;
 	padding-top: 120px;
 	height: 100%;
@@ -65,6 +71,10 @@ h2 {
 
 
 /* navbar */
+
+#user-nav {
+	background-color: white;
+}
 
 .navbar {
 	font-weight: bold;
