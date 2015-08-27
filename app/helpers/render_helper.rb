@@ -1,11 +1,8 @@
 module RenderHelper
 
 	def	render_navbar
-		if logged_in?
-			render 'layouts/logged_in_nav'
-		else
-			render 'layouts/not_log_in_nav'
-		end		
+		render logged_in? ? 'layouts/is_logged_in_nav' : 
+	  							      'layouts/is_not_log_in_nav' 
   end
 
 
