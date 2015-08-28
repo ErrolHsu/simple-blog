@@ -3,9 +3,9 @@
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
 		<%= @articles.each do |article| %>
 		<div class="article-show">
-			<%= article.title %></br>
+			<%= raw article.title %></br>
 			<HR>
-			<%= article.content %><br>
+			<%= raw article.content %><br>
 			<%= link_to "閱讀全文", "#", class: "full-content" %><br>
 			<div class="created-at">
 				<%= article.created_at %>

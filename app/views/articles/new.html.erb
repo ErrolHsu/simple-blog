@@ -3,10 +3,10 @@
 			<%= form_for [current_user, @article] do |f| %>
 			
 			<%= f.label :title %>
-			<%= f.text_field :title, class: 'form-control' %></br>
+			<%= f.text_field :title, class: 'form-control', id: "article-title" %></br>
 
 			<%= f.label :content %>
-			<%= text_area_tag :editor, :content, :class => "redactor", :rows => 40, :cols => 120 %></br>
+			<%= f.text_area :content, class: "redactor", rows: 60, cols: 100 %></br>
 
 			<%= f.submit "確認送出", class: "btn btn-default btn-custom" %>
 			<% end %>
