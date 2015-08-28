@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require redactor-rails
+//= require redactor-rails/langs/zh_tw
 //= require_tree .

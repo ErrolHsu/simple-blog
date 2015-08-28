@@ -7,16 +7,14 @@ class ArticlesController < ApplicationController
 	def create
 		@article = current_user.articles.build(article_params)
 		if @article.save
-			
+			flash[:success] = "success"
 			redirect_to user_path(current_user)
 		else
 			render :new
-		end		
+		end
 	end
 
-	def url_options
-		{ user_id: params[:user_id] }.merge(super)
-	end	
+	
 
 	private
 

@@ -1,10 +1,10 @@
-<% if @user.errors.any? %>
+<% if var.errors.any? %>
 <div id="error_explanation">
 	<div class="alert alert-danger">
-		註冊表單有<%= @user.errors.count %>個錯誤.
+		抱歉，有<%= var.errors.count %>個小問題.
 	</div>
 	<ul>
-		<% @user.errors.full_messages.each do |msg| %>
+		<% var.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
