@@ -9,6 +9,7 @@
 				<ul class="dropdown-menu">
 					<li>
 						<%= link_to current_user.name, user_path(current_user) %>
+						<%= link_to "New Article", new_user_article_path(current_user) %>
 					</li>
 					<li class="divider"></li>
 					<li >
