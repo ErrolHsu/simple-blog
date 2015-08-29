@@ -1,4 +1,7 @@
 <h1>Test</h1>
+<div class="pagi">
+<%= paginate @articles, :window => 2 %>
+</div>
 <div class="row">
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
 		<%= render 'shared/flash' %>
@@ -6,7 +9,7 @@
 		<div class="article-show">
 			<%= raw article.title %><br>
 			<HR>
-			<%= raw article.content.truncate(200) %></pre><br>
+			<%= raw article.content.truncate(500) %></pre><br>
 			<%= link_to "閱讀全文", "#", class: "full-content" %><br>
 			<div class="created-at">
 				<%= article.created_at %>

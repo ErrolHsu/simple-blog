@@ -3,20 +3,21 @@
 		<div class="col-md-6 col-xs-6 col-xs-offset-3 col-md-offset-3">
 			<%= render 'shared/flash' %>
 
-			<%= form_for(:session, url: login_path) do |f|%>
+			<%= form_tag login_path do %>
 			
-			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
-			
-			<%= f.label :passwoed, "密碼" %>
-			<%= f.password_field :password, class: 'form-control' %>
+			<%= label_tag :email, "Email" %>
+			<%= email_field_tag :email, nil, class: 'form-control' %>
 
-			<%= f.label :remember_me, class: "checkbox inline" do %>
-			<%= f.check_box :remember_me %>
+			<%= label_tag :password, "密碼" %>
+			<%= password_field_tag :password, nil, class: 'form-control' %>
+
+			<%= label_tag :remember_me, class: "checkbox inline" do %>
+			<%= check_box_tag :remember_me %>
 			<p>記住我</p>
-			<% end %>	
-			
-			<%= f.submit "登入", class: "btn btn-default btn-custom" %>
+			<% end %>
+
+			<%= submit_tag "登入", class: "btn btn-default btn-custom" %>	
+
 			<% end %>
 			<%= link_to "註冊!", signup_path %>
 		</div>

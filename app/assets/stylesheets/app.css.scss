@@ -19,9 +19,16 @@ html, body{ margin:0; height:100%; }
   border-radius: 50%;
 }
 
+.dropdown {
+	padding: 5px;
+}
 .dropdown-toggle {
 	background-color: white;
-	margin-right: 20px;
+	margin-right: 10px;
+	border: none;
+	 &:active {
+ color:red;
+ } 
 }
 
 
@@ -128,7 +135,7 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
-#session_remember_me {
+#remember_me {
 	margin-left: 0;
 }
 
@@ -156,6 +163,13 @@ input, textarea, select, .uneditable-input {
 }
 
 
+/* 分頁 */
+
+.pagi {
+	text-align: center;
+}
+
+
 
 
 
@@ -163,8 +177,7 @@ input, textarea, select, .uneditable-input {
 /* 暫存 */
 
 .article-new {
-
-	padding-top: 100px;
+	margin: 60px 0;
 }
 
 .article-show {

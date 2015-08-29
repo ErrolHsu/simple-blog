@@ -1,0 +1,11 @@
+zh-TW:
+  activerecord:
+    errors:
+      Title: "CC"
+  views:
+    pagination:
+      first: "&laquo; gg"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
