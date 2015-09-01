@@ -1,0 +1,13 @@
+<h1>Test</h1>
+<%= render 'shared/flash' %>
+<div class="article-index">
+  <ol>
+  	<% @articles.each do |article| %>
+  		<li><%= link_to article.title, user_article_path(article) %></li>
+  		<%= article.created_at %>
+  		<%= link_to "編輯 |", edit_user_article_path(article) %>
+  		<%= link_to " 刪除文章", user_article_path(article), 
+  														method: :delete, data: { confirm: "確定刪除?"} %>
+  	<% end %>	
+  </ol>
+</div>

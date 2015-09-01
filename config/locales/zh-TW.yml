@@ -1,10 +1,7 @@
 zh-TW:
-  activerecord:
-    errors:
-      Title: "CC"
   views:
     pagination:
-      first: "&laquo; gg"
+      first: "&laquo; First"
       last: "Last &raquo;"
       previous: "&lsaquo; Prev"
       next: "Next &rsaquo;"

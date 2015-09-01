@@ -1,16 +1,17 @@
 <h1>Test</h1>
 <div class="pagi">
-<%= paginate @articles, :window => 2 %>
+<h3><%= paginate @articles, :window => 2 %><h3>
 </div>
 <div class="row">
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
 		<%= render 'shared/flash' %>
 		<% @articles.each do |article| %>
 		<div class="article-show">
-			<%= raw article.title %><br>
+			<h3><%= raw article.title %></h3>
 			<HR>
-			<%= raw article.content.truncate(500) %></pre><br>
-			<%= link_to "閱讀全文", "#", class: "full-content" %><br>
+			<%= raw article.content.truncate(650) %></pre><br>
+			<%= link_to "閱讀全文", user_article_path(@user, article), 
+														class: "btn btn-default btn-custom" %><br>
 			<div class="created-at">
 				<%= article.created_at %>
 			</div>
