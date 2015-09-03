@@ -1,17 +1,15 @@
 <div class="row article-new">
-
-	<div class="col-md-10 col-xs-8 col-xs-offset-2 col-md-offset-0">
-
+	<div class="col-md-10 col-xs-10 col-xs-offset-1 col-md-offset-1">
 		<%= form_for([current_user, @article]) do |f| %>
 		  <%= render 'shared/error_messages', var: @article %>
 		  
 		  <%= f.label :title, "標題" %>
-		  <%= f.text_field :title, class: 'form-control', id: "article-title" %></br>
+		  <%= f.text_field :title, class: 'form-control', id: "article-new-title" %></br>
 	    
 		  <%= f.label :content, "內文" %>
 		  <%= f.text_area :content, class: :redactor %></br>
 
-		  <%= f.submit "確認送出", class: "btn btn-default btn-custom" %>
+		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
 		<% end %>
 	</div>
 </div>

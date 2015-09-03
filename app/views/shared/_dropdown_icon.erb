@@ -1,10 +1,8 @@
-<nav class="navbar navbar-fixed-top navbar-default" id="user-nav">
-	<em><%= link_to "s20a3264's Blog", user_path(current_user), id: "logo" %></em>
-	<div class="container-fluid">
+<div class="container-fluid">
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
 				<button type="button" class="dropdown-toggle" data-toggle="dropdown">
-				<%= gravatar_for(current_user, size:55)%>
+				<span class="glyphicon glyphicon-user"></span>
 				<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -21,4 +19,3 @@
 			</li>
 		</ul>
 	</div>
-</nav>

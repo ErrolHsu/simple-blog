@@ -1,0 +1,59 @@
+
+
+/* navbar */
+
+
+#user-nav {
+	border: none;
+}
+
+#guest-nav {
+	font-size: 16px;
+	border: none;
+	padding-left: 10px;
+}
+
+.navbar {
+  background-color: #e9e8dd;
+	font-weight: bold;
+	.gravatar_for_nav {
+		margin: 5px -5px 0 0;
+	}
+	.glyphicon-user{
+	margin: 10px 10px;
+	transform:scale(1.7);
+  -webkit-transform:scale(1.7);
+  }
+  #login {
+	margin: 0 15px 0 0;
+  }
+}
+
+.dropdown {
+	padding: 5px;
+  .dropdown-toggle {
+	  background-color: #e9e8dd;
+	  margin-right: 10px;
+	  border: none;
+	  &:active {
+      color: #d7584f;
+    }
+  }  
+}
+
+
+.dropdown-menu {
+	font-size: 16px;
+	background: #47535b;
+	li {
+	  a {
+	  	color: #a6abaf;
+	  	&:hover {
+	  		background: #d7584f;
+	  	}
+	  }
+	}
+	.divider {
+		background: #a6abaf;
+	}
+}

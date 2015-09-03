@@ -1,0 +1,29 @@
+.login-page {
+	margin-top: 70px;
+}
+
+.signup-page {
+	margin-top: 70px;
+}
+
+.homepage {
+	margin-top: 90px;
+}
+
+
+#home2 {
+	color: #a5a9ab;
+}
+
+.glyphicon-chevron-up {
+	text-align: center;
+	transform:scale(0.7);
+	-webkit-transform:scale(0.7);
+	margin: 0;
+	padding: 0;
+}	
+
+#the1 {
+	font-size: 25px;
+	width: 200px;
+}

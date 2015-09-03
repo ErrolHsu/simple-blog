@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_action :find_user
 
 	def index
 		@articles = current_user.articles.all
@@ -9,7 +10,6 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:user_id])
 		@article = @user.articles.find(params[:id])
 	end
 
@@ -48,13 +48,17 @@ class ArticlesController < ApplicationController
 		end		
 	end
 
-
 	def url_options
-		{ user_id: current_user }.merge(super)
+		{ user_id: params[:user_id] }.merge(super)
 	end
+
 	
 
 	private
+		def find_user
+			@user = User.find(params[:user_id])
+		end
+
 
 		def article_params
 			params[:article].permit(:title, :content)

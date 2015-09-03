@@ -1,3 +1,77 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 雜 */
+
+
+#gravatar_for_showpage {
+	margin: 40px 0 50px 0;
+}
+
+
+/* 分頁 */
+
+.pagi {
+	text-align: center;
+	background: #f5f5f1;
+	font-weight: bolder;
+}
+
+.current {
+
+}
+
+/* article */
+
+.article-index {
+
+}
+
+.article-title {
+	  color: #629aa9;
+	  font-size: 25px;
+		font-weight: 0;
+		letter-spacing: 2px;
+		line-height: 26px;
+		&:hover {
+			color: #d3505a;
+		}
+}
+
+.article-new {
+	margin: 20px 0;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	background: #f5f5f1;
+}
+
+#article-new-title {
+	background: darken(#f5f5f1, 5%)
+}
+
+.article-show {
+	padding: 20px;
+	margin: 30px;
+	border: solid 1px grey;
+	height: auto;
+	width: 100%;
+	border: none;
+}
+
+.created-at {
+	color: #8b8c8d;
+	text-align: right;
+}
+
+#icon-plus {
+  margin-left: 80px;
+  width: 80px;
+  padding: 3px;
+  color: #505050;
+  background: #343a4e;
+  transform:scale(1.7);
+  -webkit-transform:scale(1.7);
+  a {
+    color:#fffaec;
+    &:hover {
+    color: #d3505a;
+    }
+  }
+}

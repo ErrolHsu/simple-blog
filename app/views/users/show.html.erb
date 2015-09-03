@@ -1,16 +1,20 @@
-<h1>Test</h1>
-<div class="pagi">
-<h3><%= paginate @articles, :window => 2 %><h3>
+<%= render 'shared/flash' %>
+<div id="gravatar_for_showpage">
+  <h1><%= gravatar_for(@user, size: 120) %></h1>
 </div>
 <div class="row">
-	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
-		<%= render 'shared/flash' %>
+	<div class="col-md-10 col-xs-8 col-xs-offset-0 col-md-offset-1">
+		<div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
+		
 		<% @articles.each do |article| %>
 		<div class="article-show">
-			<h3><%= raw article.title %></h3>
+			<div class="article-title">
+			  <%= link_to article.title, user_article_path(@user, article)%>
+			  <span class="glyphicon glyphicon-tag"></span>
+		  </div>
 			<HR>
-			<%= raw article.content.truncate(650) %></pre><br>
-			<%= link_to "閱讀全文", user_article_path(@user, article), 
+			<%= raw article.content.truncate(850) %></pre><br>
+			<%= link_to "Read more..", user_article_path(@user, article), 
 														class: "btn btn-default btn-custom" %><br>
 			<div class="created-at">
 				<%= article.created_at %>
@@ -18,4 +22,8 @@
 		</div>
 		<% end %>
 	</div>
+</div>
+
+<div class="pagi">
+<h4><%= paginate @articles, :window => 2 %><h4>
 </div>
