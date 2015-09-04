@@ -8,8 +8,8 @@
 		<div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
 		
 		<% @articles.each do |article| %>
-		<div class="article-show">
-			<div class="article-title">
+		<div class="user-article-show">
+			<div class="user-article-title">
 			  <%= link_to article.title, user_article_path(@user, article)%>
 			  <span class="glyphicon glyphicon-tag"></span>
 		  </div>

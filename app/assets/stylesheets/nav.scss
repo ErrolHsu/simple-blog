@@ -10,14 +10,14 @@
 #guest-nav {
 	font-size: 16px;
 	border: none;
-	padding-left: 10px;
+	padding-left: 12px;
 }
 
 .navbar {
   background-color: #e9e8dd;
 	font-weight: bold;
 	.gravatar_for_nav {
-		margin: 5px -5px 0 0;
+		margin: 5px 0 0 0;
 	}
 	.caret {
 		margin: 10px 15px 15px 10px;
@@ -36,7 +36,7 @@
 	padding: 5px;
   .dropdown-toggle {
 	  background-color: #e9e8dd;
-	  margin-right: 10px;
+	  margin: 5px 10px 5px 15px;
 	  border: none;
 	  &:active {
       color: #d7584f;

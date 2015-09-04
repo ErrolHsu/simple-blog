@@ -41,7 +41,7 @@ body {
   background: #e9e8dd;
 	font-size: 16px;
 	font-weight: 300;
-	font-family: Helvetica,"LiHei Pro","Microsoft JhengHei";
+	font-family: Helvetica,"LiHei Pro","Microsoft JhengHei", sans-serif;
 	line-height: 18px;
 	padding-top: 70px;
 	height: auto;
@@ -69,23 +69,28 @@ h1 {
 	color: #666666;
 	font-size: 60px;
 	text-align: center;
+	letter-spacing: 3px;
 }
 
 h2 {
 	color: #666666;
 	text-align: center;
 	font-size: 50px;
+	letter-spacing: 3px;
 }
 
 h3 {
 	color: #666666;
 	font-size: 40px;
+	letter-spacing: 2px;
 }
 
 h4 {
+	font-weight: bolder;
 	color: #666666;
 	text-align: center;
 	font-size: 30px;
+	letter-spacing: 2px;
 	margin: 0;
 }
 
@@ -97,13 +102,10 @@ h4 {
 	float: left;
 	color: #aac1bf;
 	letter-spacing: -2.5px;
-	padding-top: 30px;
 	font-weight: bolder;
-	font-family: fantasy;
+	font-family: cursive, sans-serif,Helvetica,"LiHei Pro","Microsoft JhengHei";
 	font-size: 45px;
-	margin-left: 5px;
-	margin-right: 20px;
-	margin-bottom: 15px;
+	margin: 30px 15px 15px 5px;
 	&:hover {
 	color: #d7584f;
 	}
@@ -152,10 +154,12 @@ input, textarea, select, .uneditable-input {
 
 .alert-success {
 	color: #d3505a;
+	margin-top: 10px;
 }
 
 .alert-danger {
 	color: #d3505a;
+	margin-top: 10px;
 }
 
 .field_with_errors {
