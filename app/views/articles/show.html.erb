@@ -1,5 +1,9 @@
-<h4 class="article-title"><%= @article.title %></h4>
-<HR>
-<div class="col-md-9 col-xs-9 col-xs-offset-2 col-md-offset-2">
-<%= raw @article.content %>	
+<div class="article-show-page">
+	<h4 class="article-title"><%= @article.title %></h4>
+	<HR>
+<div class="article-content">		
+	<div class="col-md-9 col-xs-9 col-xs-offset-2 col-md-offset-2">
+		<%= raw @article.content %>
+	</div>
+</div>	
 </div>

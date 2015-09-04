@@ -3,6 +3,17 @@
 
 #gravatar_for_showpage {
 	margin: 40px 0 50px 0;
+	background: #212a3e;
+	padding: 50px;
+	height: 260px;
+	border-top-right-radius: 30em 6em;
+	border-top-left-radius: 15em 3em;
+	border-bottom-right-radius: 30em 1em;
+	border-bottom-left-radius: 20em 1em;
+	.gravatar {
+		padding: 5px;
+	  background: #fffaec;
+	}
 }
 
 
@@ -27,7 +38,7 @@
 .article-title {
 	  color: #629aa9;
 	  font-size: 25px;
-		font-weight: 0;
+		font-weight: 500;
 		letter-spacing: 2px;
 		line-height: 26px;
 		&:hover {
@@ -57,6 +68,7 @@
 
 .created-at {
 	color: #8b8c8d;
+	font-weight: bolder;
 	text-align: right;
 }
 

@@ -20,5 +20,12 @@
 }
 
 
-
+.glyphicon-pencil {
+  float: right;
+  margin-top: 60px;
+  margin-right: 50px;
+  color: #fffaec;
+  transform:scale(1.7);
+  -webkit-transform:scale(1.7);
+}
 
