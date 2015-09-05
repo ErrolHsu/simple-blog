@@ -1,13 +1,24 @@
 <div class="row article-new">
 	<div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">
+		<%= render 'shared/flash' %>
 	  <%= form_for(@user) do |f| %>
 		  <%= render 'shared/error_messages', var: @user %>
 		 
 		  <p class="account-setting">Blog Title</p>
 		  <p class="account-old-setting"><%= current_user.title %></p>
+
+
 		  
-		  <%= f.label :title, "New title", class: "account-setting" %>
-		  <%= f.text_field :title, class: 'form-control' %>
+		  <% if !@user.title.nil? %>
+		    <%= f.label :title, "New title", class: "account-setting" %>
+		    <%= f.text_field :title, class: 'form-control' %>
+			<% else %>
+				<p class="account-old-setting"><%= "#{@user.name}'s Blog" %></p>
+				<%= f.label :title, "New title", class: "account-setting" %>
+				<%= f.text_field :title, class: 'form-control' %>
+			<% end %>	
+
+
 
 		  <p class="account-setting">Your Name</p>
 		  <p class="account-old-setting"><%= current_user.name %></p>

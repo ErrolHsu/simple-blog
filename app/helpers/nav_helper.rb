@@ -11,8 +11,8 @@ module NavHelper
   end
 
   def user_blog_title(title: "#{@user.name}'s Blog")
-    if  @user == current_user
-    	title = current_user.title
+    if  @user == current_user 
+    	title = current_user.title if !@user.title.nil?
     	path = user_path(current_user)
     else
     	title = @user.title if !@user.title.nil?

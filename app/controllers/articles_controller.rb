@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 	def create
 		@article = current_user.articles.build(article_params)
 		if @article.save
-			flash[:success] = "success"
+			flash[:success] = "發佈成功"
 			redirect_to user_path(current_user)
 		else
 			render :new
