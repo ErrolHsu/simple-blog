@@ -32,8 +32,6 @@ html, body{ margin:0; height:100%; }
 
 
 
-
-
 /* 通用 */
 
 body {
@@ -50,7 +48,7 @@ body {
 		color: #629aa9;
 		&:hover {
 			text-decoration: none;
-			color: #cd595a;
+			color: #d7584f;
 		}
 		&:active {
 			text-decoration: none;
@@ -99,10 +97,11 @@ h4 {
 
 #logo {
 	color: #aac1bf;
-	letter-spacing: -2.5px;
+	letter-spacing: -2.0px;
 	font-weight: bolder;
 	font-family: cursive, sans-serif,Helvetica,"LiHei Pro","Microsoft JhengHei";
 	font-size: 45px;
+	margin-bottom: 20px;
 	&:hover {
 	color: #d7584f;
 	}
@@ -145,11 +144,17 @@ input, textarea, select, .uneditable-input {
 
 /* 訊息 */
 
+#error_explanation {
+	ul {
+		line-height: 30px;
+	}
+}
+
 .alert {	
 	background-color: transparent;
 	border: none;
 	font-size: 20px;
-	display: inline;
+	line-height: 25px;
 }
 
 .alert-success {
@@ -160,6 +165,7 @@ input, textarea, select, .uneditable-input {
 .alert-danger {
 	color: #d3505a;
 	margin-top: 10px;
+	line-height: 25px;
 }
 
 .field_with_errors {

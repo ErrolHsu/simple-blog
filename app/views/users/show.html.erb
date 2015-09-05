@@ -4,7 +4,12 @@
 </div>
 <div class="row">
 	<div class="col-md-9 col-xs-10 col-xs-offset-0 col-md-offset-1">
-		<div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
+
+		<% if current_user == @user %>
+		  <div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
+		<% else %>
+			<div id="icon-plus"><span class="glyphicon glyphicon-book"></span><%= link_to "Blog Archive", user_articles_path(@user)%></div>
+		<% end %>
 		
 		<% @articles.each do |article| %>
 		<div class="user-article-show">

@@ -7,9 +7,10 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <%= link_to current_user.name, user_path(current_user) %>
-          <%= link_to "管理", user_articles_path(current_user) %>
-          <%= link_to "新文章", new_user_article_path(current_user) %>
+          <%= link_to "回#{current_user.name}的部落格", user_path(current_user) %>
+          <%= link_to "帳戶設定", edit_user_path(current_user) %>
+          <%= link_to "文章管理", user_articles_path(current_user) %>
+          <%= link_to "發表文章", new_user_article_path(current_user) %>
         </li>
         <li class="divider"></li>
         <li >

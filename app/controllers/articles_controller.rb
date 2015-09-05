@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 	before_action :find_user
 
 	def index
-		@articles = current_user.articles.all
+		@articles = @user.articles.all
 	end
 
 	def new

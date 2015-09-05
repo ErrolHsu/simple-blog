@@ -18,6 +18,19 @@
 	}
 }
 
+/* 帳號設定 */
+
+.account-setting {
+	margin: 20px 0;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.account-old-setting {
+	font-size: 18px;
+	color: #478f8f;
+}
+
 
 /* 分頁 */
 
@@ -66,10 +79,13 @@
   background: #343a4e;
   transform:scale(1.7);
   -webkit-transform:scale(1.7);
+  .glyphicon {
+  	margin-right: 5px;
+  }
   a {
     color:#fffaec;
     &:hover {
-    color: #d3505a;
+    color: #d7584f;
     }
   }
 }

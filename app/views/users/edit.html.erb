@@ -1,0 +1,27 @@
+<div class="row article-new">
+	<div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">
+	  <%= form_for(@user) do |f| %>
+		  <%= render 'shared/error_messages', var: @user %>
+		 
+		  <p class="account-setting">Blog Title</p>
+		  <p class="account-old-setting"><%= current_user.title %></p>
+		  
+		  <%= f.label :title, "New title", class: "account-setting" %>
+		  <%= f.text_field :title, class: 'form-control' %>
+
+		  <p class="account-setting">Your Name</p>
+		  <p class="account-old-setting"><%= current_user.name %></p>
+
+		  <%= f.label :name, class: "account-setting" %>
+		  <%= f.text_field :name, class: 'form-control' %>
+ 		 			
+			<div class="gravatar_edit">
+				<p class="account-setting">更改頭像</p>
+    	  <%= gravatar_for @user %>
+     	  <a href="https://zh-tw.gravatar.com/emails/" target="_blank">change</a>
+      </div>   
+
+		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
+		<% end %>
+	</div>
+</div>

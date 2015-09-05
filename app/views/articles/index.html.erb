@@ -4,10 +4,14 @@
   <ol>
   	<% @articles.each do |article| %>
   		<li><%= link_to article.title, user_article_path(article) %></li><br>
-  		<%= article.created_at %>
-  		<%= link_to "編輯 |", edit_user_article_path(article) %>
-  		<%= link_to " 刪除文章", user_article_path(article), 
+  		<%= article.created_at.to_s(:long_ordinal) %>
+
+      <% if current_user == @user %>
+  		  <%= link_to "編輯 |", edit_user_article_path(article) %>
+  		  <%= link_to " 刪除文章", user_article_path(article), 
   														method: :delete, data: { confirm: "確定刪除?"} %>
+      <% end %> 
+                                   
 			<HR>  														
   	<% end %>	
   </ol>

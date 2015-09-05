@@ -27,10 +27,26 @@ class UsersController < ApplicationController
 		@articles = @user.articles.page(params[:page]).per(3)
 	end
 
+	def edit
+		@user = current_user
+	end
+
+	def update
+		@user = current_user
+		  if @user.update_attributes (user_params)
+				flash[:success] = "帳號資訊已更新"
+		    redirect_to user_path(current_user)
+		  else
+		  	render :edit
+		  end	
+	end
+
 
 	private
 
 		def user_params
-			params[:user].permit(:name, :email, :password, :password_confirmation)
+			params[:user].permit(:name, :email, :password, :password_confirmation,:title, :about_me)
 		end
+
+
 end
