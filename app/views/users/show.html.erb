@@ -1,10 +1,9 @@
-<%= render 'shared/flash' %>
 <div id="gravatar_for_showpage">
-
+	<%= render 'shared/flash' %>
   <h1><%= gravatar_for(@user, size: 120) %></h1>
 </div>
 <div class="row">
-	<div class="col-md-9 col-xs-8 col-xs-offset-0 col-md-offset-1">
+	<div class="col-md-9 col-xs-10 col-xs-offset-0 col-md-offset-1">
 		<div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
 		
 		<% @articles.each do |article| %>
