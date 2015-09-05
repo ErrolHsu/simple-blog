@@ -30,7 +30,7 @@ module NavHelper
   			title = !@user.title.nil? ? @user.title : "#{@user.name}'s Blog"
     		path = user_path(@user)
       elsif params[:user_id]
-				title = @user.title.nil? ? @user.title : "#{@user.name}'s Blog"
+				title = !@user.title.nil? ? @user.title : "#{@user.name}'s Blog"
     		path = user_path(@user)
       else	
         title =	"$&!$#%#$%"
