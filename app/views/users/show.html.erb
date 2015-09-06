@@ -1,15 +1,14 @@
 <%= render 'shared/flash' %>
+
 <div id="gravatar_for_showpage">
   <h1><%= gravatar_for(@user, size: 120) %></h1>
 </div>
+
 <div class="row">
 	<div class="col-md-9 col-xs-10 col-xs-offset-0 col-md-offset-1">
-
-		<% if current_user == @user %>
-		  <div id="icon-plus"><span class="glyphicon glyphicon-plus"></span><%= link_to "NEW ARTICLE", new_user_article_path(@user)%></div>
-		<% else %>
-			<div id="icon-plus"><span class="glyphicon glyphicon-book"></span><%= link_to "Blog Archive", user_articles_path(@user)%></div>
-		<% end %>
+			
+		
+		<div id="icon-plus"><%= correct_icon_link %></div>
 		
 		<% @articles.each do |article| %>
 		<div class="user-article-show">
@@ -28,6 +27,7 @@
 		<% end %>
 	</div>
 </div>
+
 
 <div class="pagi">
 <h4><%= paginate @articles, :window => 2 %><h4>

@@ -12,10 +12,10 @@ module NavHelper
 
   def user_blog_title(title: "#{@user.name}'s Blog")
     if  @user == current_user 
-    	title = current_user.title if !@user.title.nil?
+    	title = current_user.title if !@user.title.blank?
     	path = user_path(current_user)
     else
-    	title = @user.title if !@user.title.nil?
+    	title = @user.title if !@user.title.blank?
     	path = user_path(@user)
     end	
     return link_to title, path, id: "logo"
@@ -27,10 +27,10 @@ module NavHelper
   	  path = root_path
   	else 
   		if params[:id]
-  			title = !@user.title.nil? ? @user.title : "#{@user.name}'s Blog"
+  			title = !@user.title.blank? ? @user.title : "#{@user.name}'s Blog"
     		path = user_path(@user)
       elsif params[:user_id]
-				title = !@user.title.nil? ? @user.title : "#{@user.name}'s Blog"
+				title = !@user.title.blank? ? @user.title : "#{@user.name}'s Blog"
     		path = user_path(@user)
       else	
         title =	"$&!$#%#$%"

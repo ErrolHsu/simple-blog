@@ -5,33 +5,33 @@
 		  <%= render 'shared/error_messages', var: @user %>
 		 
 		  <p class="account-setting">Blog Title</p>
-		  <p class="account-old-setting"><%= current_user.title %></p>
+		  <p class="account-old-setting"><%= blog_title_now %></p>
 
-
-		  
-		  <% if !@user.title.nil? %>
-		    <%= f.label :title, "New title", class: "account-setting" %>
-		    <%= f.text_field :title, class: 'form-control' %>
-			<% else %>
-				<p class="account-old-setting"><%= "#{@user.name}'s Blog" %></p>
-				<%= f.label :title, "New title", class: "account-setting" %>
-				<%= f.text_field :title, class: 'form-control' %>
-			<% end %>	
-
-
+			<%= f.label :title, "Enter Your New Title", class: "account-setting" %>
+			<%= f.text_field :title, class: 'form-control' %>
 
 		  <p class="account-setting">Your Name</p>
 		  <p class="account-old-setting"><%= current_user.name %></p>
 
-		  <%= f.label :name, class: "account-setting" %>
+		  <%= f.label :name, "Enter Your New Name", class: "account-setting" %>
 		  <%= f.text_field :name, class: 'form-control' %>
  		 			
 			<div class="gravatar_edit">
-				<p class="account-setting">更改頭像</p>
-    	  <%= gravatar_for @user %>
-     	  <a href="https://zh-tw.gravatar.com/emails/" target="_blank">change</a>
+				<p class="account-setting">目前頭像</p>
+    	  <%= gravatar_now %>
       </div>   
-
+			
+			<div class="gravatar-check-box">
+			  <%= f.label :gravatar do %>
+			   <%= f.check_box :gravatar %>
+			   <span>使用自訂頭像</span>
+			  <% end %> 
+			</div>
+			
+		 <p class="account-setting">
+		 	<a href="https://zh-tw.gravatar.com/emails/" target="_blank">上傳或變更頭像</a>
+		 </p>
+			
 		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
 		<% end %>
 	</div>

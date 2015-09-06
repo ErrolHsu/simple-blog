@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			log_in(@user)
-			flash[:success] = "完善個人資料"
+			flash[:success] = "修改或完善個人資料"
 			redirect_to edit_user_path(@user)
 		else
 			render :new
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 	def update
 		@user = current_user
 		  if @user.update_attributes (user_params)
-				flash[:success] = "帳戶設定已更新"
+				flash[:success] = "更新已儲存"
 		    redirect_to user_path(current_user)
 		  else
 		  	render :edit
@@ -45,7 +45,8 @@ class UsersController < ApplicationController
 	private
 
 		def user_params
-			params[:user].permit(:name, :email, :password, :password_confirmation,:title, :about_me)
+			params[:user].permit(:name, :email, :password, :password_confirmation,
+													 :title, :about_me, :gravatar)
 		end
 
 

@@ -26,4 +26,8 @@ module SessionsHelper
 		cookies.delete(:remember_token)
 	end
 
+	def correct_user?
+		current_user == @user
+	end
+
 end
