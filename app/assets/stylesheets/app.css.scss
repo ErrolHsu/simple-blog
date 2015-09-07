@@ -17,7 +17,8 @@ html, body{ margin:0; height:100%; }
 }
 
 .redactor-box {
-	height: 450px;
+	margin: 5px 0;
+	height: 350px;
 	.redactor-toolbar {
 		background: darken(#f5f5f1, 5%);
 		.re-image {
@@ -25,7 +26,11 @@ html, body{ margin:0; height:100%; }
 		}
 	}
 	.redactor-editor {
-	height: 450px;
+		p {
+			font-size: 20px;
+			letter-spacing: 1.0px;
+		}
+	height: 350px;
 	background: darken(#f5f5f1, 5%);
 	}
 }
@@ -37,10 +42,8 @@ html, body{ margin:0; height:100%; }
 body {
   color: #505050;
   background: #e9e8dd;
-	font-size: 17px;
-	font-weight: bold;
+	font-size: 1.7em;
 	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
-	line-height: 18px;
 	padding-top: 70px;
 	height: auto;
 	@include box_sizing;
@@ -97,7 +100,7 @@ h4 {
 
 #logo {
 	color: #aac1bf;
-	letter-spacing: -2.0px;
+	letter-spacing: 0px;
 	font-weight: bolder;
 	font-family: cursive,serif;
 	font-size: 45px;
@@ -110,9 +113,6 @@ h4 {
   }
 }
 
-.logo {
-
-}
 
 
 
@@ -154,13 +154,13 @@ input, textarea, select, .uneditable-input {
 	background-color: transparent;
 	border: none;
 	font-size: 20px;
-	line-height: 25px;
+	font-weight: bolder;
 }
 
 .alert-success {
 	color: #d7584f;
 	padding: 0 5px;
-  margin: 35px 0 0 0;
+  margin: 65px 0 0 0;
 }
 
 .alert-danger {

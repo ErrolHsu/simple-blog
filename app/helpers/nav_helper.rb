@@ -6,12 +6,12 @@ module NavHelper
   end
 
   def render_dropdown_nav
-  	render @user == current_user ? 'shared/dropdown_icon' : 
+  	render current_user?(@user) ? 'shared/dropdown_icon' : 
   																 'shared/dropdown_gravatar'
   end
 
   def user_blog_title(title: "#{@user.name}'s Blog")
-    if  @user == current_user 
+    if  current_user?(@user) 
     	title = current_user.title if !@user.title.blank?
     	path = user_path(current_user)
     else

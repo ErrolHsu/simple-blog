@@ -4,7 +4,7 @@
 		<%= form_for([current_user, @article]) do |f| %>
 		  <%= render 'shared/error_messages', var: @article %>
 		  
-		  <%= f.label :title, "標題" %>
+		  <%= f.label :title, "文章標題" %>
 		  <%= f.text_field :title, class: 'form-control', id: "article-new-title" %></br>
 	    
 		  <%= f.label :content, "內文" %>

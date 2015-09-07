@@ -7,6 +7,7 @@
 	border: none;
 }
 
+
 #guest-nav {
   font-weight: bolder;
 	font-size: 18px;
@@ -16,19 +17,21 @@
 
 .navbar {
 
-	padding: 20px 15px 0 10px;
+	padding: 5px 15px 0 10px;
   background-color: #e9e8dd;
 	font-weight: bold;
-	margin: 0 0 10px 0;
+		.container-fluid {
+		
+		}
 	  .gravatar_for_nav {
 
 	  }
 
 	.glyphicon-user{
-	transform:scale(1.7);
-  -webkit-transform:scale(1.7);
+		font-size: 1.5em;
   }
   #login {
+  font-size: 22px;
 	margin: 5px 15px 0 5px;
 	padding: 0;
   }
@@ -48,10 +51,11 @@
 
 
 .dropdown-menu {
-	font-size: 16px;
-	background: #47535b;
+	background: #343a4e;
 	li {
 	  a {
+	  	margin: 1.5px 0;
+	  	font-size: 1.4em;
 	  	color: #a6abaf;
 	  	&:hover {
 	  		background: #d7584f;

@@ -1,16 +1,19 @@
 class ArticlesController < ApplicationController
+	
 	before_action :find_user
+
+	before_action :can_crud, except: [:index, :show]
 
 	def index
 		@articles = @user.articles.all
 	end
 
-	def new
-		@article = current_user.articles.build
-	end
-
 	def show
 		@article = @user.articles.find(params[:id])
+	end
+
+	def new
+		@article = current_user.articles.build
 	end
 
 	def create
@@ -62,5 +65,13 @@ class ArticlesController < ApplicationController
 
 		def article_params
 			params[:article].permit(:title, :content)
+		end
+
+		def can_crud
+			@user = User.find(params[:user_id])
+			unless current_user?(@user)
+			  flash[:danger] = "無此權限"
+			  redirect_to root_path 
+			end  
 		end
 end

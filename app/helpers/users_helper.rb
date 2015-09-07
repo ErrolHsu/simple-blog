@@ -1,6 +1,6 @@
 module UsersHelper
 	
-	def gravatar_for(user, options = { size:80 })
+	def gravatar_for(user, options = { size: 80 })
 		user = user.gravatar?	? user : User.first		
 	  gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
 	  size = options[:size]
@@ -26,7 +26,7 @@ module UsersHelper
 
 
   def correct_icon_link
-  	if correct_user?
+  	if current_user?(@user)
   		link_title = "NEW ARTICLE"
   		path = new_user_article_path(@user)
   		style = "glyphicon glyphicon-plus"

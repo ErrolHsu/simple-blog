@@ -1,7 +1,7 @@
 <% provide(:title, "#{blog_title_now} - Archive") %>
 <h1 class="article-index">Index</h1>
 <%= render 'shared/flash' %>
-<div class="article-index">
+<div class="article-index-item">
   <ol>
   	<% @articles.each do |article| %>
   		<li><%= link_to article.title, user_article_path(article) %></li><br>

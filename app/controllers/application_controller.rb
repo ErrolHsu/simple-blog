@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   include SessionsHelper
 
-  helper_method :current_user
+  helper_method :current_user, :current_user?
 
 
 
@@ -22,5 +22,8 @@ class ApplicationController < ActionController::Base
 		end	  
 	end
 
+	def current_user?(user)
+		user == current_user
+	end
 
 end
