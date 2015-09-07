@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 	def create
 		@article = current_user.articles.build(article_params)
 		if @article.save
-			flash[:success] = "發佈成功"
+			flash[:success] = "文章已發佈"
 			redirect_to user_path(current_user)
 		else
 			render :new
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 	def update
 		@article = current_user.articles.find(params[:id])
 		if @article.update_attributes(article_params)
-			flash[:success] = "編輯成功"
+			flash[:success] = "編輯完成"
 			redirect_to user_path(current_user)
 		else
 			render :edit

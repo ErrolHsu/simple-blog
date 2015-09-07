@@ -17,10 +17,10 @@ module UsersHelper
   end
 
   def blog_title_now
- 		if current_user.title.blank?
- 			"#{current_user.name}'s Blog"
+ 		if @user.title.blank?
+ 			"#{@user.name}'s Blog"
  		else
- 			current_user.title
+ 			@user.title
  		end		
   end
 
