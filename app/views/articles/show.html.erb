@@ -1,7 +1,7 @@
 <% provide(:title, "#{blog_title_now} - #{@article.title}") %>
 <div class="article-show-page">
 	<h4 class="article-show-page-title"><%= @article.title %></h4>
-	<HR>
+	<HR class="dark-hr"> 
 	<div class="col-md-10 col-xs-10 col-xs-offset-1 col-md-offset-1 article-content">
 		<%= raw @article.content %>
 	</div>

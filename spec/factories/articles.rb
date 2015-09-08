@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :article do
+  	association :user
     title "MyString"
     content "MyText"
     user nil

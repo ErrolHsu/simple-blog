@@ -18,7 +18,7 @@
 .navbar {
 
 	padding: 5px 15px 0 10px;
-  background-color: #e9e8dd;
+  background-color: lighten(#e9e8dd, 3%);
 	font-weight: bold;
 		.container-fluid {
 		
@@ -40,7 +40,7 @@
 .dropdown {
 	padding: 5px;
   .dropdown-toggle {
-	  background-color: #e9e8dd;
+	  background-color: lighten(#e9e8dd, 3%);
 	  margin: 0px 10px 5px 15px;
 	  border: none;
 	  &:active {
@@ -54,7 +54,7 @@
 	background: #343a4e;
 	li {
 	  a {
-	  	margin: 1.5px 0;
+	  	margin: 5px 0;
 	  	font-size: 1.6em;
 	  	color: #a6abaf;
 	  	&:hover {

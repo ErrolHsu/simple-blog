@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 	
 	before_action :find_user
 
-	before_action :can_crud, except: [:index, :show]
+	before_action :can_write, except: [:index, :show]
 
 	def index
 		@articles = @user.articles.all
@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
 			params[:article].permit(:title, :content)
 		end
 
-		def can_crud
+		def can_write
 			@user = User.find(params[:user_id])
 			unless current_user?(@user)
 			  flash[:danger] = "無此權限"

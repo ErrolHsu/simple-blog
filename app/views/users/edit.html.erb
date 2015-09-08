@@ -7,16 +7,16 @@
 		 
 		  <p class="account-setting">Blog Title</p>
 		  <p class="account-old-setting"><%= blog_title_now %></p>
-			<HR>
+			<HR class="dark-hr"> 
 			<%= f.label :title, "Enter Your New Title", class: "account-setting" %>
 			<%= f.text_field :title, class: 'form-control' %>
-			<HR>
+			<HR class="dark-hr"> 
 		  <p class="account-setting">Your Name</p>
 		  <p class="account-old-setting"><%= current_user.name %></p>
-			<HR>
+			<HR class="dark-hr"> 
 		  <%= f.label :name, "Enter Your New Name", class: "account-setting" %>
 		  <%= f.text_field :name, class: 'form-control' %>
- 		 	<HR>		
+ 		 	<HR class="dark-hr"> 		
 			<div class="gravatar_edit">
 				<p class="account-setting">目前頭像</p>
     	  <%= gravatar_now %>
@@ -33,7 +33,7 @@
 		  <p class="account-setting">
 		 	 <a href="https://zh-tw.gravatar.com/emails/" target="_blank">上傳或變更自訂頭像</a>
 		  </p>
-			<HR>
+			<HR class="dark-hr"> 
 		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
 		<% end %>
 	</div>

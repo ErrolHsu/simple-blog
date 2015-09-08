@@ -6,7 +6,7 @@
 }
 
 
-/* 關於文章 */
+/* article index */
 
 
 .article-index {
@@ -14,15 +14,39 @@
 }
 
 .article-index-item {
+	padding: 0;
 	font-size: 1em;
+	li {
+		margin: 20px 0 0 0;
+	}	
 }
+
+.article-index-edit {
+	float: right;
+}
+
+.article-index-delete {
+	color: #d7584f;
+	float: right;
+}
+
+.article-index--- {
+	float: right;
+		margin: 0 10px;
+}
+
+/* 關於文章 */
 
 .article-show-page {
 	margin: 90px 0px 0px 0px;
   .article-content {
-	padding: 15px;
-	background-color: lighten(#e9e8dd, 2%);
+	padding: 5px;
+	background-color: lighten(#e9e8dd, 3%);
   }
+}
+
+.article-show-page-title {
+	margin: 5px 10px;
 }
 
 .article-new {
@@ -40,7 +64,7 @@
 #article-new-title {
 	margin: 5px 0;
   font-size: 20px;
-	background: darken(#f5f5f1, 5%)
+	background: lighten(#e9e8dd, 3%)
 }
 
 
