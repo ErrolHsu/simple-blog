@@ -76,7 +76,7 @@
   width: 80px;
   padding: 3px;
   color: #505050;
-  background: #343a4e;
+  background: lighten(#343a4e, 6%);
   transform:scale(1.7);
   -webkit-transform:scale(1.7);
   a {
