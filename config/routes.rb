@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :articles
+    resources :tags, only: [:index, :show, :destroy]
   end   
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

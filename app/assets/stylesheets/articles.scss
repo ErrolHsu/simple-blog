@@ -49,6 +49,10 @@
 	margin: 5px 10px;
 }
 
+
+
+/* 新增 */
+
 .article-new {
 	margin: 60px 0 0 0;
 	padding-top: 30px;
@@ -66,5 +70,15 @@
   font-size: 20px;
 	background: lighten(#e9e8dd, 3%)
 }
+
+.tag-field {
+	label {
+		margin: 10px 20px 10px 0;
+		.check_box {
+		  margin: 0 8px 0 0;
+ 	  }
+  }
+}
+
 
 

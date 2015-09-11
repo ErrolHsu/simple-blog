@@ -64,7 +64,7 @@ class ArticlesController < ApplicationController
 
 
 		def article_params
-			params[:article].permit(:title, :content, :tag_names)
+			params[:article].permit(:title, :content, :tag_names, {:tag_ids => []})
 		end
 
 		def can_write

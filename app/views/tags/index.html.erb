@@ -1,0 +1,4 @@
+<h1>Tag All</h1>
+<% @tags.each do |tag| %>
+	<%= link_to tag.name, user_tag_path(@user,tag) %>
+	<% end %>

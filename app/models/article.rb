@@ -15,10 +15,9 @@ class Article < ActiveRecord::Base
   private
   	def assign_tags
   		if @tag_names
-  			self.tags = @tag_names.split(/\s+/).map do |name|       
+  			self.tags += @tag_names.split(/\s+/).map do |name|       
           Tag.find_or_create_by(name: name, user_id: self.user_id)
         end  
   		end
   	end
-
 end
