@@ -21,6 +21,9 @@
   -webkit-transform:scale(0.7);
 }
 
+.glyphicon-tags {
+  margin: 0 10px ;
+}
 
 .glyphicon-pencil {
   float: right;

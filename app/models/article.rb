@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :taggings, :dependent => :destroy
-  has_many :tags, :through => :taggings
+  has_many :tags, :through => :taggings, :counter_cache => true
   
   default_scope -> { order(created_at: :desc) }
   

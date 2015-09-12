@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = @user.articles.all
+		@tags = @user.tags.all 
 	end
 
 	def show
@@ -27,14 +28,14 @@ class ArticlesController < ApplicationController
 	end
 
 	def edit
-		@article = current_user.articles.find(params[:id])
+		@article = @user.articles.includes(:tags).find(params[:id])
 	end
 
 	def update
 		@article = current_user.articles.find(params[:id])
 		if @article.update_attributes(article_params)
 			flash[:success] = "編輯完成"
-			redirect_to user_path(current_user)
+			redirect_to user_article_path(@article)
 		else
 			render :edit
 		end	
@@ -51,9 +52,7 @@ class ArticlesController < ApplicationController
 		end		
 	end
 
-	def url_options
-		{ user_id: params[:user_id] }.merge(super)
-	end
+
 
 	
 

@@ -16,9 +16,8 @@
 }
 
 .navbar {
-
 	padding: 5px 15px 0 10px;
-  background-color: lighten(#e9e8dd, 3%);
+  background-color: #d7584f;
 	font-weight: bold;
 		.container-fluid {
 		
@@ -40,7 +39,7 @@
 .dropdown {
 	padding: 5px;
   .dropdown-toggle {
-	  background-color: lighten(#e9e8dd, 3%);
+	  background-color: #d7584f;
 	  margin: 0px 10px 5px 15px;
 	  border: none;
 	  &:active {

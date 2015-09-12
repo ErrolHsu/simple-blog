@@ -51,12 +51,25 @@ html, body{ margin:0; height:100%; }
   margin: 40px 0;
 }
 
+.hr-2 {
+  background: #e7e6dd;
+  color: #e7e6dd;
+  clear:both;
+  float: none;
+  width: 100%;
+  line-height: 1px;
+  font-size: 0;
+  border: 1px solid #e7e6dd;
+  margin: 0;
+}	
+
+
 
 /* 通用 */
 
 body {
   color: #505050;
-  background: lighten(#e9e8dd, 3%);
+  background: #f5f5f1;
 	font-size: 1.8em;
 	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
 	padding-top: 75px;
@@ -111,7 +124,9 @@ h4 {
 }
 
 
-
+.title {
+	margin: 80px 0 50px 0;
+}
 
 #logo {
 	color: #aac1bf;

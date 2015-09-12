@@ -1,4 +1,14 @@
-<h1>Show</h1>
-<% @articles.each do |article| %>
-	<%= article.title %>
-<% end %>	
+<% provide(:title, "#{blog_title_now} - #{@tag.name}") %>
+<div class="article-index">
+  <%= render 'shared/flash' %>
+  <h1><%= @tag.name %></h1>
+  <div class="tags-all"> 
+    <span class="glyphicon glyphicon-tags"></span>
+    <%= raw user_tags_info(@tags) %>
+  </div>
+</div>
+<div class="article-index-item">
+
+    <%= render partial: 'articles/articles', collection: @articles, as: :article %>
+
+</div>
