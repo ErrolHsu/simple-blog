@@ -1,12 +1,12 @@
 <% provide(:title, "#{blog_title_now} - Archive") %>
 <div class="article-index">
-  <%= render 'shared/flash' %>
   <h1>Archive</h1>
   <div class="tags-all"> 
     <span class="glyphicon glyphicon-tags"></span>
     <%= raw user_tags_info(@tags) %>
     <%= link_to "標籤管理", user_tags_path %>
   </div>
+<%= render 'shared/flash' %>
 </div>
 <div class="article-index-item">
   

@@ -16,19 +16,32 @@
 }
 
 .navbar {
-	padding: 5px 15px 0 10px;
-  background-color: #d7584f;
+
+	padding: 15px 0 10px 18px;
+  background-color: lighten(#343a4e, 2%);
 	font-weight: bold;
 		.container-fluid {
-		
+		}
+		.nav-icon {
+			padding: 0;
+			margin: 0 15px 0 0;
 		}
 	  .gravatar_for_nav {
 
 	  }
 
 	.glyphicon-user{
+		margin: 0 0 0 -15px;
+		color: #f0e6c8;
 		font-size: 1.5em;
   }
+
+  .caret {
+  	margin: -10px 0 0 0;
+  	color: #f0e6c8;
+  }
+
+
   #login {
   font-size: 22px;
 	margin: 5px 15px 0 5px;
@@ -39,7 +52,7 @@
 .dropdown {
 	padding: 5px;
   .dropdown-toggle {
-	  background-color: #d7584f;
+	  background-color: lighten(#343a4e, 2%);
 	  margin: 0px 10px 5px 15px;
 	  border: none;
 	  &:active {

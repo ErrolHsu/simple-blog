@@ -18,7 +18,7 @@ module NavHelper
     	title = @user.title if !@user.title.blank?
     	path = user_path(@user)
     end	
-    return link_to title, path, id: "logo"
+    return link_to title, path
   end
 
   def guest_blog_title
