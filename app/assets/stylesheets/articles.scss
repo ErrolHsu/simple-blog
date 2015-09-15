@@ -72,8 +72,6 @@
 .article-show-page {
 	margin: 40px 0px 0px 0px;
   .article-content {
-	padding: 5px;
-	background-color: lighten(#e9e8dd, 3%);
   }
 }
 
@@ -89,7 +87,6 @@
 	margin: 0 0 0 0;
 	padding-top: 30px;
 	padding-bottom: 60px;
-	background: #f5f5f1;
 	label {
 		font-size: 1.3em;
 		font-weight: bolder;
@@ -100,7 +97,7 @@
 #article-new-title {
 	margin: 5px 0;
   font-size: 20px;
-	background: lighten(#e9e8dd, 3%)
+	background: #f3f3f3;
 }
 
 .tag-field {

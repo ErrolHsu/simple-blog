@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
 	attr_accessor :remember_token
 
-	before_save { self.email.downcase! }
+	before_save :email_downcase, :set_blog_title
 
 	validates :name, presence: {message: "不能為空"}, length: { maximum: 20, message: "請勿超過20個字元" } 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -44,5 +44,19 @@ class User < ActiveRecord::Base
   	return false if remember_digest.nil?
   	BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+
+  private
+
+    def set_blog_title
+      if self.title.blank?
+        self.title = "#{self.name}'s Blog"
+      end
+    end
+
+    def email_downcase
+      self.email = email.downcase
+    end
+
 
 end

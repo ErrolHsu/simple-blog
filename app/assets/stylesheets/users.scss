@@ -1,13 +1,14 @@
 /* 雜 */
 
 
-#gravatar_for_showpage {
-	.gravatar {
-		border: 8px solid #fffaec;
-		border-radius: 50%;
-	  background: #fffaec;
-	}
+#side-bar {
+	margin : 0px 0;
 }
+
+#gravatar-1 {
+  float:right;  
+}
+
 
 /* 帳號設定 */
 
@@ -40,19 +41,16 @@
 
 
 .user-article-title {
-	  color: #629aa9;
 	  font-size: 25px;
 		font-weight: bolder;
 		letter-spacing: 2px;
 		line-height: 26px;
-		&:hover {
-			color: #d3505a;
-		}
 }
 
 
 
 .user-article-show {
+	background: #ffffff;
   font-weight: bold;
 	padding: 20px;
 	margin: 30px;
@@ -67,17 +65,17 @@
 	text-align: right;
 }
 
-#icon-plus {
-  font-size: 17px;
-  font-weight: 300;
-  margin: 40px 0 0 60px;
-  height: 45px;
-  width: 80px;
-  padding: 3px;
+
+/* box */
+
+#box-1 {
+  font-size: 25px;
+
+
+  padding: 0;
   color: #505050;
-  background: lighten(#343a4e, 6%);
-  transform:scale(1.7);
-  -webkit-transform:scale(1.7);
+  background: #95a5a6;
+
   a {
     color:#fffaec;
     &:hover {
@@ -92,3 +90,40 @@
     margin: 0 3px 0 0;
   }
 }
+
+
+#box-2 {
+  font-size: 25px;
+  height: 150px;
+  padding: 0;
+  color: #505050;
+  background: #489fc9;
+  a {
+    color:#fffaec;
+    &:hover {
+    color: #d7584f;
+    }
+    &:hover:before {
+    color: #fffaec;
+    }
+  }
+  a:before {
+    color: #505050;
+    margin: 0 3px 0 0;
+  }
+  #box-2-1 {
+    font-size: 30px;
+    padding: 20px 0;
+    height: 105px;
+    width: 120px;
+    margin: auto;
+  }
+  #box-2-2 {
+    font-size: 36px;
+    height: 45px;
+    text-align: center;
+    background: #93c378;
+  }
+}
+
+
