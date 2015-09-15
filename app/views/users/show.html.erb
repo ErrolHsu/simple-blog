@@ -1,5 +1,4 @@
 <% provide(:title, "#{blog_title_now}") %>
-<%= render 'shared/flash' %>
 <div class="row">
   <div class="col-md-3 col-sm-3 col-xs-12" id="side-bar">
   	<div class="row">
@@ -7,15 +6,16 @@
  	    	<%= gravatar_for(@user, size: 150, id: "gravatar-1") %>
  	    </div>
   	  <div class="col-md-12 col-sm-12 col-xs-7" id="box-2">
-  	  	<div id="box-2-1"><%= correct_icon_link %></div>
   	  	<div id="box-2-2"><span>About</span></div>
+  	  	<div id="box-2-1"><%= correct_icon_link %></div>
+  	  	
   	  </div>
  	  </div>  
   </div>
 
 
-	<div class="col-md-8 col-sm-8 col-xs-11">
-			
+	<div class="col-md-9 col-sm-9 col-xs-12" id="articles">
+	<%= render 'shared/flash' %>		
 		<% @articles.each do |article| %>
 		<div class="user-article-show">
 			<div class="user-article-title">
