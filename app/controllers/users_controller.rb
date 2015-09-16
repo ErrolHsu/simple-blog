@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@articles = @user.articles.page(params[:page]).per(5)
+		@tags = @user.tags.all 
 	end
 
 	def edit

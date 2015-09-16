@@ -1,3 +1,4 @@
+@import 'global';
 /* blog title */
 
 #logo {
@@ -8,6 +9,7 @@
 	font-size: 30px;
 	display: inline;
 	a {
+	  font-family: cursive,serif;
 		color: #ffffff;
 		&:hover {
 	    color: #d7584f;
@@ -23,9 +25,8 @@
 /* navbar */
 
 .navbar {
-	border-bottom: 2px solid #d0d2d3 ;
 	padding: 15px 5px;
-  background-color:#42464c;
+  background-color: #42464c;
 	font-weight: bold;
 }
 
@@ -63,19 +64,32 @@
 
 
 .dropdown-menu {
-	background: #343a4e;
+	background: $green;
 	li {
 		padding: 0 40px 0 5px;
 	  a {
 	  	margin: 5px 0;
 	  	font-size: 1.6em;
-	  	color: #a6abaf;
 	  	&:hover {
-	  		background: #d7584f;
+	  		background: darken($green, 10%);
 	  	}
 	  }
 	}
 	.divider {
 		background: #a6abaf;
+	}
+}
+
+.navbar-default {
+	.navbar-nav {
+		.open {
+		  .dropdown-menu {
+		  	li {
+		  		a {
+		  			color: $gray1;
+		  		}
+		  	}
+		  }
+		}
 	}
 }

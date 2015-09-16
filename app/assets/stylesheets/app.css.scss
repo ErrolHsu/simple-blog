@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'global';
 
 
 @mixin box_sizing { 
@@ -9,6 +10,7 @@
 }
 
 html, body{ margin:0; height:100%; }
+
 
 /* else */
 
@@ -37,26 +39,26 @@ html, body{ margin:0; height:100%; }
 }
 
 .dark-hr {
-  background: #e7e6dd;
-  color: #e7e6dd;
+  background: #ced7df;
+  color: #ced7df;
   clear:both;
   float: none;
   width: 100%;
   line-height: 1px;
   font-size: 0;
-  border: 1px solid #e7e6dd;
+  border: 1px solid #ced7df;
   margin: 40px 0;
 }
 
 .hr-2 {
-  background: #e7e6dd;
-  color: #e7e6dd;
+  background: #ced7df;
+  color: #ced7df;
   clear:both;
   float: none;
   width: 100%;
   line-height: 1px;
   font-size: 0;
-  border: 1px solid #e7e6dd;
+  border: 1px solid #ced7df;
   margin: 0;
 }	
 
@@ -66,18 +68,18 @@ html, body{ margin:0; height:100%; }
 
 body {
   color: #505050;
-  background: #f8f8f8;
-  font-weight: bold;
+  background: $gray1;
 	font-size: 1.8em;
 	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
-	padding-top: 120px;
+	padding-top: 130px;
 	height: auto;
 	@include box_sizing;
 	a {
+		font-family: Helvetica,"Microsoft JhengHei", sans-serif;
 		color: #5482ab;
 		&:hover {
 			text-decoration: none;
-			color: #d7584f;
+			color: #93c378;
 		}
 		&:active {
 			text-decoration: none;

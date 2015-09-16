@@ -2,16 +2,34 @@
 <div class="row">
   <div class="col-md-3 col-sm-3 col-xs-12" id="side-bar">
   	<div class="row">
-  		<div class="col-md-12 col-sm-12 col-xs-5" id="box-1">
- 	    	<%= gravatar_for(@user, size: 150, id: "gravatar-1") %>
+  		<div class="col-md-10 col-sm-10 col-xs-5" id="box-1">
+ 	    	<%= gravatar_for(@user, size: 130, id: "gravatar-1") %>
  	    </div>
-  	  <div class="col-md-12 col-sm-12 col-xs-7" id="box-2">
-  	  	<div id="box-2-2"><span>About</span></div>
-  	  	<div id="box-2-1"><%= correct_icon_link %></div>
-  	  	
+  	  <div class="col-md-10 col-sm-10 col-xs-7" id="box-2">
+  	  	<div id="box-2-1"><span>About</span></div>
+  	  	<div id="box-2-2">
+  	  		<div id="box-2-2-1"><%= correct_icon_link %></div>
+  	  	</div>
+  	  </div>
+  	  <div class="col-md-12 col-sm-12 hidden-xs" id="box-3">
+				<div id="tags">
+					<span class="glyphicon glyphicon-tags"></span>CATEGORIES
+				</div>
+					<div class="user-show-tags">
+            <% @tags.each do |tag| %>
+              <div class="show-tag">
+					      <%= link_to user_tag_path(@user, tag) do %>
+					      	<%= "#{tag.name}" %>
+					      	<span class="tag-size"><%= "(#{tag.articles.size})" %></span>
+					      <% end %>	
+					    </div>
+					  <% end %>
+				  </div>
   	  </div>
  	  </div>  
   </div>
+
+
 
 
 	<div class="col-md-9 col-sm-9 col-xs-12" id="articles">
@@ -22,13 +40,15 @@
 			  <%= link_to article.title, user_article_path(@user, article)%>
 			  <span class="glyphicon glyphicon-tag"></span>
 		  </div>
-			<HR class="dark-hr">
-			<%= raw article.content.truncate(850) %></pre><br>
-			<%= link_to "Read more..", user_article_path(@user, article), 
-														class: "btn btn-default btn-custom" %><br>
+
 			<div class="created-at">
 				<%= article.created_at.to_s(:month_day_year) %>
 			</div>
+
+			<%= raw article.content.truncate(850) %></pre><br>
+			<%= link_to "Read more..", user_article_path(@user, article), 
+														class: "btn btn-default btn-custom" %><br>
+
 		</div>
 		<% end %>
 	</div>

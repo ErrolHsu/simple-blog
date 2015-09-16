@@ -1,3 +1,5 @@
+@import 'global';
+
 /* 雜 */
 
 
@@ -40,7 +42,7 @@
 /* user-show-page */
 
 #articles {
-  margin-left: -25px;
+  margin-left: -30px;
 }
 
 .user-article-title {
@@ -48,13 +50,15 @@
 		font-weight: bolder;
 		letter-spacing: 2px;
 		line-height: 26px;
+    a {
+      color: $blue1;
+    }
 }
 
 
 
 .user-article-show {
 	background: #ffffff;
-  font-weight: bold;
 	padding: 20px;
 	margin: 30px;
 	height: auto;
@@ -64,8 +68,10 @@
 
 .created-at {
 	color: #8b8c8d;
-	font-weight: bolder;
-	text-align: right;
+	font-weight: 200;
+  font-size: 15px;
+	text-align: left;
+  margin: 20px 0;
 }
 
 
@@ -73,16 +79,14 @@
 
 #box-1 {
   font-size: 25px;
-
-
   padding: 0;
+  margin: 0 0 2px 0;
   color: #505050;
-  background: #95a5a6;
-
+  background: $gray3;
   a {
     color:#fffaec;
     &:hover {
-    color: #d7584f;
+    color: $red;
     }
     &:hover:before {
     color: #fffaec;
@@ -96,15 +100,16 @@
 
 
 #box-2 {
-  font-size: 25px;
-  height: 150px;
+  font-size: 23px;
+  font-weight: 500;
   padding: 0;
-  color: #505050;
-  background: #489fc9;
+  color: $gray1;
   a {
-    color:#fffaec;
+    font-weight: bolder;
+    letter-spacing: -1.5px;
+    color: #fff;
     &:hover {
-    color: #d7584f;
+    color: #93c378;
     }
     &:hover:before {
     color: #fffaec;
@@ -115,18 +120,63 @@
     margin: 0 3px 0 0;
   }
   #box-2-1 {
-    font-size: 30px;
-    padding: 20px 0;
-    height: 105px;
-    width: 120px;
-    margin: auto;
-  }
-  #box-2-2 {
-    font-size: 36px;
+    font-size: 32px;
     height: 45px;
     text-align: center;
-    background: #93c378;
+    background: $blue1;
+    margin: 0 0 2px 0;
   }
+  #box-2-2 {
+    background: #ced7df;
+    height: 83px;
+    font-size: 30px;
+    padding: 10px 0;
+    margin: auto;
+    text-align: center;
+  }
+  #box-2-2-1 {
+    width: 140px;
+    background: #ced7df;
+    margin: auto;
+  }
+
 }
 
 
+#box-3 {
+  margin: 40px 0;
+  padding: 10px 5px;
+  border: 1px solid $gray2;
+  background: $gray2;
+  #tags {
+    color: darken($gray2, 40%);
+    margin: auto;
+    padding: 5px 0;
+    text-align: center;
+    background: darken($gray2, 5%);
+    font-size: 16px;
+    font-weight: 200;
+    width: 180px;
+  } 
+  .user-show-tags {
+    margin: 15px 0;
+    padding: 5px;
+    a {
+      color: darken($gray2, 40%);
+      font-size: 16px;
+      &:hover {
+        color: $red;
+      }
+    }
+    .show-tag {
+      margin: 15px 50px 15px 10px;
+      float: left;
+      .tag-size {
+        color: #505050;
+        &:hover {
+          color: $red;
+        }  
+      }
+    }
+  }
+}
