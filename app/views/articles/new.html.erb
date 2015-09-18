@@ -1,6 +1,6 @@
 <% provide(:title, "") %>
 <div class="row article-new">
-	<div class="col-md-12 col-xs-11">
+	<div class="col-md-10 col-xs-11">
 		<%= form_for([current_user, @article]) do |f| %>
 		  <%= render 'form', f: f %>
 		<% end %>
