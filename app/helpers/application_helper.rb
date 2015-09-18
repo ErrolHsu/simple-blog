@@ -1,12 +1,15 @@
 module ApplicationHelper
   
   def full_title(page_title= "")
-    base_title = "s20a3264"
-    if page_title.empty?
-      base_title
+    if @user && @user.id
+      if page_title.blank?
+        @user.title
+      else  
+        "#{@user.title} - #{page_title}"
+      end  
     else
-      page_title + "  <<  " + base_title
-    end
+      "$&!$#%#$%"
+    end   
   end
 
 

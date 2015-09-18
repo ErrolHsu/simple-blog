@@ -1,15 +1,27 @@
-<% provide(:title, "#{blog_title_now} - Archive") %>
-<div class="article-index">
-  <h1>Archive</h1>
-  <div class="tags-all"> 
-    <span class="glyphicon glyphicon-tags"></span>
-    <%= raw user_tags_info(@tags) %>
-    <%= link_to "標籤管理", user_tags_path %>
+<% provide(:title, "") %>
+<div class="row">
+  <div class="col-md-5 col-sm-5 col-xs-11 index-year">  
+    <% @articles_by_year.each do |year, articles| %>
+      <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
+  	  <div class="index-articles">
+  	    <% for article in articles %>
+  	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
+  		    <%= link_to "#{article.title}", user_article_path(article) %>
+  		    <HR class="hr-2">
+  	    <% end %>	
+  	  </div>  
+    <% end %>
   </div>
-<%= render 'shared/flash' %>
-</div>
-<div class="article-index-item">
-  
-    <%= render partial: 'articles', collection: @articles, as: :article %>
-  
+  <div class="col-md-4 col-sm-4 hidden-xs" id="box-3">
+    <div id="tags">
+      <span class="glyphicon glyphicon-tags"></span>CATEGORIES
+        </div>
+          <div class="user-show-tags">
+            <%= render partial: 'shared/tags', collection: @tags, as: :tag %>
+          </div>
+      </div>
+    </div>  
+  </div>
+<div class="pagi">
+  <%= paginate @articles, :window => 2 %>
 </div>

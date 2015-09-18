@@ -46,6 +46,10 @@ class UsersController < ApplicationController
 		  end	
 	end
 
+	def about_me
+		@user = User.find(params[:id])
+	end	
+
 
 	private
 

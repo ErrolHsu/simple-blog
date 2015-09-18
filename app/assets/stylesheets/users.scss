@@ -29,12 +29,17 @@
 	margin: 30px 0;
 }
 
+.user-edit-submit {
+  margin: 0 0 40px 0 ;
+}
+
 /* 分頁 */
 
 .pagi {
+  font-size: 25px;
 	text-align: center;
-	background: #f5f5f1;
-	font-weight: bolder;
+	background: $gray2;
+	font-weight: bold;
 }
 
 
@@ -58,12 +63,11 @@
 
 
 .user-article-show {
-	background: #ffffff;
-	padding: 20px;
+ 	background: #ffffff;
+	padding: 30px;
 	margin: 30px;
 	height: auto;
 	width: 100%;
-	border: none;
 }
 
 .created-at {
@@ -106,7 +110,6 @@
   color: $gray1;
   a {
     font-weight: bolder;
-    letter-spacing: -1.5px;
     color: #fff;
     &:hover {
     color: #93c378;
@@ -128,6 +131,7 @@
   }
   #box-2-2 {
     background: #ced7df;
+    letter-spacing: -1px;
     height: 83px;
     font-size: 30px;
     padding: 10px 0;
@@ -160,7 +164,7 @@
   } 
   .user-show-tags {
     margin: 15px 0;
-    padding: 5px;
+    padding: 0 0 0 15px;
     a {
       color: darken($gray2, 40%);
       font-size: 16px;
@@ -169,7 +173,8 @@
       }
     }
     .show-tag {
-      margin: 15px 50px 15px 10px;
+      margin: 15px 5px;
+      width: 45%;
       float: left;
       .tag-size {
         color: #505050;

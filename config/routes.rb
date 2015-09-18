@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users do
-    resources :articles
+    member do
+      get 'about_me'
+    end  
+    resources :articles 
     resources :tags, only: [:index, :show, :destroy]
   end   
 

@@ -9,7 +9,6 @@ class TagsController < ApplicationController
 		@user = User.find(params[:user_id])
 		@tag = @user.tags.find(params[:id])
 		@tags = @user.tags.all
-		@articles = @tag.articles.all
 	end
 
 	def destroy

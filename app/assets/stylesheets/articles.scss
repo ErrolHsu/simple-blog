@@ -1,82 +1,47 @@
+@import 'global';
+
 /* 雜 */
 
-.return {
-	display: block;
-	margin: 30px 0;
+#return {
+	font-size: 1.5em;
+	margin: 50px 0;
+	text-align: center;
+	height: 100px;
 }
 
+/* articles index */
 
-/* article index */
-
-
-.article-index {
-	margin: 0 0 0 0;
-	padding: 20px 15px;
-	background: #f5f5f1;
-	border-bottom: 3px solid #e7e6dd;
-	.tags-all {
-	  margin: 20px 0;
-	  background: #f5f5f1;
-	  height: 100px;
-	  width: 100%;
-	  text-align: center;
-	  padding: 30px 0;
-	  a {
-	  	margin: 10px 5px;
-	  }
+.index-year {
+  margin: 20px 140px 20px 5px;
+  padding: 20px 10px;
+  h5 {
+    margin: 0 0 25px 0;
+  }
+  .index-articles {
+    margin: 0 0 0 15px;
   }
 }
-
-.article-index-item {
-	font-size: 1em;
-}
-
-.article-index-item div:nth-child(even) {
-	margin: 0;
-	padding: 20px 20px;
-	width: 100%;
-	height: 130px;
-	background: #f5f5f1;
-	border-bottom: 1.5px solid #fffaec;
-}	
-
-.article-index-item div:nth-child(odd) {
-	margin: 0;
-	padding: 20px 20px;
-	width: 100%;
-	height: 130px;
-	border-bottom: 1.5px solid #fffaec;
-	background: lighten(#f5f5f1, 3%);
-}			
-
-.article-index-edit {
-	float: right;
-}
-
-.article-index-delete {
-	color: #d7584f;
-	float: right;
-}
-
-.article-index--- {
-	float: right;
-		margin: 0 10px;
-}
-
-
-
 
 
 /* 關於文章 */
 
 .article-show-page {
-	margin: 40px 0px 0px 0px;
-  .article-content {
-  }
+	padding: 20px 15px;
+}
+
+.article-show-content {
+		padding: 40px 30px;
+	  box-shadow: 1px 1px 3px -2px rgba(20%,20%,40%,0.5);
+  	background: #fff;
 }
 
 .article-show-page-title {
-	margin: 5px 10px;
+	margin: 20px 0 40px 0;
+	color: #3d464d;
+}
+
+.article-show-tags {
+	margin: 50px 0 0 0 ;
 }
 
 

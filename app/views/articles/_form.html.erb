@@ -1,0 +1,19 @@
+<%= render 'shared/error_messages', var: @article %>
+<%= f.label :title, "文章標題" %>
+<%= f.text_field :title, class: 'form-control', id: "article-new-title" %></br>
+
+<%= f.label :content, "內文" %>
+<%= f.text_area :content, class: :redactor %>
+<HR class="dark-hr">
+
+<%= f.label :tag_names, "Tag" %>
+<%= f.text_field :tag_names, class: 'form-control' %>
+<div class="tag-field">
+  <%= f.label :tags %><br />
+  <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>
+    <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
+  <% end %>
+</div>
+<HR class="dark-hr"> 
+
+<%= f.submit "Save", class: "btn btn-default btn-custom" %>

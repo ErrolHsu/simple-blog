@@ -25,15 +25,26 @@
 /* navbar */
 
 .navbar {
-	padding: 15px 5px;
+	padding: 5px 5px 10px 5px;
   background-color: #42464c;
 	font-weight: bold;
 }
 
 .nav-link {
 	margin: 15px 0 10px 0;
-	a {
-		color: #95a5a6;
+	#nav-login {
+	padding: 1px 8px;
+		margin: -10px 0 0px 5px;
+		float: right;
+		background: $gray3;
+		border-radius: 15px;
+	  a {
+	  	color: lighten($gray5, 8%);
+	  	font-size: 17px;
+	  	&:hover {
+	  		color: $green;
+	  	}
+	  }
 	}
 }
 
@@ -41,7 +52,7 @@
 
 
 .nav-menu {
-	margin: -5px 10px 10px 5px;
+	margin: -10px 10px 0px 5px;
 	.dropdown {
     .dropdown-toggle {
       color: #95a5a6;
@@ -52,8 +63,8 @@
       }
     }
     .glyphicon-user {
-      transform:scale(1.7);
-      -webkit-transform:scale(1.7);
+      transform:scale(1.4);
+      -webkit-transform:scale(1.4);
     }
     .caret {
   	  color: #f0e6c8;

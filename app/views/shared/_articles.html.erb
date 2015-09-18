@@ -1,0 +1,12 @@
+<div class="user-article-show">
+	<div class="user-article-title">
+	  <%= link_to article.title, user_article_path(@user, article)%>
+	  	<span class="glyphicon glyphicon-tag"></span>
+	</div>
+	<div class="created-at">
+		<%= article.created_at.to_s(:month_day_year) %>
+	</div>
+		<%= raw article.content.truncate(850) %></pre><br>
+		<%= link_to "Read more..", user_article_path(@user, article), 
+				class: "btn btn-default btn-custom" %><br>
+</div>

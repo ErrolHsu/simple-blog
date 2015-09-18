@@ -1,40 +1,50 @@
-<% provide(:title, "#{blog_title_now} - Setting") %>
+<% provide(:title, "Setting") %>
 <div class="row article-new">
-	<div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">
-		<%= render 'shared/flash' %>
-	  <%= form_for(@user) do |f| %>
-		  <%= render 'shared/error_messages', var: @user %>
+	<%= render 'shared/flash' %>
+	<%= form_for(@user) do |f| %>
+	  <div class="col-md-6 col-xs-10">
+      <%= render 'shared/error_messages', var: @user %>
 		 
-		  <p class="account-setting">Blog Title</p>
-		  <p class="account-old-setting"><%= blog_title_now %></p>
-			<HR class="dark-hr"> 
+	    <p class="account-setting">Blog Title</p>
+		  <p class="account-old-setting"><%= "#{@user.title}" %></p>
+			<HR class="hr-2">
+
 			<%= f.label :title, "Enter Your New Title", class: "account-setting" %>
 			<%= f.text_field :title, class: 'form-control' %>
-			<HR class="dark-hr"> 
+			<HR class="hr-2">
+
 		  <p class="account-setting">Your Name</p>
 		  <p class="account-old-setting"><%= current_user.name %></p>
-			<HR class="dark-hr"> 
+			<HR class="hr-2">
+
 		  <%= f.label :name, "Enter Your New Name", class: "account-setting" %>
 		  <%= f.text_field :name, class: 'form-control' %>
- 		 	<HR class="dark-hr"> 		
-			<div class="gravatar_edit">
-				<p class="account-setting">目前頭像</p>
-    	  <%= gravatar_now %>
-      </div>   
+ 		 	<HR class="hr-2"> 		
+			  <div class="gravatar_edit">
+				  <p class="account-setting">目前頭像</p>
+    	    <%= gravatar_now %>
+        </div>   
 			
-			<div class="gravatar-check-box">
-			  <%= f.label :gravatar do %>
-			   <%= f.check_box :gravatar %>
-			   <span>使用自訂頭像(Gravatar)</span>
-			  <% end %> 
-			</div>
+			  <div class="gravatar-check-box">
+			    <%= f.label :gravatar do %>
+			      <%= f.check_box :gravatar %>
+			      <span>使用自訂頭像(Gravatar)</span>
+			    <% end %> 
+			  </div>
 			
 
 		  <p class="account-setting">
 		 	 <a href="https://zh-tw.gravatar.com/emails/" target="_blank">上傳或變更自訂頭像</a>
 		  </p>
-			<HR class="dark-hr"> 
+			<HR class="hr-2"> 
+		</div>	
+		<div class="col-md-6 col-xs-11">
+			<%= f.label :about_me %>
+			<%= f.text_area :about_me, class: :redactor %>
+			<HR class="hr-2"> 
+		</div>
+		<div class="col-md-12 col-xs-12  user-edit-submit">
 		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
-		<% end %>
-	</div>
+	  </div>
+	<% end %>
 </div>

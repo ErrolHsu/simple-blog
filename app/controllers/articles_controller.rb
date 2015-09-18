@@ -5,7 +5,8 @@ class ArticlesController < ApplicationController
 	before_action :can_write, except: [:index, :show]
 
 	def index
-		@articles = @user.articles.all
+		@articles = @user.articles.page(params[:page]).per(25)
+		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
 		@tags = @user.tags.all 
 	end
 

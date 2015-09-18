@@ -30,7 +30,7 @@ html, body{ margin:0; height:100%; }
 	}
 	.redactor-editor {
 		p {
-			font-size: 20px;
+			font-size: 18px;
 			letter-spacing: 1.0px;
 		}
 	height: 350px;
@@ -39,27 +39,27 @@ html, body{ margin:0; height:100%; }
 }
 
 .dark-hr {
-  background: #ced7df;
-  color: #ced7df;
+  background: $gray3;
+  color: $gray3;
   clear:both;
   float: none;
   width: 100%;
   line-height: 1px;
   font-size: 0;
-  border: 1px solid #ced7df;
+  border: 1px solid $gray3;
   margin: 40px 0;
 }
 
 .hr-2 {
-  background: #ced7df;
-  color: #ced7df;
+  background: $gray2;
+  color: $gray2;
   clear:both;
   float: none;
   width: 100%;
   line-height: 1px;
   font-size: 0;
-  border: 1px solid #ced7df;
-  margin: 0;
+  border: 1px solid $gray2;
+  margin: 20px 0 40px 0;
 }	
 
 
@@ -71,7 +71,7 @@ body {
   background: $gray1;
 	font-size: 1.8em;
 	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
-	padding-top: 130px;
+	padding-top: 110px;
 	height: auto;
 	@include box_sizing;
 	a {
@@ -116,10 +116,20 @@ h3 {
 h4 {
 	font-weight: bolder;
 	color: #666666;
-	text-align: center;
+	text-align: left;
 	font-size: 30px;
 	letter-spacing: 2px;
 	margin: 0;
+}
+
+h5 {
+	font-weight: bolder;
+	color: #666666;
+	text-align: left;
+	font-size: 22px;
+	letter-spacing: 1px;
+	margin: 0;
+
 }
 
 

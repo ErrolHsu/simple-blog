@@ -1,0 +1,12 @@
+#管理介面
+
+<div>
+  <li><%= link_to article.title, user_article_path(article) %></li><br>
+  <%= article.created_at.to_s(:month_day_year) %>
+
+  <%= show_link(current_user?(@user), "刪除文章", user_article_path(article), 
+    method: "delete", data: { confirm: "確定刪除?"}, style: "article-index-delete" )%>
+  <span class="article-index---">---</span>
+  <%= show_link(current_user?(@user), "編輯", edit_user_article_path(article), 
+    style: "article-index-edit") %>												
+</div>

@@ -1,15 +1,5 @@
 module UsersHelper
 	
-
-  def blog_title_now
- 		if @user.title.blank?
- 			"#{@user.name}'s Blog"
- 		else
- 			@user.title
- 		end		
-  end
-
-
   def correct_icon_link
   	if current_user?(@user)
   		link_title = "NEW ARTICLE"

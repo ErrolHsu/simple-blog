@@ -1,12 +1,14 @@
-<% provide(:title, "#{blog_title_now}") %>
+<% provide(:title, "") %>
 <div class="row">
-  <div class="col-md-3 col-sm-3 col-xs-12" id="side-bar">
+  <div class="col-md-3 col-sm-3 col-xs-11" id="side-bar">
   	<div class="row">
-  		<div class="col-md-10 col-sm-10 col-xs-5" id="box-1">
+  		<div class="col-md-9 col-sm-10 col-xs-5" id="box-1">
  	    	<%= gravatar_for(@user, size: 130, id: "gravatar-1") %>
  	    </div>
-  	  <div class="col-md-10 col-sm-10 col-xs-7" id="box-2">
-  	  	<div id="box-2-1"><span>About</span></div>
+  	  <div class="col-md-9 col-sm-10 col-xs-6" id="box-2">
+  	  	<div id="box-2-1">
+          <%= link_to "About", about_me_user_path %>
+        </div>
   	  	<div id="box-2-2">
   	  		<div id="box-2-2-1"><%= correct_icon_link %></div>
   	  	</div>
@@ -16,45 +18,18 @@
 					<span class="glyphicon glyphicon-tags"></span>CATEGORIES
 				</div>
 					<div class="user-show-tags">
-            <% @tags.each do |tag| %>
-              <div class="show-tag">
-					      <%= link_to user_tag_path(@user, tag) do %>
-					      	<%= "#{tag.name}" %>
-					      	<span class="tag-size"><%= "(#{tag.articles.size})" %></span>
-					      <% end %>	
-					    </div>
-					  <% end %>
+						<%= render partial: 'shared/tags', collection: @tags, as: :tag %>
 				  </div>
   	  </div>
  	  </div>  
   </div>
-
-
-
-
 	<div class="col-md-9 col-sm-9 col-xs-12" id="articles">
-	<%= render 'shared/flash' %>		
-		<% @articles.each do |article| %>
-		<div class="user-article-show">
-			<div class="user-article-title">
-			  <%= link_to article.title, user_article_path(@user, article)%>
-			  <span class="glyphicon glyphicon-tag"></span>
-		  </div>
-
-			<div class="created-at">
-				<%= article.created_at.to_s(:month_day_year) %>
-			</div>
-
-			<%= raw article.content.truncate(850) %></pre><br>
-			<%= link_to "Read more..", user_article_path(@user, article), 
-														class: "btn btn-default btn-custom" %><br>
-
-		</div>
-		<% end %>
+	  <%= render 'shared/flash' %>	
+	  <%= render partial: 'shared/articles', collection: @articles, as: :article %>	
 	</div>
 </div>
 
 
 <div class="pagi">
-<h4><%= paginate @articles, :window => 2 %><h4>
+  <%= paginate @articles, :window => 2 %>
 </div>

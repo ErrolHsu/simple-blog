@@ -23,7 +23,11 @@
 	-webkit-transform:scale(0.7);
 	margin: 0;
 	padding: 0;
-}	
+}
+
+.home-page-icon {
+	text-align: center;
+}
 
 #the1 {
 	font-size: 25px;

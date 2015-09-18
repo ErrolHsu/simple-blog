@@ -1,14 +1,27 @@
-<% provide(:title, "#{blog_title_now} - #{@tag.name}") %>
-<div class="article-index">
-  <%= render 'shared/flash' %>
-  <h1><%= @tag.name %></h1>
-  <div class="tags-all"> 
-    <span class="glyphicon glyphicon-tags"></span>
-    <%= raw user_tags_info(@tags) %>
+<% provide(:title, "#{@tag.name}") %>
+<div class="row">
+  <div class="col-md-5 col-sm-5 col-xs-11 tag-name">
+  	<h5>
+  		<span class="glyphicon glyphicon-tag"></span>
+  		<%= "#{@tag.name}(#{@tag.articles.size})" %>
+  	</h5>
+  	<div class="tag-articles">
+  		<% @tag.articles.each do |article| %>
+  	  	<%= "#{article.created_at.to_s(:simple_month_day)}-" %>
+  		  <%= link_to "#{article.title}", user_article_path(article) %>
+  		  <HR class="hr-2">
+  	  <% end %>	
+  	</div>  
+	</div>
+	<div class="col-md-4 col-sm-4 hidden-xs" id="box-3">
+  <div id="tags">
+    <span class="glyphicon glyphicon-tags"></span>CATEGORIES
+      </div>
+        <div class="user-show-tags">
+          <%= render partial: 'shared/tags', collection: @tags, as: :tag %>
+        </div>
+      </div>
+    </div>  
   </div>
 </div>
-<div class="article-index-item">
 
-    <%= render partial: 'articles/articles', collection: @articles, as: :article %>
-
-</div>
