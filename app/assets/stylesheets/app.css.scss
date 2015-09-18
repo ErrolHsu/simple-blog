@@ -75,7 +75,7 @@ body {
 	height: auto;
 	@include box_sizing;
 	a {
-		font-family: Helvetica,"Microsoft JhengHei", sans-serif;
+		font-family: Helvetica, sans-serif, "Microsoft JhengHei";
 		color: #5482ab;
 		&:hover {
 			text-decoration: none;
