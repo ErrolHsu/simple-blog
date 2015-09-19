@@ -26,11 +26,10 @@
 /* navbar */
 
 .navbar {
+	z-index: 2000 !important;
 	padding: 5px 5px 5px 5px;
   background-color: $gray6;
 	font-weight: bold;
-	border-bottom: 2px solid $gray2;
-	border-top: 2px solid $gray2;
 }
 
 .nav-link {
@@ -101,7 +100,10 @@
 		  .dropdown-menu {
 		  	li {
 		  		a {
-		  			color: $gray2;
+		  			color: $gray1;
+		  			&:hover {
+		  				color: $red;
+		  			}
 		  		}
 		  	}
 		  }

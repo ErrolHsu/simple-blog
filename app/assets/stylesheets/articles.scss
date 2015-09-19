@@ -22,29 +22,6 @@
   }
 }
 
-.edit-link {
-	float: right;
-	font-size: 15px;
-	color: $green;
-	&:hover {
-		color: darken($green, 20%)
-	}
-}
-
-.link-sym {
-	float: right;
-	font-size: 15px;
-}
-
-.delete-link {
-	float: right;
-	font-size: 15px;
-	color: $gray4;
-	&:hover {
-		color: $red;
-	}
-}
-
 
 
 /* 關於文章 */

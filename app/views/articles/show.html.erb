@@ -1,7 +1,7 @@
 <% provide(:title, "#{@article.title}") %>
 <div class="row article-show-page">
+  <%= render 'shared/flash' %>
   <div class="col-md-10 col-xs-12 col-md-offset-1 article-show-content">
-	  <%= render 'shared/flash' %>
 	  <h4 class="article-show-page-title"><%= @article.title %></h4>
 		<%= raw @article.content %>
 		<div class="article-show-tags">

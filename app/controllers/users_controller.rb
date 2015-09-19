@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-	before_action :logged_in_user, only: [:edit, :update]
-	before_action :can_edit, only: [:edit, :update]
+	before_action :find_user, except: [:index, :new, :create]
+
+	before_action :can_manage, only: [:edit, :update, :manage]
 
 	def index
 		@users = User.all
@@ -27,17 +28,14 @@ class UsersController < ApplicationController
 
 
 	def show
-		@user = User.find(params[:id])
 		@articles = @user.articles.page(params[:page]).per(5)
 		@tags = @user.tags.all 
 	end
 
 	def edit
-		@user = User.find(params[:id])
 	end
 
 	def update
-		@user = User.find(params[:id])
 		  if @user.update_attributes (user_params)
 				flash[:success] = "更新已儲存"
 		    redirect_to user_path(current_user)
@@ -47,8 +45,13 @@ class UsersController < ApplicationController
 	end
 
 	def about_me
-		@user = User.find(params[:id])
 	end	
+
+	def manage
+		@articles = @user.articles.page(params[:page]).per(25)
+		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
+		@tags = @user.tags.all 
+	end
 
 
 	private
@@ -58,15 +61,12 @@ class UsersController < ApplicationController
 													 :title, :about_me, :gravatar)
 		end
 
-
-		def logged_in_user
-			unless logged_in?
-				flash[:danger] = "請先登入"
-				redirect_to login_path
-			end	
+		def find_user
+			@user = User.find(params[:id])
 		end
 
-		def can_edit
+
+		def can_manage
 			@user = User.find(params[:id])
 			unless current_user?(@user)
 				flash[:danger] = "無此權限"

@@ -35,10 +35,5 @@ module ApplicationHelper
   end
 
 
-  def show?(condition=true, tag, message, style: "")
-    if condition
-      content_tag(:tag, "---", class: style)
-    end
-  end
 
 end

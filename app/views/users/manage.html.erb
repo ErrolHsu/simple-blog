@@ -1,12 +1,45 @@
-#管理介面
-
-<div>
-  <li><%= link_to article.title, user_article_path(article) %></li><br>
-  <%= article.created_at.to_s(:month_day_year) %>
-
-  <%= show_link(current_user?(@user), "刪除文章", user_article_path(article), 
-    method: "delete", data: { confirm: "確定刪除?"}, style: "article-index-delete" )%>
-  <span class="article-index---">---</span>
-  <%= show_link(current_user?(@user), "編輯", edit_user_article_path(article), 
-    style: "article-index-edit") %>												
+<% provide(:title, "manage") %>
+<div class="row">
+  <%= render 'shared/flash' %>
+  <div class="col-md-5 col-sm-5 col-xs-11 index-year">
+    <% @articles_by_year.each do |year, articles| %>
+      <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
+  	  <div class="index-articles">
+  	    <% for article in articles %>
+  	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
+  		    <%= link_to "#{article.title}", user_article_path(@user, article) %><br>
+          <%= link_to "刪除", user_article_path(@user, article), method: 'delete',
+              data: {confirm: "確定刪除文章 - '#{article.title}' ?"}, 
+              class: "delete-link" %>
+          <span class="link-sym">---</span>   
+          <%= link_to "編輯", edit_user_article_path(@user, article), 
+              class: "edit-link" %>
+  		    <HR class="hr-2">
+  	    <% end %>	
+  	  </div>  
+    <% end %>
+  </div>
+  <div class="col-md-4 col-sm-4 hidden-xs" id="manage-tags-box">
+    <div id="manage-tags">
+      <span class="glyphicon glyphicon-tags"></span>CATEGORIES
+      </div>
+        <div class="manage-show-tags">
+          <% @tags.each do |tag| %>
+            <div class="manage-show-tag">
+              <%= link_to user_tag_path(@user, tag), id: "tag-name" do %>
+                <%= "#{tag.name}" %>
+                <span class="manage-tag-size"><%= "(#{tag.articles.size})" %></span>
+              <% end %>
+              <%= content_tag(:span, id: "tag-delete") do %>
+                <%= link_to "...刪除", user_tag_path(@user, tag), method: 'delete',
+                 data: {confirm: "確定刪除標籤 - [#{tag.name}] ?"}%>
+              <% end %>   
+            </div>
+          <% end %>  
+        </div>
+      </div>
+    </div>  
+  </div>
+<div class="pagi">
+  <%= paginate @articles, :window => 2 %>
 </div>

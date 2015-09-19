@@ -16,7 +16,7 @@ class TagsController < ApplicationController
 		@tag = @user.tags.find(params[:id])
 		if @tag.destroy
 			flash[:success] = "標籤已刪除"
-			redirect_to user_tags_path
+			redirect_to manage_user_path(current_user)
 		end
 	end
 end

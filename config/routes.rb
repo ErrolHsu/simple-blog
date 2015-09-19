@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get 'about_me'
+      get 'manage'
     end  
     resources :articles 
-    resources :tags, only: [:index, :show, :destroy]
+    resources :tags, only: [:show, :destroy]
   end   
 
 

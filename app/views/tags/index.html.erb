@@ -1,8 +1,0 @@
-<h1>Tags All</h1>
-<%= render 'shared/flash' %>
-<% @tags.each do |tag| %>
-	<div>
-	  <%= link_to "#{tag.name}(#{tag.articles.size})", user_tag_path(tag)%>
-	  <%= link_to "刪除標籤", user_tag_path(tag), method: :delete, data: { confirm: "確定刪除?"} %>
-  </div>
-<% end %>	

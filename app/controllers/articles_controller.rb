@@ -46,10 +46,10 @@ class ArticlesController < ApplicationController
 		@article = current_user.articles.find(params[:id])
 		if @article.destroy
 			flash[:success] = "文章已刪除"
-			redirect_to user_articles_path(current_user)
+			redirect_to manage_user_path(current_user)
 		else
 			flash[:danger] = "刪除失敗"
-			redirect_to user_articles_path(current_user)
+			redirect_to manage_user_path(current_user)
 		end		
 	end
 

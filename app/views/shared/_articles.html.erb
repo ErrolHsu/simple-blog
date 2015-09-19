@@ -4,7 +4,8 @@
 	  	<span class="glyphicon glyphicon-tag"></span>
 	</div>
 	<div class="created-at">
-		<%= article.created_at.to_s(:month_day_year) %>
+		<span>By </span><%= content_tag(:span, "#{@user.name}", id: "user-name") %>
+		<span> · </span><%= article.created_at.to_s(:month_day_year) %>
 	</div>
 		<%= raw article.content.truncate(850) %></pre><br>
 		<%= link_to "Read more..", user_article_path(@user, article), 

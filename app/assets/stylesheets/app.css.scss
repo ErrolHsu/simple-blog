@@ -20,9 +20,12 @@ html, body{ margin:0; height:100%; }
 
 
 .redactor-box {
+	z-index: 0 !important;
 	margin: 5px 0;
 	height: 350px;
 	.redactor-toolbar {
+		z-index: 0 !important;
+		border-bottom: 2px solid $gray4;
 		background: #f3f3f3;
 		.re-image {
 			display: none;
@@ -76,7 +79,7 @@ body {
 	@include box_sizing;
 	a {
 		font-family: Helvetica, "Microsoft JhengHei", sans-serif;
-		color: #5482ab;
+		color: $blue2;
 		&:hover {
 			text-decoration: none;
 			color: #93c378;
@@ -176,12 +179,12 @@ input, textarea, select, .uneditable-input {
 	background-color: transparent;
 	border: none;
 	font-size: 20px;
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 .alert-success {
 	color: $green;
-	padding: 10px 25px;
+	margin: 10px 10px;
 }
 
 .alert-danger {
