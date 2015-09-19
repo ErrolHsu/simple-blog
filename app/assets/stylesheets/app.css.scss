@@ -67,15 +67,15 @@ html, body{ margin:0; height:100%; }
 /* 通用 */
 
 body {
-  color: #222;
-  background: $gray1;
+  color: #444;
+  background: #fff;
 	font-size: 1.9em;
 	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
-	padding-top: 110px;
+	padding-top: 100px;
 	height: auto;
 	@include box_sizing;
 	a {
-		font-family: Helvetica, sans-serif, "Microsoft JhengHei";
+		font-family: Helvetica, "Microsoft JhengHei", sans-serif;
 		color: #5482ab;
 		&:hover {
 			text-decoration: none;
@@ -181,7 +181,7 @@ input, textarea, select, .uneditable-input {
 
 .alert-success {
 	color: $green;
-	padding: 0 5px;
+	padding: 10px 25px;
 }
 
 .alert-danger {

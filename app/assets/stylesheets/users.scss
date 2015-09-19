@@ -51,7 +51,7 @@
 }
 
 .user-article-title {
-	  font-size: 25px;
+	  font-size: 30px;
 		font-weight: bolder;
 		letter-spacing: 2px;
 		line-height: 26px;
@@ -65,7 +65,7 @@
 .user-article-show {
  	background: #ffffff;
 	padding: 30px;
-	margin: 30px;
+	margin: 30px 30px 30px 30px;
 	height: auto;
 	width: 100%;
 }
@@ -150,7 +150,6 @@
 #box-3 {
   margin: 40px 0;
   padding: 10px 5px;
-  border: 1px solid $gray2;
   background: $gray2;
   #tags {
     color: darken($gray2, 40%);

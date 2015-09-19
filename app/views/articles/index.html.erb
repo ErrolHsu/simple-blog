@@ -6,7 +6,13 @@
   	  <div class="index-articles">
   	    <% for article in articles %>
   	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
-  		    <%= link_to "#{article.title}", user_article_path(article) %>
+  		    <%= link_to "#{article.title}", user_article_path(article) %><br>
+          
+          <%= show_link(current_user?(@user), "刪除", user_article_path(article),
+            method: 'delete', data: {confirm: "確定?"},style: "delete-link") %>
+          <%= show?(current_user?(@user), :span, "---", style: "link-sym") %>
+          <%= show_link(current_user?(@user), "編輯", edit_user_article_path(article), style: "edit-link") %>
+
   		    <HR class="hr-2">
   	    <% end %>	
   	  </div>  

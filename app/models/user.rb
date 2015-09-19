@@ -7,9 +7,11 @@ class User < ActiveRecord::Base
 
 	attr_accessor :remember_token
 
-	before_save :email_downcase, :set_blog_title
+	before_save :email_downcase
+  after_save :set_blog_title
 
-	validates :name, presence: {message: "不能為空"}, length: { maximum: 20, message: "請勿超過20個字元" } 
+	validates :name, presence: {message: "不能為空"}, length: { maximum: 20, message: "請勿超過20個字元" }
+  validates :title, length: { maximum: 20, message: "請勿超過20個字元" }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: {message: "不能為空"}, length: { maximum: 50 },
 										format: { with: VALID_EMAIL_REGEX, message: "格式錯誤" },
@@ -51,6 +53,7 @@ class User < ActiveRecord::Base
     def set_blog_title
       if self.title.blank?
         self.title = "#{self.name}'s Blog"
+        self.save
       end
     end
 
