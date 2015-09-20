@@ -9,7 +9,7 @@
   	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
   		    <%= link_to "#{article.title}", user_article_path(@user, article) %><br>
           <%= link_to "刪除", user_article_path(@user, article), method: 'delete',
-              data: {confirm: "確定刪除文章 - '#{article.title}' ?"}, 
+              data: {confirm: "確定刪除文章 - [ #{article.title} ] ?"}, 
               class: "delete-link" %>
           <span class="link-sym">---</span>   
           <%= link_to "編輯", edit_user_article_path(@user, article), 
@@ -32,7 +32,7 @@
               <% end %>
               <%= content_tag(:span, id: "tag-delete") do %>
                 <%= link_to "...刪除", user_tag_path(@user, tag), method: 'delete',
-                 data: {confirm: "確定刪除標籤 - [#{tag.name}] ?"}%>
+                 data: {confirm: "確定刪除標籤 - [ #{tag.name} ] ?"}%>
               <% end %>   
             </div>
           <% end %>  
