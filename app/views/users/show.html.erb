@@ -1,7 +1,7 @@
 <% provide(:title, "") %>
 <div class="row">
-  <div class="col-md-3 col-sm-3 col-xs-11" id="side-bar">
-  	<div class="row">
+  <div class="col-md-3 col-sm-3 col-xs-11">
+  	<div class="row" id="side-bar">
   		<div class="col-md-9 col-sm-10 col-xs-5" id="box-1">
  	    	<%= gravatar_for(@user, size: 130, id: "gravatar-1") %>
  	    </div>
@@ -23,8 +23,8 @@
   	  </div>
  	  </div>  
   </div>
-  <%= render 'shared/flash' %>  
-	<div class="col-md-9 col-sm-9 col-xs-12" id="articles">
+  <%= render 'shared/flash' %> 
+	<div class="col-md-9 col-sm-9 col-xs-12" id="user-show-articles">
 	  <%= render partial: 'shared/articles', collection: @articles, as: :article %>	
 	</div>
 </div>

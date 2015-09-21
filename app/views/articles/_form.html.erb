@@ -6,14 +6,20 @@
 <%= f.text_area :content, class: :redactor %>
 <HR class="dark-hr">
 
-<%= f.label :tag_names, "Tag" %>
+<%= f.label :state, "文章屬性" %>
+<%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %>
+<HR class="dark-hr">
+
+<%= f.label :tag_names, "新增標籤" %>
+<span>(新增多個標籤，請以空白分隔)</span>
 <%= f.text_field :tag_names, class: 'form-control' %>
 <div class="tag-field">
-  <%= f.label :tags %><br />
+  <%= f.label :tags, "現有標籤" %><br />
   <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>
     <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
   <% end %>
 </div>
 <HR class="dark-hr"> 
+	
 
 <%= f.submit "Save", class: "btn btn-default btn-custom" %>

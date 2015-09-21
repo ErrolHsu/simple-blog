@@ -1,12 +1,10 @@
 .btn-custom {
   background-color: #5482ab !important;
-  background-repeat: repeat-x;
   color: #fff !important;
   font-weight: bolder;
   font-size: 22px;
   border: none;
   border-radius: 0;
-  -webkit-font-smoothing: antialiased;
   width: auto;
   margin: 20px 0 10px 0;
   padding: 3px 35px;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<%= favicon_link_tag 'ico.png' %>
 	<meta name="google-site-verification" content="kfeccGubyw1DGAsm3JtElAGzwD2xYc1h5PsbxoNqX28" />
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,5 +13,6 @@
 		<%= render 'layouts/nav'  %>
 			<%= yield %>
 	</div>
+	
 </body>
 </html>

@@ -26,18 +26,19 @@ html, body{ margin:0; height:100%; }
 	.redactor-toolbar {
 		z-index: 0 !important;
 		border-bottom: 2px solid $gray4;
-		background: #f3f3f3;
+		background: $gray2;
 		.re-image {
 			display: none;
 		}
 	}
 	.redactor-editor {
+	  border: 1px solid $gray3;
+		height: 350px;
+	  background: $gray2;
 		p {
 			font-size: 18px;
-			letter-spacing: 1.0px;
+			letter-spacing:01.0px;
 		}
-	height: 350px;
-	background: #f3f3f3;
 	}
 }
 
@@ -71,10 +72,10 @@ html, body{ margin:0; height:100%; }
 
 body {
   color: #444;
-  background: #fff;
-	font-size: 1.9em;
-	font-family: Helvetica,"Microsoft JhengHei", sans-serif;
-	padding-top: 100px;
+  background: #f1f2f3;
+	font-size: 1.8em;
+	font-family: "Open Sans",Helvetica,"Microsoft JhengHei", sans-serif;
+	padding-top: 60px;
 	height: auto;
 	@include box_sizing;
 	a {
@@ -152,7 +153,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .form-control {
-	background: #f3f3f3;
+	background: $gray2;
 	border-radius: 0;
 }
 
@@ -184,7 +185,8 @@ input, textarea, select, .uneditable-input {
 
 .alert-success {
 	color: $green;
-	margin: 10px 10px;
+	margin: 5px 5px;
+	padding: 10px;
 }
 
 .alert-danger {
