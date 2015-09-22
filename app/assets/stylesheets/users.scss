@@ -4,7 +4,9 @@
 
 
 #gravatar-1 {
-  float:right;  
+  float:right;
+  border-radius: 10px; 
+  border-left: 2px solid #fff;
 }
 
 
@@ -18,7 +20,7 @@
 
 .account-old-setting {
 	font-size: 18px;
-	color: #517891;
+	color: $blue1;
 }
 
 .gravatar-check-box {
@@ -48,32 +50,56 @@
   padding: 5px;
 }
 
-.user-article-title {
-	  font-size: 25px;
-		font-weight: bolder;
-		letter-spacing: 2px;
-		line-height: 26px;
-    a {
-      color: $blue1;
-    }
+#user-show-articles .user-articles:nth-child(odd) {
+  .user-article-title {
+    background: $blue1;
+  }
+}
+
+#user-show-articles .user-articles:nth-child(even) {
+  .user-article-title {
+    background: $blue6;
+  }
+  .btn-custom {
+    background: $blue6;
+  }
 }
 
 
 
-.user-article-show {
+.user-articles {
+  border-radius: 10px;
  	background: #ffffff;
-	padding: 50px 30px 20px 30px;
+	padding: 0px 30px 20px 30px;
 	margin: 60px 30px 30px 0px;
 	height: auto;
 	width: 100%;
 }
+
+.user-article-title {
+    border-radius: 10px;
+    height: 80px;
+    margin: 0 -30px 0 -30px;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    line-height: 80px;
+    padding: 0 0 0 30px;
+    a {
+      color: #fff;
+      &:hover {
+        color: darken(#fff, 5%);
+      }
+    }
+}
+
 
 .created-at {
 	color: #8b8c8d;
 	font-weight: 200;
   font-size: 15px;
 	text-align: left;
-  margin: 20px 0;
+  margin: 30px 0;
   #user-name {
     color: $blue1;
   }
@@ -88,13 +114,13 @@
 }
 
 #box-1 {
+  border-radius: 10px;
   font-size: 25px;
   padding: 0;
   margin: 0 0 0 0;
   color: $gray5;
-  background: $gray3;
+  background: #3b5a6f;
   border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
   a {
     color:#fffaec;
@@ -113,19 +139,16 @@
 
 
 #box-2 {
+  border-radius: 10px;
   font-size: 23px;
   font-weight: 500;
   padding: 0;
   color: $gray1;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-
   a {
     font-weight: bolder;
     color: #fff;
     &:hover {
-    color: #93c378;
+    color: $blue6;
     }
     &:hover:before {
     color: #fffaec;
@@ -136,20 +159,24 @@
     margin: 0 3px 0 0;
   }
   #box-2-1 {
+    border-radius: 10px;
     font-size: 32px;
-    height: 45px;
+    height: 50px;
     text-align: center;
-    background: $blue1;
-    margin: 0 0 2px 0;
+    background: $green2;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
   }
   #box-2-2 {
+    border-radius: 10px;
     background: #ced7df;
     letter-spacing: -1px;
-    height: 83px;
-    font-size: 30px;
+    height: 82px;
+    font-size: 28px;
     padding: 10px 0;
-    margin: auto;
     text-align: center;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
   }
   #box-2-2-1 {
     width: 140px;
@@ -162,6 +189,7 @@
   margin: 40px 0;
   padding: 30px 5px 100px 5px;
   background: $gray2;
+  border-radius: 10px;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;

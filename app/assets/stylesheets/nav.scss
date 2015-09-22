@@ -8,10 +8,17 @@
 	font-family: sans-serif;
 	font-size: 30px;
 	display: inline;
+	background: $gray6;
+	padding: 10px 20px;
+	margin-left: -15px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 15px;
 	a {
 		font-weight: bolder;
 	  font-family: sans-serif;
-		color: $gray1;
+		color: #fff;
 		&:hover {
 	    color: #d7584f;
 	  }
@@ -28,23 +35,24 @@
 .navbar {
 	z-index: 2000 !important;
 	padding: 10px 5px 0px 5px;
-  background-color: $gray6;
+  background-color: #f1f1f1;
 	font-weight: bold;
+	border-bottom: 2px solid $gray3;
 }
 
 .nav-link {
-	margin: 10px 0 10px 0;
+	margin: 10px 0 0px 0;
 	#nav-login {
 	padding: 0px 8px;
 		margin: -40px 0 5px 5px;
 		float: right;
-		background: $gray2;
+		background: $gray3;
 		border-radius: 15px;
 	  a {
 	  	color: $gray5;
 	  	font-size: 17px;
 	  	&:hover {
-	  		color: $green;
+	  		color: $green1;
 	  	}
 	  }
 	}
@@ -56,10 +64,10 @@
 .nav-menu {
 	.dropdown {
     .dropdown-toggle {
-	    margin: -42px 5px 0px 5px;
+	    margin: -45px 5px 0px 5px;
     	float: right;
-    	color: $gray3;
-	    background-color: $gray6;
+    	color: #444;
+	    background-color: #f1f1f1;
 	    border: none;
 	    &:active {
         color: #d7584f;
@@ -100,7 +108,7 @@
 		  .dropdown-menu {
 		  	li {
 		  		a {
-		  			color: $gray1;
+		  			color: $gray6;
 		  			&:hover {
 		  				color: $red;
 		  			}

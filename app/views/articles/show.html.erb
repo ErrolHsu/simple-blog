@@ -1,8 +1,14 @@
 <% provide(:title, "#{@article.title}") %>
 <div class="row article-show-page">
   <%= render 'shared/flash' %>
-  <div class="col-md-10 col-xs-12 col-md-offset-1 article-show-content">
+  <div class="col-md-10 col-xs-12 col-md-offset-1 article-show-all">
 	  <h4 class="article-show-page-title"><%= @article.title %></h4>
+    
+    <div class="created-at">
+      <span>By </span><%= content_tag(:span, "#{@user.name}", id: "user-name") %>
+      <span> · </span><%= @article.created_at.to_s(:month_day_year) %>
+    </div>
+
 		<%= raw @article.content %>
 		<div class="article-show-tags">
       <span class="glyphicon glyphicon-tags article-show-icon"></span>
@@ -10,7 +16,7 @@
     </div>
   </div>
   <div class="col-md-12 col-xs-12" id="return">
-    <%= link_to "回上頁", request.referer %>
+    <%= link_to "return", request.referer %>
   </div>
 </div>
 

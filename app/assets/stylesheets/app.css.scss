@@ -20,10 +20,13 @@ html, body{ margin:0; height:100%; }
 
 
 .redactor-box {
+	border-radius: 10px;
 	z-index: 0 !important;
 	margin: 5px 0;
 	height: 350px;
 	.redactor-toolbar {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 		z-index: 0 !important;
 		border-bottom: 2px solid $gray4;
 		background: $gray2;
@@ -32,9 +35,11 @@ html, body{ margin:0; height:100%; }
 		}
 	}
 	.redactor-editor {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 	  border: 1px solid $gray3;
 		height: 350px;
-	  background: $gray2;
+	  background: #fff;
 		p {
 			font-size: 18px;
 			letter-spacing:01.0px;
@@ -55,14 +60,14 @@ html, body{ margin:0; height:100%; }
 }
 
 .hr-2 {
-  background: $gray2;
-  color: $gray2;
+  background: $gray3;
+  color: $gray3;
   clear:both;
   float: none;
   width: 100%;
   line-height: 1px;
   font-size: 0;
-  border: 1px solid $gray2;
+  border: 1px solid $gray3;
   margin: 20px 0 40px 0;
 }	
 
@@ -80,10 +85,10 @@ body {
 	@include box_sizing;
 	a {
 		font-family: Helvetica, "Microsoft JhengHei", sans-serif;
-		color: $blue2;
+		color: $blue1;
 		&:hover {
 			text-decoration: none;
-			color: #93c378;
+			color: $blue2;
 		}
 		&:active {
 			text-decoration: none;
@@ -153,8 +158,8 @@ input, textarea, select, .uneditable-input {
 }
 
 .form-control {
-	background: $gray2;
-	border-radius: 0;
+	background: #fff;
+	border-radius: 10px;
 }
 
 .checkbox { 
