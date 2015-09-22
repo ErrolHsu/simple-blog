@@ -6,7 +6,7 @@
 	font-weight: bolder;
 	letter-spacing: 0px;
 	font-family: sans-serif;
-	font-size: 30px;
+	font-size: 22px;
 	display: inline;
 	background: $gray6;
 	padding: 10px 20px;
@@ -34,7 +34,7 @@
 
 .navbar {
 	z-index: 2000 !important;
-	padding: 10px 5px 0px 5px;
+	padding: 15px 5px 15px 5px;
   background-color: #f1f1f1;
 	font-weight: bold;
 	border-bottom: 2px solid $gray3;
@@ -64,7 +64,7 @@
 .nav-menu {
 	.dropdown {
     .dropdown-toggle {
-	    margin: -45px 5px 0px 5px;
+	    margin: -40px 5px 0px 5px;
     	float: right;
     	color: #444;
 	    background-color: #f1f1f1;
