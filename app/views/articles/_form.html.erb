@@ -1,18 +1,20 @@
 <%= render 'shared/error_messages', var: @article %>
-<%= f.label :title, "文章標題" %>
+<%= render 'shared/flash' %>
+
+<%= f.label :title, "文章標題 :" %>
 <%= f.text_field :title, class: 'form-control', id: "article-new-title" %></br>
 
-<%= f.label :content, "內文" %>
+<%= f.label :content, "內文 :" %>
 <%= f.text_area :content, class: :redactor %>
 <HR class="dark-hr">
 
-<%= f.label :state, "文章屬性" %>
+<%= f.label :state, "文章屬性 : " %>
 <%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %>
 <HR class="dark-hr">
 
-<%= f.label :tag_names, "新增標籤" %>
-<span>(新增多個標籤，請以空白分隔)</span>
-<%= f.text_field :tag_names, class: 'form-control' %>
+<%= f.label :tag_names, "新增標籤 :" %><br>
+<p>(新增多個標籤，請以空白分隔)</p>
+<%= f.text_field :tag_names, class: 'form-control' %><br>
 <div class="tag-field">
   <%= f.label :tags, "現有標籤" %><br />
   <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>

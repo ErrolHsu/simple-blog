@@ -28,7 +28,7 @@
 
 .article-show-page {
 	margin-top: 20px;
-	padding: 20px 15px;
+	padding: 20px 5px;
 }
 
 .article-show-content {
@@ -43,6 +43,24 @@
 
 .article-show-tags {
 	margin: 50px 0 0 0 ;
+}
+
+.tag_list {
+	border-radius: 20px;
+	font-size: 14px;
+	float: left;
+	margin: 0px 5px 15px 5px;
+	background: $blue1;
+	padding: 3px 15px;
+	color: #fff;
+	&:hover {
+	  background: $red;
+	}
+}
+
+.article-show-icon {
+	padding-top: 2px;
+	float: left;
 }
 
 

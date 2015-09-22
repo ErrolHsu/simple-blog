@@ -5,8 +5,8 @@
 	  <h4 class="article-show-page-title"><%= @article.title %></h4>
 		<%= raw @article.content %>
 		<div class="article-show-tags">
-      <span class="glyphicon glyphicon-tags"></span>
-      <%= raw article_tags(@article.tags) %>
+      <span class="glyphicon glyphicon-tags article-show-icon"></span>
+      <span><%= raw tag_list(@article.tags) %></span>
     </div>
   </div>
   <div class="col-md-12 col-xs-12" id="return">
