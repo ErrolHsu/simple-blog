@@ -8,6 +8,11 @@
 	text-align: center;
 	font-weight: bold;
 	height: 100px;
+	a {	
+    &:hover {
+	  color: lighten($blue1, 10%);
+	  }
+	}
 }
 
 /* articles index */
@@ -67,7 +72,9 @@
 	padding: 3px 15px;
 	color: #fff;
 	&:hover {
-	  background: $red;
+	  background: #fff;
+	  color: $blue1;
+	  border: 2px solid $blue1;
 	}
 }
 

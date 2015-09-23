@@ -10,7 +10,7 @@
 	display: inline;
 	background: #333;
 	padding: 10px 20px;
-	margin-left: -15px;
+	margin-left: -10px;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 30px;
@@ -69,8 +69,9 @@
     	color: $gray1;
 	    background-color: $gray6;
 	    border: none;
-	    &:active {
-        color: #d7584f;
+	    &:hover {
+        transform:scale(1.2);
+        -webkit-transform:scale(1.2);
       }
     }
     .glyphicon-user {
@@ -86,14 +87,14 @@
 
 
 .dropdown-menu {
-	background: $green;
+	background: $green1;
 	li {
 		padding: 0px 40px 0 5px;
 	  a {
 	  	margin: 5px 0;
 	  	font-size: 1.6em;
 	  	&:hover {
-	  		background: darken($green, 10%);
+	  		background: darken($green1, 10%);
 	  	}
 	  }
 	}
@@ -110,7 +111,7 @@
 		  		a {
 		  			color: $gray1;
 		  			&:hover {
-		  				color: $red;
+		  				color: $gray3;
 		  			}
 		  		}
 		  	}

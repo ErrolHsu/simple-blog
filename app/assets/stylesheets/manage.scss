@@ -51,14 +51,14 @@
         color: $blue2;
         font-size: 16px;
         &:hover {
-          color: $green3;
+          color: lighten($blue2, 5%);
+          .manage-tag-size  {
+          color: lighten($blue2, 5%);
+          }
         }
       }
       .manage-tag-size {
         color: $gray5;
-        &:hover {
-          color: $green3;
-        }
       }   
     }
   }

@@ -7,14 +7,15 @@ module NavHelper
   end
 
   def render_blog_title
-    if @user && @user.id
-    	title = @user.title
-      path = user_path(@user)
+    if @user.nil? || @user.new_record?
+      link_to root_path do
+        content_tag(:div, "$&!$#%#$%", id: "logo")
+      end  
     else  
-      title = "$&!$#%#$%"
-      path = root_path
+      link_to user_path(@user) do
+        content_tag(:div, @user.title, id: "logo")
+      end 
     end	
-    link_to title, path
   end
 
   def show_login_path

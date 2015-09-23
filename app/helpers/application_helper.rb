@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def full_title(page_title= "")
-    if @user && @user.id
+    if @user && !@user.new_record?
       if page_title.blank?
         @user.title
       else  

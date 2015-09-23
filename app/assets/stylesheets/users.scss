@@ -5,7 +5,7 @@
 
 #gravatar-1 {
   float:right;
-  border-radius: 10px; 
+  border-radius: 7px; 
   border-left: 2px solid #fff;
 }
 
@@ -50,25 +50,42 @@
   padding: 5px;
 }
 
-#user-show-articles .user-articles:nth-child(odd) {
+#user-show-articles .user-articles:nth-child(even) {
   .user-article-title {
     background: $blue1;
+    &:hover {
+      background: darken($blue1, 10%);
+    }
+  }  
+  .btn-custom {
+    background: $blue1;
+    &:hover {
+      background: darken($blue1, 10%);
+      color: #fff;
+    }
   }
 }
 
-#user-show-articles .user-articles:nth-child(even) {
+#user-show-articles .user-articles:nth-child(odd) {
   .user-article-title {
     background: $blue6;
+    &:hover {
+      background: lighten($blue6, 10%);
+    }
   }
   .btn-custom {
     background: $blue6;
+    &:hover {
+      background: lighten($blue6, 10%);
+      color: #fff;
+    }
   }
 }
 
 
 
 .user-articles {
-  border-radius: 10px;
+  border-radius: 7px;
  	background: #ffffff;
 	padding: 0px 30px 20px 30px;
 	margin: 60px 30px 30px 0px;
@@ -77,20 +94,15 @@
 }
 
 .user-article-title {
-    border-radius: 10px;
-    height: 80px;
-    margin: 0 -30px 0 -30px;
-    font-size: 27px;
-    font-weight: bolder;
-    letter-spacing: 2px;
-    line-height: 80px;
-    padding: 0 0 0 30px;
-    a {
-      color: #fff;
-      &:hover {
-        color: darken(#fff, 5%);
-      }
-    }
+  border-radius: 7px;
+  height: 80px;
+  margin: 0 -30px 0 -30px;
+  font-size: 27px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  line-height: 80px;
+  padding: 0 0 0 30px;
+  color: #fff;
 }
 
 
@@ -114,9 +126,9 @@
 }
 
 #box-1 {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
 
   font-size: 25px;
   padding: 0;
@@ -125,66 +137,62 @@
   background: #3b5a6f;
   border-top: 2px solid #fff;
   border-right: 2px solid #fff;
-  a {
-    color:#fffaec;
-    &:hover {
-    color: $red;
-    }
-    &:hover:before {
-    color: #fffaec;
-    }
-  }
-  a:before {
-    color: #505050;
-    margin: 0 3px 0 0;
-  }
 }
 
 
 #box-2 {
-  border-radius: 10px;
-  font-size: 23px;
-  font-weight: 500;
+  border-radius: 7px;
   padding: 0;
-  color: $gray1;
   a {
     font-weight: bolder;
     color: #fff;
-    &:hover {
-    color: $blue6;
-    }
-    &:hover:before {
-    color: #fffaec;
-    }
-  }
-  a:before {
-    color: #505050;
-    margin: 0 3px 0 0;
   }
   #box-2-1 {
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 32px;
     height: 50px;
     text-align: center;
     background: $green2;
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
+    &:hover {
+      background: lighten($green2, 3%);
+    }
   }
   #box-2-2 {
-    border-radius: 10px;
+    border-radius: 7px;
     background: #ced7df;
     letter-spacing: -1px;
     height: 82px;
-    font-size: 28px;
-    padding: 10px 0;
+    padding: 5px 0 7px 0;
     text-align: center;
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
+    .glyphicon-book {
+      transform:scale(0.9);
+      -webkit-transform:scale(0.9);
+    }
+    &:hover {
+      background: darken(#ced7df, 5%);
+      color: $blue6;
+      .glyphicon-book {
+        color: #fff;
+      }
+      #box-2-2-1 {
+        background: darken(#ced7df, 5%);
+      }
+    }
   }
   #box-2-2-1 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bolder;
     width: 140px;
     background: #ced7df;
     margin: auto;
+    .glyphicon-book {
+      color: $gray6;
+    }
   }
 }
 
@@ -192,10 +200,8 @@
   margin: 40px 0;
   padding: 30px 5px 100px 5px;
   background: $gray2;
-  border-radius: 10px;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-radius: 7px;
+  border: 2px solid #fff;
   #tags {
     color: darken($gray2, 40%);
     margin: auto;
@@ -209,22 +215,20 @@
   .user-show-tags {
     margin: 15px 0;
     padding: 0 0 0 15px;
-    a {
-      color: darken($gray2, 40%);
-      font-size: 16px;
-      &:hover {
-        color: $red;
-      }
-    }
     .show-tag {
       margin: 15px 5px;
       width: 45%;
       float: left;
+      color: darken($gray2, 40%);
+      font-size: 16px;
+      &:hover {
+        color: $red;
+        .tag-size {
+          color: $red;
+        }
+      }
       .tag-size {
         color: #444;
-        &:hover {
-          color: $red;
-        }  
       }
     }
   }

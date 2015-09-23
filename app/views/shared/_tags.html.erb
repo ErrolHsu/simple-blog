@@ -1,6 +1,8 @@
-<div class="show-tag">
+<div>
 	<%= link_to user_tag_path(@user, tag) do %>
+	<div class="show-tag">
 	  <%= "#{tag.name}" %>
 	  <span class="tag-size"><%= "(#{tag.articles.size})" %></span>
+	</div>  
   <% end %>
 </div>
