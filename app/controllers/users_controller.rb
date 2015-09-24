@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 	def show
 		@articles = @user.articles.page(params[:page]).per(5)
 		@tags = @user.tags.all 
+		render text: params
 	end
 
 	def edit
