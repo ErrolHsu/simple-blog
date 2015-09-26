@@ -5,13 +5,21 @@ class ArticlesController < ApplicationController
 	before_action :can_write, except: [:index, :show]
 
 	def index
-		@articles = @user.articles.page(params[:page]).per(25)
+		if current_user?(@user)
+		  @articles = @user.articles.page(params[:page]).per(25)
+		else  
+		  @articles = @user.articles.published.page(params[:page]).per(25)
+		end  
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
 		@tags = @user.tags.all 
 	end
 
 	def show
-		@article = @user.articles.find(params[:id])
+		if current_user?(@user)
+		  @article = @user.articles.find(params[:id])
+		else
+		  @article = @user.articles.published.find(params[:id])
+		end  
 	end
 
 	def new

@@ -1,9 +1,13 @@
 class Article < ActiveRecord::Base
+  extend FriendlyId
   belongs_to :user
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
+
+  friendly_id :slug_candidates, use: :slugged
   
   default_scope -> { order(created_at: :desc) }
+  scope :published, -> { where(state: 1) }
   
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 30, message: "請勿超過30個字元"}
@@ -11,6 +15,16 @@ class Article < ActiveRecord::Base
 
   attr_accessor :tag_names
   after_save :assign_tags
+
+  def slug_candidates
+    [
+      :title
+    ]
+  end
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize(transliterations: :russian).to_s
+  end
 
   private
   	def assign_tags

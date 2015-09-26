@@ -2,6 +2,20 @@
 <div class="row">
   <%= render 'shared/flash' %>
   <div class="col-md-5 col-sm-5 col-xs-11 index-year">
+    <div id="manage-menu-all">
+      <%= link_to manage_user_path(@user) do %>
+        <%= content_tag(:div, '全部', class: "manage-menu") %>
+      <% end %>
+      <%= link_to manage_user_path(@user, state: 1) do %>
+        <%= content_tag(:div, '公眾', class: "manage-menu") %>
+      <% end %> 
+      <%= link_to manage_user_path(@user, state: 2) do %>
+        <%= content_tag(:div, '私人', class: "manage-menu") %>
+      <% end %>
+      <%= link_to manage_user_path(@user, state: 3) do %>
+        <%= content_tag(:div, '草稿', class: "manage-menu") %>
+      <% end %>  
+    </div>
     <% @articles_by_year.each do |year, articles| %>
       <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
   	  <div class="index-articles">

@@ -28,9 +28,12 @@ class UsersController < ApplicationController
 
 
 	def show
-		@articles = @user.articles.page(params[:page]).per(5)
+		if current_user?(@user)
+		  @articles = @user.articles.page(params[:page]).per(5)
+	  else
+		  @articles = @user.articles.published.page(params[:page]).per(5)
+		end  
 		@tags = @user.tags.all 
-		render text: params
 	end
 
 	def edit
@@ -49,7 +52,12 @@ class UsersController < ApplicationController
 	end	
 
 	def manage
-		@articles = @user.articles.page(params[:page]).per(25)
+		if params[:state].nil?
+			@select_articles = @user.articles.all
+		else	
+		  @select_articles = @user.articles.where(state: params[:state])
+		end  
+		@articles = @select_articles.page(params[:page]).per(25)
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
 		@tags = @user.tags.all 
 	end

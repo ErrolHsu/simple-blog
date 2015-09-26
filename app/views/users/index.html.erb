@@ -2,9 +2,9 @@
 <ul>
 <% @users.each do |user| %>
 	<li>
-	<%= gravatar_for(user, size: 50) %>
-	<%= user.name %>
-	<HR class="dark-hr"> 
-</li>
+	  <%= gravatar_for(user, size: 50) %>
+	  <%= user.name %>
+	  <HR class="dark-hr"> 
+  </li>
 <% end %>
 </ul>	

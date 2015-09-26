@@ -29,5 +29,6 @@ class ApplicationController < ActionController::Base
 	def url_options
 		{ user_id: params[:user_id] }.merge(super)
 	end
+	
 
 end

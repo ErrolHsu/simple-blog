@@ -1,6 +1,8 @@
+require "babosa"
+
 class User < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 	
   has_many :articles, dependent: :destroy
   has_many :tags
@@ -45,6 +47,16 @@ class User < ActiveRecord::Base
   def authenticated?(remember_token)
   	return false if remember_digest.nil?
   	BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  def slug_candidates
+    [
+      :name
+    ]
+  end
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
 
 

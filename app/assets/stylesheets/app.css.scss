@@ -153,7 +153,6 @@ h5 {
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
 	margin-bottom: 15px;
-  height: auto !important;
   @include box_sizing 
 }
 
@@ -205,3 +204,24 @@ input, textarea, select, .uneditable-input {
 }
 
 
+
+textarea {
+	border-radius: 5px;
+  width: 100%;
+  height: 400px;
+  max-width: 100%;
+}
+
+.CodeRay {
+	pre {
+	background: #fff;
+	}
+}
+
+
+
+.debug_dump {
+clear: both;
+float: left;
+width: 100%; margin-top: 45px; @include box_sizing;
+}

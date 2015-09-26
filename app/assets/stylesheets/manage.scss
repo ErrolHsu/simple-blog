@@ -2,6 +2,31 @@
 
 /* 管理頁面 */
 
+.index-year {
+  #manage-menu-all {
+    border-radius: 7px;
+    width: 100%;
+    padding: 0;
+    .manage-menu {
+      color: #9bd9d9;
+      border-radius: 7px;
+      border-left: 2px solid #fff;
+      text-align: center;
+      height: 35px;
+      line-height: 35px;
+      font-size: 20px;
+      margin: 20px 0 30px 0;
+      width: 25%;
+      background: $gray6;
+      float: left;
+      &:hover {
+        background: lighten($gray6, 5%);
+        color: $red;
+      }
+    }
+  }
+}
+
 .edit-link {
 	float: right;
 	font-size: 15px;
