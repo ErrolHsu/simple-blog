@@ -18,12 +18,8 @@ class Article < ActiveRecord::Base
 
   def slug_candidates
     [
-      [:title, :time_now]
+      :title
     ]
-  end
-
-  def time_now
-    Time.now.to_s(:short)
   end
 
   def normalize_friendly_id(input)
