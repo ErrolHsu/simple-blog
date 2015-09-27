@@ -53,7 +53,15 @@
 	color: #fff;
 	font-weight: bolder;
   letter-spacing: 2px;
-  line-height: 80px;;
+  line-height: 80px;
+}
+
+.article-show-edit {
+	float: right;
+	color: $green1;
+	&:hover {
+		color: $green2;
+	}
 }
 
 
