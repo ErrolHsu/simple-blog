@@ -2,7 +2,7 @@ require "babosa"
 
 class User < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: [:slugged, :finders] 
 	
   has_many :articles, dependent: :destroy
   has_many :tags

@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
 
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: [:slugged, :finders]
   
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 1) }
@@ -18,8 +18,12 @@ class Article < ActiveRecord::Base
 
   def slug_candidates
     [
-      :title
+      [:title, :time_now]
     ]
+  end
+
+  def time_now
+    Time.now.to_s(:short)
   end
 
   def normalize_friendly_id(input)

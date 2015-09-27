@@ -33,16 +33,6 @@
 
 
 
-/* 分頁 */
-
-.pagi {
-  font-size: 25px;
-	text-align: center;
-	background: $gray1;
-	font-weight: bold;
-}
-
-
 
 /* user-show-page */
 
@@ -199,18 +189,19 @@
 #box-3 {
   margin: 40px 0;
   padding: 30px 5px 100px 5px;
-  background: $gray2;
+  background: #ced7df;
   border-radius: 7px;
   border: 2px solid #fff;
   #tags {
-    color: darken($gray2, 40%);
+    color: $gray6;
     margin: auto;
     padding: 5px 0;
     text-align: center;
-    background: darken($gray2, 5%);
+    background: $gray1;
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 500;
     width: 180px;
+    border-radius: 5px;
   } 
   .user-show-tags {
     margin: 15px 0;
@@ -219,7 +210,7 @@
       margin: 15px 5px;
       width: 45%;
       float: left;
-      color: darken($gray2, 40%);
+      color: #444;
       font-size: 16px;
       &:hover {
         color: $red;
@@ -228,7 +219,7 @@
         }
       }
       .tag-size {
-        color: #444;
+        color: #111;
       }
     }
   }

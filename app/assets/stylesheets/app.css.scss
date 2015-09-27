@@ -12,65 +12,6 @@
 html, body{ margin:0; height:100%; }
 
 
-/* else */
-
-.danger {
-	color: #d7584f;
-}
-
-
-.redactor-box {
-	border-radius: 10px;
-	z-index: 0 !important;
-	margin: 5px 0;
-	height: 350px;
-	.redactor-toolbar {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-		z-index: 0 !important;
-		border-bottom: 2px solid $gray4;
-		background: $gray2;
-		.re-image {
-			display: none;
-		}
-	}
-	.redactor-editor {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-	  border: 1px solid $gray3;
-		height: 350px;
-	  background: #fff;
-		p {
-			font-size: 18px;
-			letter-spacing:01.0px;
-		}
-	}
-}
-
-.dark-hr {
-  background: $gray3;
-  color: $gray3;
-  clear:both;
-  float: none;
-  width: 100%;
-  line-height: 1px;
-  font-size: 0;
-  border: 1px solid $gray3;
-  margin: 40px 0;
-}
-
-.hr-2 {
-  background: $gray3;
-  color: $gray3;
-  clear:both;
-  float: none;
-  width: 100%;
-  line-height: 1px;
-  font-size: 0;
-  border: 1px solid $gray3;
-  margin: 20px 0 40px 0;
-}	
-
 
 
 /* 通用 */
@@ -212,6 +153,68 @@ textarea {
   max-width: 100%;
 }
 
+
+
+/* else */
+
+.danger {
+	color: #d7584f;
+}
+
+
+.redactor-box {
+	border-radius: 10px;
+	z-index: 0 !important;
+	margin: 5px 0;
+	height: 350px;
+	.redactor-toolbar {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+		z-index: 0 !important;
+		border-bottom: 2px solid $gray4;
+		background: $gray2;
+		.re-image {
+			display: none;
+		}
+	}
+	.redactor-editor {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+	  border: 1px solid $gray3;
+		height: 350px;
+	  background: #fff;
+		p {
+			font-size: 18px;
+			letter-spacing:01.0px;
+		}
+	}
+}
+
+.dark-hr {
+  background: $gray3;
+  color: $gray3;
+  clear:both;
+  float: none;
+  width: 100%;
+  line-height: 1px;
+  font-size: 0;
+  border: 1px solid $gray3;
+  margin: 40px 0;
+}
+
+.hr-2 {
+  background: $gray3;
+  color: $gray3;
+  clear:both;
+  float: none;
+  width: 100%;
+  line-height: 1px;
+  font-size: 0;
+  border: 1px solid $gray3;
+  margin: 20px 0 40px 0;
+}	
+
+
 .CodeRay {
 	pre {
 	background: #fff;
@@ -219,9 +222,34 @@ textarea {
 }
 
 
-
 .debug_dump {
-clear: both;
-float: left;
-width: 100%; margin-top: 45px; @include box_sizing;
+  clear: both;
+  float: left;
+  width: 100%; margin-top: 45px; @include box_sizing;
 }
+
+
+.pagi {
+  font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+	color: $gray1;
+	.pagination {
+	  background: $gray6;
+	  height: 50px;
+	  line-height: 50px;
+	  padding: 0 15px;
+		.page {
+			padding: 0 15px;
+		}	
+	}
+	a {
+		color: $blue1;
+		&:hover {
+			color: #9bd9d9;
+		}
+	}
+}
+
+
+

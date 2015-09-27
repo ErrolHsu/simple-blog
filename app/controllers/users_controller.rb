@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 		end  
 		@articles = @select_articles.page(params[:page]).per(25)
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
-		@tags = @user.tags.all 
+		@tags = @user.tags.all
 	end
 
 
@@ -75,12 +75,12 @@ class UsersController < ApplicationController
 		end
 
 
-		def can_manage
-			@user = User.find(params[:id])
-			unless current_user?(@user)
-				flash[:danger] = "無此權限"
-				redirect_to root_path
-			end
-		end
+def can_manage
+	@user = User.find(params[:id])
+	unless current_user?(@user)
+		flash[:danger] = "無此權限"
+		redirect_to root_path
+	end
+end
 
 end

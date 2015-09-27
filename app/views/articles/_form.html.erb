@@ -18,7 +18,9 @@
 <div class="tag-field">
   <%= f.label :tags, "現有標籤" %><br />
   <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>
+  <div class="check_box_item">
     <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
+  </div>  
   <% end %>
 </div>
 <HR class="dark-hr"> 
