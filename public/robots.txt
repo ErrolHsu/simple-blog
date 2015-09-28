@@ -3,3 +3,6 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
+
+Sitemap: https://www.nooffy.com/sitemaps/sitemap.xml.gz
+
