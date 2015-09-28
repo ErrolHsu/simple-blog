@@ -1,8 +1,8 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
   belongs_to :user
-  has_many :taggings, :dependent => :destroy
-  has_many :tags, :through => :taggings
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   friendly_id :slug_candidates, use: [:slugged, :finders]
   
