@@ -4,5 +4,5 @@
 # User-agent: *
 # Disallow: /
 
-Sitemap: https://www.nooffy.com/sitemaps/sitemap.xml.gz
+Sitemap: http://nooffy.herokuapp.com/sitemap-generator/sitemaps/sitemap.xml.gz
 
