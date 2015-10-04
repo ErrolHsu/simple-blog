@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 		@user = current_user
 	end
 
-
 	def new
 		@user = User.new
 	end
@@ -83,4 +82,8 @@ def can_manage
 	end
 end
 
+
 end
+
+
+

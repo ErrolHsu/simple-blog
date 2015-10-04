@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
 
 	attr_accessor :remember_token
 
-	before_save :email_downcase
-  after_save :set_blog_title
+	before_create :email_downcase
+  after_create :set_blog_title
 
 	validates :name, presence: {message: "不能為空"}, length: { maximum: 20, message: "請勿超過20個字元" }
   validates :title, length: { maximum: 20, message: "請勿超過20個字元" }
@@ -63,10 +63,8 @@ class User < ActiveRecord::Base
   private
 
     def set_blog_title
-      if self.title.blank?
-        self.title = "#{self.name}'s Blog"
-        self.save
-      end
+      self.title = "#{self.name}'s Blog"
+      self.save
     end
 
     def email_downcase

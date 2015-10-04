@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
 	<%= favicon_link_tag 'ico.png' %>
-	<meta name="google-site-verification" content="kfeccGubyw1DGAsm3JtElAGzwD2xYc1h5PsbxoNqX28" />
+	<meta name="google-site-verification" content="kfeccGubyw1DGAsm3JtElAGzwD2xYc1h5PsbxoNqX28" >
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,6 +11,7 @@
 <body>
 	<div class="container-fluid">
 		<%= render 'layouts/nav'  %>
+	  <%= render 'shared/flash' %>
 			<%= yield %>
 			<%= debug(params) if Rails.env.development? %>
 	</div>
