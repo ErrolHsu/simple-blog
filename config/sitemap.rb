@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.nooffy.com"
-SitemapGenerator::Sitemap.sitemaps_host = "http://nooffy.herokuapp.com/sitemap-generator/"
+SitemapGenerator::Sitemap.sitemaps_host = "http://www.nooffy.com"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
