@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :current_user?
 
 
+  def sitemap
+    @host = request.protocol + request.host
+    @users = User.all
+    render 'layouts/sitemap.builder'
+  end
+
 
   def current_user
   	if session[:user_id].present?

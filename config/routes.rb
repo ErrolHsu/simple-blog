@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
+  get 'sitemap' => 'application#sitemap'
+
   resources :users do
     member do
       get 'about_me'

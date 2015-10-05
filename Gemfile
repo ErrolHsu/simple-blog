@@ -9,7 +9,6 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'redcarpet'
 gem 'coderay'   
 gem 'babosa'
-gem 'sitemap_generator'
 gem	'carrierwave'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
