@@ -32,7 +32,6 @@ class ArticlesController < ApplicationController
 			flash[:success] = "文章已發佈"
 			redirect_to user_path(current_user)
 		else
-			flash.now[:danger] = "標籤勿超過20字元"
 			render :new
 		end
 	end
@@ -47,7 +46,6 @@ class ArticlesController < ApplicationController
 			flash[:success] = "編輯完成"
 			redirect_to user_article_path(@article)
 		else
-			flash.now[:danger] = "標籤勿超過20字元"
 			render :edit
 		end	
 	end

@@ -4,7 +4,7 @@
 		抱歉，有<%= var.errors.count %>個小問題.
 	</div>
 	<ul>
-		<% var.errors.full_messages.each do |msg| %>
+		<% var.errors.each do |key, msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>

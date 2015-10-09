@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
-  get 'sitemap' => 'application#sitemap'
+  get 'sitemap' => 'static_pages#sitemap'
 
   resources :users do
     member do
