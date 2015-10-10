@@ -52,7 +52,7 @@ module ApplicationHelper
     end 
   end
 
-  def show_link(condition=true, title, path, method: "get", data: nil, style: "nornal" )
+  def show_link_if(condition=true, title, path, method: "get", data: nil, style: "nornal" )
   	if condition
   		link_to title, path, method: method, data: data, class: style
   	end	 

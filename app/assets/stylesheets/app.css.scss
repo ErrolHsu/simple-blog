@@ -244,9 +244,9 @@ textarea {
   font-size: 25px;
 	text-align: center;
 	font-weight: bold;
-	color: $gray1;
+	color: #111;
 	.pagination {
-	  background: $gray6;
+	  background: #517891;
 	  height: 50px;
 	  line-height: 50px;
 	  padding: 0 15px;
@@ -255,9 +255,9 @@ textarea {
 		}	
 	}
 	a {
-		color: $blue1;
+		color: #fff;
 		&:hover {
-			color: #9bd9d9;
+			color: $gray3;
 		}
 	}
 }

@@ -6,8 +6,8 @@
     <div class="created-at">
       <span>By </span><%= content_tag(:span, "#{@user.name}", id: "user-name") %>
       <span> · </span><%= @article.created_at.to_s(:month_day_year) %>
-      <%= link_to_if(current_user?(@user), "編輯", 
-          edit_user_article_path(@user, @article), class: "article-show-edit" )%>
+      <%= show_link_if(current_user?(@user), "編輯", edit_user_article_path(@user, @article),
+        style: "article-show-edit") %>
     </div>
 
 		<%= markdown(@article.content) %>

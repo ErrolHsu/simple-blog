@@ -8,22 +8,23 @@
 <%= f.text_area :content %>
 <HR class="dark-hr">
 
-<%= f.label :state, "文章屬性 : " %>
-<%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %>
-<HR class="dark-hr">
+<%= f.label :state, "文章屬性 : " %><br>
+<%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %><br>
 
-<%= f.label :tag_names, "新增標籤 :" %><br>
-<p>(新增多個標籤，請以逗號' , '分隔)</p>
-<%= f.text_field :tag_names, class: 'form-control' %><br>
 
 <div class="tag-field">
-  <%= f.label :tags, "現有標籤" %><br />
+  <%= f.label :tags, "Tags :" %><br>
   <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>
   <div class="check_box_item">
     <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
   </div>  
   <% end %>
 </div>
+
+<%= f.label :tag_names, "新增標籤 :" %><br>
+<p>(新增多個標籤，請以逗號' , '分隔)</p>
+<%= f.text_field :tag_names, class: 'form-control' %>
+
 <HR class="dark-hr"> 
 	
 
