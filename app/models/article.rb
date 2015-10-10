@@ -37,7 +37,7 @@ class Article < ActiveRecord::Base
   	end
 
     def set_article_slug!
-      self.slug = self.title.to_slug.normalize.to_s
+      self.slug = self.title.to_slug.normalize.to_s if self.title
     end
 
 end
