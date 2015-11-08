@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
   scope :published, -> { where(state: 1) }
   
   validates :user_id, presence: true
-  validates :title, presence: { message: "標題請勿空白"}, length: { maximum: 30, message: "標題請勿超過30個字元"}
+  validates :title, presence: { message: "標題請勿空白"}, uniqueness: { message: "已有同名標題"}
 
   attr_accessor :tag_names
 
