@@ -164,7 +164,6 @@ GEM
       devise
       mime-types
       orm_adapter
-    redcarpet (3.3.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.3.2)
@@ -255,7 +254,6 @@ DEPENDENCIES
   rails-i18n (~> 4.0.0)
   rails_12factor
   redactor-rails
-  redcarpet
   rspec-rails (~> 3.3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
