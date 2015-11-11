@@ -139,6 +139,7 @@ input, textarea, select, .uneditable-input {
 	border: none;
 	font-size: 20px;
 	font-weight: bold;
+	margin-bottom: 5px;
 }
 
 .alert-success {
@@ -257,7 +258,7 @@ textarea {
 	a {
 		color: #fff;
 		&:hover {
-			color: $gray3;
+			color: #79afc1;
 		}
 	}
 }

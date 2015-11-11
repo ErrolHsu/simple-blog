@@ -53,17 +53,19 @@
 #manage-tags-box {
   margin: 40px 0;
   padding: 10px 5px;
-  background: $gray2;
+  background: #f5f5f5;
+  border-radius: 7px;
   border: 2px solid #fff;
   #manage-tags {
-    color: darken($gray2, 40%);
+    color: $gray6;
     margin: auto;
     padding: 5px 0;
     text-align: center;
-    background: darken($gray2, 5%);
+    background: #eee;
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 500;
     width: 180px;
+    border-radius: 5px;
   } 
   .manage-show-tags {
     margin: 15px 0;
@@ -73,17 +75,17 @@
       width: 45%;
       float: left;
       #tag-name {
-        color: $blue2;
+        color: #444;
         font-size: 16px;
         &:hover {
-          color: lighten($blue2, 5%);
+          color: $red;
           .manage-tag-size  {
-          color: lighten($blue2, 5%);
+          color: $red
           }
         }
       }
       .manage-tag-size {
-        color: $gray5;
+        color: #111;
       }   
     }
   }

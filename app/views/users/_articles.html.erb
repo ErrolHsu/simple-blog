@@ -1,9 +1,12 @@
 <div class="user-articles">
+	<div class="user-article-head"></div>
+	<div class="user-article-head1"></div>
 	<%= link_to user_article_path(@user, article) do %>
 	  <%= content_tag(:div, article.title, class: "user-article-title") %>
 	<% end %>
+
 	<div class="created-at">
-		<span>By </span><%= content_tag(:span, "#{@user.name}", id: "user-name") %>
+		<span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>
 		<span> · </span><%= article.created_at.to_s(:month_day_year) %>
 	</div>
 		<%= markdown(article.content.truncate(750)) %></pre><br>

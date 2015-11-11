@@ -34,7 +34,7 @@
 
 .article-show-page {
 	line-height: 1.6em;
-	margin-top: 60px;
+	margin-top: 40px;
 	padding: 20px 5px;
 }
 
@@ -42,6 +42,28 @@
 	border-radius: 10px;
 	padding:  0 30px 40px 30px;
   background: #fff;
+}
+
+.article-head {
+  border-radius: 7px 7px 0 0 / 7px 7px 0 0;
+  height: 35px;
+  margin: 0 -30px 0 -30px;
+  background: $blue6;
+}
+.article-head1 {
+  border-radius: 0 0 7px 7px / 0 0 7px 7px;
+  height: 45px;
+  margin: 0 -30px 0 -30px;
+  background: $blue1;
+}
+
+.article-title {
+	margin: 40px 0 20px -25px;
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: 40px;
+  padding: 0 0 0 20px;
+  color: #555;
 }
 
 .article-show-page-title {

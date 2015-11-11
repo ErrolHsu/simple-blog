@@ -36,64 +36,102 @@
 
 /* user-show-page */
 
+#box-hidden {
+  height: 40px;
+  background: #f1f2f3;
+  border-radius: 7px 0 0 7px 
+}
+
+
+.user-articles {
+  border-radius: 7px;
+  background: #ffffff;
+  padding: 0px 30px 20px 30px;
+  margin: 20px 30px 30px 0px;
+  height: auto;
+  width: 100%;
+  line-height: 1.6em;
+
+}
+
+
 #user-show-articles {
   padding: 5px;
 }
 
+.user-article-head {
+  border-radius: 7px 7px 0 0 / 7px 7px 0 0;
+  height: 35px;
+  margin: 0 -30px 0 -30px;
+}
+
+.user-article-head1 {
+  border-radius: 0 0 7px 7px / 0 0 7px 7px;
+  height: 45px;
+  margin: 0 -30px 0 -30px;
+}
+
+
 #user-show-articles .user-articles:nth-child(even) {
   .user-article-title {
-    background: $blue1;
+    color: $green1;
     &:hover {
-      background: darken($blue1, 10%);
+      margin: 40px 0 20px -20px;
+      color: darken($green1, 15%);
     }
-  }  
+  }
+  .user-article-head {
+    background: $green2;
+  }
+  .user-article-head1 {
+    background: $green1;
+  }
   .btn-custom {
-    background: $blue1;
+    background: $green1;
     &:hover {
-      background: darken($blue1, 10%);
+      background: darken($green1, 10%);
       color: #fff;
     }
+  }
+  #user-name {
+    color: $green1;
   }
 }
 
 #user-show-articles .user-articles:nth-child(odd) {
   .user-article-title {
-    background: $blue6;
+    color: $blue1;
     &:hover {
-      background: lighten($blue6, 10%);
+      margin: 40px 0 20px -20px;
+      color: darken($blue1, 10%);
     }
   }
-  .btn-custom {
+  .user-article-head {
     background: $blue6;
+  }
+  .user-article-head1 {
+    background: $blue1;
+  }
+
+  .btn-custom {
+    background: $blue1;
     &:hover {
-      background: lighten($blue6, 10%);
+      background: darken($blue1, 10%);
       color: #fff;
     }
   }
-}
-
-
-
-.user-articles {
-  border-radius: 7px;
- 	background: #ffffff;
-	padding: 0px 30px 20px 30px;
-	margin: 60px 30px 30px 0px;
-	height: auto;
-	width: 100%;
-  line-height: 1.6em;
+  #user-name {
+    color: $blue1;
+  }
 
 }
 
 .user-article-title {
-  border-radius: 7px;
-  height: 80px;
-  margin: 0 -30px 0 -30px;
-  font-size: 26px;
+  margin: 40px 0 20px -25px;
+  font-size: 30px;
   font-weight: bolder;
-  line-height: 80px;
+  line-height: 40px;
   padding: 0 0 0 20px;
-  color: #fff;
 }
 
 
@@ -102,10 +140,7 @@
 	font-weight: 200;
   font-size: 15px;
 	text-align: left;
-  margin: 30px 0;
-  #user-name {
-    color: $blue1;
-  }
+  margin: 10px 0 50px 0;
 }
 
 
@@ -186,6 +221,7 @@
     }
   }
 }
+
 
 #box-3 {
   margin: 40px 0;
