@@ -36,12 +36,6 @@
 
 /* user-show-page */
 
-#box-hidden {
-  height: 40px;
-  background: #f1f2f3;
-  border-radius: 7px 0 0 7px 
-}
-
 
 .user-articles {
   border-radius: 7px;
@@ -60,15 +54,9 @@
 }
 
 .user-article-head {
-  border-radius: 7px 7px 0 0 / 7px 7px 0 0;
-  height: 35px;
-  margin: 0 -30px 0 -30px;
-}
-
-.user-article-head1 {
-  border-radius: 0 0 7px 7px / 0 0 7px 7px;
-  height: 45px;
-  margin: 0 -30px 0 -30px;
+  border-radius: 7px;
+  height: 65px;
+  margin: 0 -30px 30px -30px;
 }
 
 
@@ -81,11 +69,9 @@
     }
   }
   .user-article-head {
-    background: $green2;
-  }
-  .user-article-head1 {
     background: $green1;
   }
+
   .btn-custom {
     background: $green1;
     &:hover {
@@ -107,9 +93,6 @@
     }
   }
   .user-article-head {
-    background: $blue6;
-  }
-  .user-article-head1 {
     background: $blue1;
   }
 
@@ -127,7 +110,7 @@
 }
 
 .user-article-title {
-  margin: 40px 0 20px -25px;
+  margin: 0 0 0px -25px;
   font-size: 30px;
   font-weight: bolder;
   line-height: 40px;
@@ -143,13 +126,26 @@
   margin: 10px 0 50px 0;
 }
 
+#user-name {
+  color: $blue1;
+}
+
 
 /* box */
 
 #side-bar {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 0;
 }
+
+#box-hidden {
+  height: 40px;
+  background: #f1f2f3;
+  border-radius: 7px 0 0 7px;
+  color: red;
+  
+}
+
 
 #box-1 {
   border-top-right-radius: 7px;

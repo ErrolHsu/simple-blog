@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 	before_action :find_user, except: [:index, :new, :create]
-
 	before_action :can_manage, only: [:edit, :update, :manage]
 
 	def index
@@ -13,7 +12,6 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	
 	def create
 		@user = User.new(user_params)
 		if @user.save
@@ -25,14 +23,23 @@ class UsersController < ApplicationController
 		end		
 	end
 
-
 	def show
-		if current_user?(@user)
-		  @articles = @user.articles.page(params[:page]).per(5)
-	  else
-		  @articles = @user.articles.published.page(params[:page]).per(5)
-		end  
-		@tags = @user.tags.all 
+		@date = Time.now
+		@tags = @user.tags.all
+		if params[:month]
+			if  params[:day]
+				@date = Time.new(params[:year], params[:month], params[:day])
+				@articles = @user.articles.in_this_day(@date).published.page(params[:page]).per(5)
+				@marked_item_for_calendar = @user.articles.mark_articles(@date, params[:day].to_i)
+		  else
+			  @date = Time.new(params[:year], params[:month])
+			  @articles = @user.articles.in_this_month(@date).published.page(params[:page]).per(5)
+			  @marked_item_for_calendar = @user.articles.mark_articles(@date)
+			end 
+		else	
+  		@articles = @user.articles.published.page(params[:page]).per(5) 
+	  	@marked_item_for_calendar = @user.articles.mark_articles(@date)
+	  end	
 	end
 
 	def edit
@@ -61,9 +68,7 @@ class UsersController < ApplicationController
 		@tags = @user.tags.all
 	end
 
-
 	private
-
 		def user_params
 			params[:user].permit(:name, :email, :password, :password_confirmation,
 													 :title, :about_me, :gravatar)
@@ -73,15 +78,13 @@ class UsersController < ApplicationController
 			@user = User.find(params[:id])
 		end
 
-
-def can_manage
-	@user = User.find(params[:id])
-	unless current_user?(@user)
-		flash[:danger] = "無此權限"
-		redirect_to root_path
-	end
-end
-
+    def can_manage
+    	@user = User.find(params[:id])
+    	unless current_user?(@user)
+    		flash[:danger] = "無此權限"
+    		redirect_to root_path
+    	end
+    end
 
 end
 

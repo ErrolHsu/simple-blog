@@ -8,7 +8,9 @@ class Article < ActiveRecord::Base
   
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 1) }
-  
+  scope :in_this_month, -> (month) { where(created_at: (month.beginning_of_month)..month.end_of_month) }
+  scope :in_this_day, -> (day) { where(created_at: (day.beginning_of_day)..day.end_of_day) }
+
   validates :user_id, presence: true
   validates :title, presence: { message: "標題請勿空白"}, uniqueness: { message: "已有同名標題"}
 
@@ -25,6 +27,33 @@ class Article < ActiveRecord::Base
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize.to_s
+  end
+
+  class << self
+    def mark_articles(date, active_day=nil)
+      days = Time.days_in_month(date.month, date.year)
+      begin_day = date.beginning_of_month
+      end_day = date.end_of_month
+      marked_days = []
+      where(created_at: (begin_day)..end_day).published.each { |i| marked_days << i.created_at.day }  
+      marked_days.uniq!
+
+      ary = Array.new(days) { |i| i + 1 }
+      block = Proc.new do |day|
+        if day == Time.now.day && Time.new(Time.now.year, Time.now.month) == date.beginning_of_month
+          {day: day, mark: "today"} 
+        elsif marked_days.include?(day)
+          if day == active_day
+            {day: day, mark: "active"}
+          else  
+            {day: day, mark: true}
+          end  
+        else  
+          {day: day, mark: false}
+        end
+      end     
+      {array: ary.map(&block), date: date}
+    end
   end
 
   private

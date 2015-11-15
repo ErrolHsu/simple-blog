@@ -1,0 +1,92 @@
+@import 'global';
+
+#calendar {
+	margin: 15px 0 0 0;
+	font-size: 14px;
+	color: $gray4;
+	padding: 0 10px;
+	line-height: 40px;
+}
+
+.calendar-month {
+	margin: 5px auto;
+	text-align: center;
+	color: $gray4;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.week {
+	font-size: 13px;
+	font-weight: bolder;
+  color: #788292;
+	height: 50px;
+	width: 14%;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+}
+
+.calendar-row {
+  height: 40px;
+	text-align: center;
+	border-bottom: 1px solid $gray3;
+	padding: 0;
+}
+
+.mark-true {
+	height: 40px;
+	width: 14%;
+	float: left;
+	display: flex;
+	align-items: center;
+	a {
+	 	color: #84afa2;
+	}
+  #mark-active {
+		height: 27px;
+		width: 27px;
+		margin: auto;
+		background: $gray4;
+		border-radius: 50%;
+		line-height: 27px;
+		a {
+			color: #fff;
+		}
+	}
+	#mark-today {
+		height: 27px;
+		width: 27px;
+		margin: auto;
+		background: $red;
+		border-radius: 50%;
+		line-height: 27px;
+		color: #fff;
+	}
+	div {
+		height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+
+.normal-days {
+	height: 40px;
+	width: 14%;
+	float: left;
+	display: inline-block;
+  text-align: center;
+
+}
+
+#previous_month {
+	float:left;
+	margin-left: 20px;
+}
+
+#next_month {
+	float:right;
+	margin-right: 20px;
+}

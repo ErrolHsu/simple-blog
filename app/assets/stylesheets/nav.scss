@@ -8,7 +8,7 @@
 	font-size: 22px;
 	display: inline;
 	background: #444;
-	padding: 10px 20px;
+	padding: 0px 20px 0px 20px;
 	margin-left: -10px;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 15px;
@@ -31,7 +31,7 @@
 
 .navbar {
 	z-index: 2000 !important;
-	padding: 20px 5px 5px 5px;
+	padding: 10px 5px 0px 5px;
   background-color: $gray6;
 	font-weight: bold;
 	border-bottom: 2px solid $gray3;
@@ -76,12 +76,9 @@
       -webkit-transform:scale(1.4);
     }
     .caret {
-
     }  
   }
 }
-
-
 
 .dropdown-menu {
 	background: $green1;
