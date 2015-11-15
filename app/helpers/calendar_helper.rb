@@ -51,7 +51,7 @@ module CalendarHelper
 	end
 
 	def next_month
-		if @date.beginning_of_month != Time.now.beginning_of_month
+		if @date.beginning_of_month != Time.zone.now.beginning_of_month
 		  date = (@date.beginning_of_month + 1.month)
 		  next_month = (@date.beginning_of_month + 1.month).strftime("%b")
 			link_to "#{next_month} 》", user_path(@user, month: date.month, year: date.year), id: "next_month"

@@ -24,15 +24,15 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@date = Time.now
+		@date = Time.zone.now
 		@tags = @user.tags.all
 		if params[:month]
 			if  params[:day]
-				@date = Time.new(params[:year], params[:month], params[:day])
+				@date = Time.zone.local(params[:year], params[:month], params[:day])
 				@articles = @user.articles.in_this_day(@date).published.page(params[:page]).per(5)
 				@marked_item_for_calendar = @user.articles.mark_articles(@date, params[:day].to_i)
 		  else
-			  @date = Time.new(params[:year], params[:month])
+			  @date = Time.zone.local(params[:year], params[:month])
 			  @articles = @user.articles.in_this_month(@date).published.page(params[:page]).per(5)
 			  @marked_item_for_calendar = @user.articles.mark_articles(@date)
 			end 

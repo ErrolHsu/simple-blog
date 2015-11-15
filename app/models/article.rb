@@ -40,7 +40,7 @@ class Article < ActiveRecord::Base
 
       ary = Array.new(days) { |i| i + 1 }
       block = Proc.new do |day|
-        if day == Time.now.day && Time.new(Time.now.year, Time.now.month) == date.beginning_of_month
+        if day == Time.zone.now.day && Time.zone.local(Time.zone.now.year, Time.zone.now.month) == date.beginning_of_month
           {day: day, mark: "today"} 
         elsif marked_days.include?(day)
           if day == active_day
