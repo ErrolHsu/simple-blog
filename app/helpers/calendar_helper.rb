@@ -14,17 +14,16 @@ module CalendarHelper
 		end
 	end	
 
-	def build_calendar_item(condition)
-		first_day = condition[:date].beginning_of_month
-		array = condition[:array]
+	def build_calendar_item(array)
+		first_day = @date.beginning_of_month
 		first_day.wday.times do 
 			array.unshift({day: nil, mark: false})	
 		end
 		array
 	end
 
-	def calendar(condition, n)
-		build_calendar_item(condition).be_group_by(n)
+	def calendar(array, n)
+		build_calendar_item(array).be_group_by(n)
 	end
 
 	def each_day(hash)

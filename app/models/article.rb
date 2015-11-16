@@ -52,7 +52,7 @@ class Article < ActiveRecord::Base
           {day: day, mark: false}
         end
       end     
-      {array: ary.map(&block), date: date}
+      ary.map(&block)    
     end
   end
 
