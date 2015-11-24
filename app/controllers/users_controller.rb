@@ -1,7 +1,9 @@
+require 'extension/calendar.rb'
+
 class UsersController < ApplicationController
 
 	before_action :find_user, except: [:index, :new, :create]
-	before_action :can_manage, only: [:edit, :update, :manage]
+	before_action :correct_user, only: [:edit, :update, :manage]
 
 	def index
 		@users = User.all
@@ -24,22 +26,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@date = Time.zone.now
+		@date = params[:year] ? Time.zone.local(params[:year], params[:month], params[:day]) : Time.zone.now
+		@special_days = @user.articles.special_days(@date)
 		@tags = @user.tags.all
-		if params[:month]
-			if  params[:day]
-				@date = Time.zone.local(params[:year], params[:month], params[:day])
-				@articles = @user.articles.in_this_day(@date).published.page(params[:page]).per(5)
-				@marked_item_for_calendar = @user.articles.mark_articles(@date, params[:day].to_i)
-		  else
-			  @date = Time.zone.local(params[:year], params[:month])
-			  @articles = @user.articles.in_this_month(@date).published.page(params[:page]).per(5)
-			  @marked_item_for_calendar = @user.articles.mark_articles(@date)
-			end 
-		else	
-  		@articles = @user.articles.published.page(params[:page]).per(5) 
-	  	@marked_item_for_calendar = @user.articles.mark_articles(@date)
-	  end	
+		@articles = @user.articles.in_this_range(@date, params[:month], params[:day]).page(params[:page]).per(5)
 	end
 
 	def edit
@@ -78,7 +68,7 @@ class UsersController < ApplicationController
 			@user = User.find(params[:id])
 		end
 
-    def can_manage
+    def correct_user
     	@user = User.find(params[:id])
     	unless current_user?(@user)
     		flash[:danger] = "無此權限"

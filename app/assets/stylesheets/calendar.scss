@@ -1,4 +1,3 @@
-@import 'global';
 
 #calendar {
 	margin: 15px 0 0 0;
@@ -35,16 +34,28 @@
 	padding: 0;
 }
 
-.mark-true {
+	.op {
+		border-bottom: 5px solid #79b9e7;
+		border-top: 5px solid $background;
+	}
+
+
+.been-mark {
 	height: 40px;
 	width: 14%;
 	float: left;
 	display: flex;
 	align-items: center;
-	a {
-	 	color: #84afa2;
+	.mark-mark {
+		height: 27px;
+		width: 27px;
+		margin: auto;
+		line-height: 27px;
+		a {
+			color: #00aeef;
+		}
 	}
-  #mark-active {
+  .mark-active {
 		height: 27px;
 		width: 27px;
 		margin: auto;
@@ -62,12 +73,21 @@
 		background: $red;
 		border-radius: 50%;
 		line-height: 27px;
-		color: #fff;
+		a {
+			color: #fff;
+		}
 	}
-	div {
-		height: 100%;
-		width: 100%;
-		text-align: center;
+	#mark-today-active {
+		height: 31px;
+		width: 31px;
+		margin: auto;
+		background: $red;
+		border: 3px solid $green;
+		border-radius: 50%;
+		line-height: 27px;
+		a {
+			color: #fff;
+		}
 	}
 }
 
@@ -76,9 +96,24 @@
 	height: 40px;
 	width: 14%;
 	float: left;
-	display: inline-block;
-  text-align: center;
-
+	display: flex;
+	align-items: center;
+  padding: auto 0;
+  	#mark-today {
+		height: 27px;
+		width: 27px;
+		margin: auto;
+		background: $red;
+		border-radius: 50%;
+		line-height: 27px;
+		color: #fff;
+	}
+	div {
+    height: 27px;
+    width: 27px;
+		line-height: 27px;
+		margin: auto;
+	}
 }
 
 #previous_month {

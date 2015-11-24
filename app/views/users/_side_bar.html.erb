@@ -1,0 +1,29 @@
+<div class="row" id="side-bar">
+	<div class="col-md-11 col-sm-10 col-xs-5" id="box-1">
+   	<%= gravatar_for(@user, size: 130, id: "gravatar-1") %>
+   </div>
+  <div class="col-md-11 col-sm-10 col-xs-7" id="box-2">
+    <%= link_to about_me_user_path(@user) do %>
+      <%= content_tag(:div, "About", id: "box-2-1") %>
+    <% end %> 
+    <%= link_to user_articles_path(@user) do %>
+      <%= content_tag(:div, id: "box-2-2") do %>
+        <%= content_tag(:div, id: "box-2-2-1") do%>
+        <span class= "glyphicon glyphicon-book"></span>
+        <%= content_tag(:span, "Blog Archive") %>
+        <% end %>
+      <% end %>
+    <% end %>    
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12" id="calendar">
+    <%= render 'calendar' %>
+  </div>
+  <div class="col-md-12 col-sm-12 hidden-xs" id="box-3">
+		<div id="tags">
+			<span class="glyphicon glyphicon-tags"></span>TAGS
+		</div>
+		<div class="user-show-tags">
+			<%= render partial: 'shared/tags', collection: @tags, as: :tag %>
+	  </div>
+  </div>
+</div> 

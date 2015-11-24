@@ -30,29 +30,20 @@ class Article < ActiveRecord::Base
   end
 
   class << self
-    def mark_articles(date, active_day=nil)
-      days = Time.days_in_month(date.month, date.year)
-      begin_day = date.beginning_of_month
-      end_day = date.end_of_month
-      marked_days = []
-      where(created_at: (begin_day)..end_day).published.each { |i| marked_days << i.created_at.day }  
-      marked_days.uniq!
+    def special_days(date)
+      special_days = []
+      where(created_at: (date.beginning_of_month)..date.end_of_month).published.each do |i|
+        special_days << i.created_at.day 
+      end  
+      special_days.uniq
+    end
 
-      ary = Array.new(days) { |i| i + 1 }
-      block = Proc.new do |day|
-        if day == Time.zone.now.day && Time.zone.local(Time.zone.now.year, Time.zone.now.month) == date.beginning_of_month
-          {day: day, mark: "today"} 
-        elsif marked_days.include?(day)
-          if day == active_day
-            {day: day, mark: "active"}
-          else  
-            {day: day, mark: true}
-          end  
-        else  
-          {day: day, mark: false}
-        end
-      end     
-      ary.map(&block)    
+    def in_this_range(date, month=nil, day=nil)
+      if month
+        day ? in_this_day(date).published : in_this_month(date).published
+      else
+        published 
+      end
     end
   end
 

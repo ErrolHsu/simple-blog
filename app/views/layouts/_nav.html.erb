@@ -1,9 +1,13 @@
 <nav class="navbar navbar-fixed-top navbar-default" id="nav-all">
 	<div class="container-fluid">
-    <%= render_blog_title %>
+    <%= render_blog_title(id: "logo") %>
     <div class="nav-link">
-    	<%=  show_login_path %>
-			<%= render_nav_menu %>
+    	<% if !logged_in? %>
+    		<%= content_tag(:div, id: "nav-login") do %>
+    	    <%= link_to "Login", login_path %>
+      	<% end %>
+    	<% end %>  
+			<%= render 'layouts/nav_dropdown' if logged_in? %>
 	  <div>
   </div>
 </nav>

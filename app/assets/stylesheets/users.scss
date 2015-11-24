@@ -1,4 +1,3 @@
-@import 'global';
 
 /* 雜 */
 
@@ -54,17 +53,41 @@
 }
 
 .user-article-head {
-  border-radius: 7px;
-  height: 65px;
-  margin: 0 -30px 30px -30px;
+  border-radius: 5px;
+  height: 20px;
+  margin: 0 -30px 40px -30px;
+}
+
+#user-show-articles .user-articles:nth-child(3n) {
+  .user-article-title {
+    color: $blue6;
+    &:hover {
+      color: lighten($blue6, 10%);
+    }
+  }
+  .user-article-head {
+    background: $blue6;
+  }
+
+  .btn-custom {
+    background: $blue6;
+    &:hover {
+      background: lighten($blue6, 10%);
+      color: #fff;
+    }
+  }
+  #user-name {
+    color: $blue6;
+    font-weight: bolder;
+  }
 }
 
 
-#user-show-articles .user-articles:nth-child(even) {
+
+#user-show-articles .user-articles:nth-child(3n+2) {
   .user-article-title {
     color: $green1;
     &:hover {
-      margin: 40px 0 20px -20px;
       color: darken($green1, 15%);
     }
   }
@@ -81,14 +104,14 @@
   }
   #user-name {
     color: $green1;
+    font-weight: bolder;
   }
 }
 
-#user-show-articles .user-articles:nth-child(odd) {
+#user-show-articles .user-articles:nth-child(3n+1) {
   .user-article-title {
     color: $blue1;
     &:hover {
-      margin: 40px 0 20px -20px;
       color: darken($blue1, 10%);
     }
   }
@@ -105,8 +128,8 @@
   }
   #user-name {
     color: $blue1;
+    font-weight: bolder;
   }
-
 }
 
 .user-article-title {
