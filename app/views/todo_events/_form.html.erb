@@ -1,0 +1,17 @@
+<% if current_user?(@user) %>
+	<%= form_for([current_user, @todo_event]) do |f| %>
+
+	  <%= f.label :event, "Event" %>
+	  <%= f.text_field :event, class: 'form-control' %>
+  
+	  <%= f.label :description, "Description" %>
+	  <%= f.text_field :description, class: 'form-control' %>
+  
+	  <%= f.date_field :date %>
+
+	  <%= f.label :stretch %>	
+	  <%= f.text_field :stretch, placeholder: 1 %>
+
+		<%= f.submit %>
+	<% end %>	
+<% end %>	

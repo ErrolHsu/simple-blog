@@ -3,40 +3,38 @@
 	<%= form_for(@user) do |f| %>
 	  <div class="col-md-6 col-xs-10">
       <%= render 'shared/error_messages', var: @user %>
+
+      <%= f.label :calendar_todo_events, "顯示任務" %>
+      <%= f.check_box :calendar_todo_events %>
 		 
 	    <p class="account-setting">Blog Title</p>
 		  <p class="account-old-setting"><%= "#{@user.title}" %></p>
-			<HR class="hr-2">
-
 			<%= f.label :title, "Enter Your New Title", class: "account-setting" %>
 			<%= f.text_field :title, class: 'form-control' %>
 			<HR class="hr-2">
 
 		  <p class="account-setting">Your Name</p>
 		  <p class="account-old-setting"><%= current_user.name %></p>
-			<HR class="hr-2">
-
 		  <%= f.label :name, "Enter Your New Name", class: "account-setting" %>
 		  <%= f.text_field :name, class: 'form-control' %>
+ 		 	
  		 	<HR class="hr-2"> 		
 			  <div class="gravatar_edit">
 				  <p class="account-setting">目前頭像</p>
     	    <%= gravatar_now %>
-        </div>   
-			
+        </div>   		
 			  <div class="gravatar-check-box">
 			    <%= f.label :gravatar do %>
 			      <%= f.check_box :gravatar %>
 			      <span>使用自訂頭像(Gravatar)</span>
 			    <% end %> 
-			  </div>
-			
-
+			  </div>			
 		  <p class="account-setting">
 		 	 <a href="https://zh-tw.gravatar.com/emails/" target="_blank">上傳或變更自訂頭像</a>
 		  </p>
 			<HR class="hr-2"> 
-		</div>	
+		</div>
+
 		<div class="col-md-6 col-xs-11 edit_about_me">
 			<%= f.label :about_me %>
 			<%= f.text_area :about_me %>

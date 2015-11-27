@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925155536) do
+ActiveRecord::Schema.define(version: 20151127150216) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -52,9 +52,24 @@ ActiveRecord::Schema.define(version: 20150925155536) do
     t.string  "name"
     t.integer "user_id"
     t.integer "articles_count", default: 0
+    t.string  "slug"
   end
 
+  add_index "tags", ["slug"], name: "index_tags_on_slug", unique: true
   add_index "tags", ["user_id"], name: "index_tags_on_user_id"
+
+  create_table "todo_events", force: :cascade do |t|
+    t.string   "event"
+    t.text     "description"
+    t.datetime "date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "stretch"
+  end
+
+  add_index "todo_events", ["user_id", "date"], name: "index_todo_events_on_user_id_and_date"
+  add_index "todo_events", ["user_id"], name: "index_todo_events_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -68,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150925155536) do
     t.boolean  "admin",           default: false
     t.boolean  "gravatar",        default: false
     t.string   "slug"
+    t.text     "settings"
   end
 
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true

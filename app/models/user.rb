@@ -2,9 +2,13 @@ require "babosa"
 
 class User < ActiveRecord::Base
   extend FriendlyId
+
+  store :settings, accessors: [:calendar_todo_events]
+
   friendly_id :slug_candidates, use: [:slugged, :finders] 
 	
   has_many :articles, dependent: :destroy
+  has_many :todo_events
   has_many :tags
 
 	attr_accessor :remember_token
@@ -59,6 +63,34 @@ class User < ActiveRecord::Base
     input.to_s.to_slug.normalize.to_s
   end
 
+
+  def special_days(date)
+    find_article_days(date)
+    find_event_days(date)       
+    {article_days: @article_days.uniq, event_days: @event_days}
+  end
+
+  def find_article_days(date)
+    @article_days = []
+    now = Time.zone.now
+    articles.where(created_at: (date.beginning_of_month)..date.end_of_month).published.each do |i|
+      @article_days << i.created_at.day 
+    end
+  end
+
+  def find_event_days(date)
+    now = Time.zone.now
+    @event_days = []
+    if date.beginning_of_month == now.beginning_of_month
+      todo_events.where(date: (now.beginning_of_day)..now.end_of_month).each do |i|
+        @event_days << {date_num: i.date.day, stretch: i.stretch}
+      end
+    elsif date > now
+      todo_events.where(date: (date.beginning_of_month)..date.end_of_month).each do |i|
+        @event_days << {date_num: i.date.day, stretch: i.stretch} 
+      end
+    end        
+  end
 
   private
 

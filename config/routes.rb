@@ -16,9 +16,10 @@ Rails.application.routes.draw do
     member do
       get 'about_me'
       get 'manage'
-    end  
+    end 
     resources :articles 
     resources :tags, only: [:show, :destroy]
+    resources :todo_events, except: :new
   end   
 
 

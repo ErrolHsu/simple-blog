@@ -26,10 +26,13 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@date = params[:year] ? Time.zone.local(params[:year], params[:month], params[:day]) : Time.zone.now
-		@special_days = @user.articles.special_days(@date)
+		query_date = params[:query_date] ? params[:query_date].split("-").map(&:to_i) : []
+		
+		@articles = @user.articles.find_by_date(*query_date).page(params[:page]).per(5)
+		@date = params[:query_date] ? Time.zone.local(*query_date) : Time.zone.now
+		@special_days = [@user.special_days(@date), query_date[2] ]
+		@todo_event = @user.todo_events.build
 		@tags = @user.tags.all
-		@articles = @user.articles.in_this_range(@date, params[:month], params[:day]).page(params[:page]).per(5)
 	end
 
 	def edit
@@ -61,7 +64,7 @@ class UsersController < ApplicationController
 	private
 		def user_params
 			params[:user].permit(:name, :email, :password, :password_confirmation,
-													 :title, :about_me, :gravatar)
+													 :title, :about_me, :gravatar, :calendar_todo_events)
 		end
 
 		def find_user

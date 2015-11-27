@@ -30,16 +30,9 @@ class Article < ActiveRecord::Base
   end
 
   class << self
-    def special_days(date)
-      special_days = []
-      where(created_at: (date.beginning_of_month)..date.end_of_month).published.each do |i|
-        special_days << i.created_at.day 
-      end  
-      special_days.uniq
-    end
-
-    def in_this_range(date, month=nil, day=nil)
+    def find_by_date(year=nil, month=nil, day=nil)
       if month
+        date = Time.zone.local(year, month, day)
         day ? in_this_day(date).published : in_this_month(date).published
       else
         published 
