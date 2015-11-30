@@ -1,17 +1,34 @@
 <% if current_user?(@user) %>
 	<%= form_for([current_user, @todo_event]) do |f| %>
 
-	  <%= f.label :event, "Event" %>
+	  <%= f.label :event, "任務 :" %>
 	  <%= f.text_field :event, class: 'form-control' %>
   
-	  <%= f.label :description, "Description" %>
-	  <%= f.text_field :description, class: 'form-control' %>
+	  <%= f.label :description, "描述 :" %>
+	  <%= f.text_area :description, class: "event-description" %>
   
-	  <%= f.date_field :date %>
+	  <%= f.date_select :date %><br>
 
-	  <%= f.label :stretch %>	
-	  <%= f.text_field :stretch, placeholder: 1 %>
-
-		<%= f.submit %>
+	  <%= f.label :stretch, "持續(天) :" %><br>
+	  <%= f.text_field :stretch, placeholder: 1, class: 'form-control' %><br>
+		
+		<div id="color-box">
+	    <div class="color-select">
+	 	    <%= f.radio_button :color, "blue", CHECKED: true %>
+	      <div class="blue-box"></div>
+      </div>	  
+  
+	    <div class="color-select">
+	      <%= f.radio_button :color, "red" %>
+	      <div class="red-box"></div>
+      </div>
+	    	  
+	    <div class="color-select">
+	 	    <%= f.radio_button :color, "green" %>
+	      <div class="green-box"></div>
+      </div>
+    </div><br>
+		
+		<%= f.submit "Save", class: "btn btn-default btn-custom" %>
 	<% end %>	
 <% end %>	

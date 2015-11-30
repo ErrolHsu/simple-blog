@@ -3,9 +3,16 @@
 	<%= form_for(@user) do |f| %>
 	  <div class="col-md-6 col-xs-10">
       <%= render 'shared/error_messages', var: @user %>
-
-      <%= f.label :calendar_todo_events, "顯示任務" %>
-      <%= f.check_box :calendar_todo_events %>
+		
+			<div>
+				關於calendar<br>
+        <%= f.label :event_days, "顯示任務" %>
+        <%= f.check_box :event_days %>
+        <%= f.label :article_days, "文章日期" %>
+        <%= f.check_box :article_days %>
+        <%= f.label :today, "標示今天" %>
+        <%= f.check_box :today %>
+      </div>
 		 
 	    <p class="account-setting">Blog Title</p>
 		  <p class="account-old-setting"><%= "#{@user.title}" %></p>

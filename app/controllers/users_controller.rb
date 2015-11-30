@@ -1,5 +1,3 @@
-require 'extension/calendar.rb'
-
 class UsersController < ApplicationController
 
 	before_action :find_user, except: [:index, :new, :create]
@@ -30,7 +28,7 @@ class UsersController < ApplicationController
 		
 		@articles = @user.articles.find_by_date(*query_date).page(params[:page]).per(5)
 		@date = params[:query_date] ? Time.zone.local(*query_date) : Time.zone.now
-		@special_days = [@user.special_days(@date), query_date[2] ]
+		@special_days = @user.special_days(@date)
 		@todo_event = @user.todo_events.build
 		@tags = @user.tags.all
 	end
@@ -63,8 +61,9 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params[:user].permit(:name, :email, :password, :password_confirmation,
-													 :title, :about_me, :gravatar, :calendar_todo_events)
+			a = [:name, :email, :password, :password_confirmation, :title, :about_me, :gravatar, 
+				   :event_days, :article_days, :today]
+			params[:user].permit(*a)
 		end
 
 		def find_user

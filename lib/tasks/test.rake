@@ -1,6 +1,6 @@
 task :op => :environment do
 	TodoEvent.all.each do |i|
-		i.day = 1
+		i.color = "blue"
 		i.save
 		puts "set #{i.event}" 
 	end	

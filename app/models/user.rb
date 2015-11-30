@@ -3,7 +3,7 @@ require "babosa"
 class User < ActiveRecord::Base
   extend FriendlyId
 
-  store :settings, accessors: [:calendar_todo_events]
+  store :settings, accessors: [:event_days, :article_days, :today]
 
   friendly_id :slug_candidates, use: [:slugged, :finders] 
 	
@@ -83,11 +83,11 @@ class User < ActiveRecord::Base
     @event_days = []
     if date.beginning_of_month == now.beginning_of_month
       todo_events.where(date: (now.beginning_of_day)..now.end_of_month).each do |i|
-        @event_days << {date_num: i.date.day, stretch: i.stretch}
+        @event_days << {date_num: i.date.day, stretch: i.stretch, color: i.color}
       end
     elsif date > now
       todo_events.where(date: (date.beginning_of_month)..date.end_of_month).each do |i|
-        @event_days << {date_num: i.date.day, stretch: i.stretch} 
+        @event_days << {date_num: i.date.day, stretch: i.stretch, color: i.color} 
       end
     end        
   end

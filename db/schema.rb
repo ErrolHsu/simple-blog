@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127150216) do
+ActiveRecord::Schema.define(version: 20151130112933) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20151127150216) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "stretch"
+    t.string   "color"
   end
 
   add_index "todo_events", ["user_id", "date"], name: "index_todo_events_on_user_id_and_date"

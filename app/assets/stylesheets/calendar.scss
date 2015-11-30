@@ -1,3 +1,4 @@
+/* calendar */
 
 #calendar {
 	margin: 15px 0;
@@ -35,12 +36,13 @@
 }
 
 
-.event, .special-day, .normal-days {
+.event, .article-day, .no-article-days {
 	height: 40px;
 	width: 13%;
 	float: left;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	margin: 0 1px;
 	div {
 		height: 27px;
@@ -48,59 +50,44 @@
 		margin: auto;
 		line-height: 27px;
 		a {
-			color: #00aeef;
+			color: $red;
+			font-weight: bold;
 		}
 	}
 }
 
-.event {
-	border-bottom: 5px solid #79b9e7;
-	border-top: 5px solid $background;
-}
 
-.special-day {
+.article-day {
 	margin-right: 2px;
-	.mark-mark {
+	.today  {
+		a {
+		  color: #fff;
+		}
 	}
-  .mark-active {
+  .active {
 		background: $gray4;
 		border-radius: 50%;
 		a {
-			color: #fff;
-		}
-	}
-	#mark-today {
-		background: $red;
-		border-radius: 50%;
-		a {
-			color: #fff;
-		}
-	}
-	#mark-today-active {
-		height: 31px;
-		width: 31px;
-		margin: auto;
-		background: $red;
-		border: 3px solid $green;
-		border-radius: 50%;
-		a {
+		  font-weight: bold;
 			color: #fff;
 		}
 	}
 }
 
-
-.normal-days {
-  	#mark-today {
-		height: 27px;
-		width: 27px;
-		margin: auto;
-		background: $red;
-		border-radius: 50%;
-		line-height: 27px;
+.today {
+	font-size: 17px;
+	background: $blue;
+	border: 1px solid $blue;
+	border-radius: 50%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+	a {
 		color: #fff;
 	}
 }
+
 
 #pre-next-month {
 	margin: 20px auto;
@@ -112,5 +99,85 @@
 	  float:right;
   	margin-right: 20px;
   }
+}
+
+/* claendar event */
+
+.event {
+	border-top: 5px solid $background;
+}
+
+.blue {
+	border-bottom: 5px solid $blue;
+}
+
+.green {
+	border-bottom: 5px solid $green;
+}
+
+.red {
+	border-bottom: 5px solid $red;
+}
+
+
+
+/* to_do form */
+
+#todo-form {
+	background: $green1;
+	padding: 20px;
+	form {
+	  input, select {
+	  	background: $gray2;
+	  }
+	  .btn {
+	  	background: $gray6;
+	  }
+	}
+}
+
+.event-description {
+	background: $gray2;
+	height: 120px;
+}
+
+#color-box {
+	background: $gray2;
+	padding: 15px;
+	margin-top: 10px;
+	border-radius: 7px;
+	.color-select {
+	  margin: 10px 20px 20px 10px;
+    display: inline-block;
+  }
+}
+
+.red-box {
+	background: $red;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+.blue-box {
+	background: $blue;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+
+.green-box {
+	background: $green;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+#todo-form-controller {
+	margin: 20px 0 0 0;
 }
 
