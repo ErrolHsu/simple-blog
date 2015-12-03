@@ -1,15 +1,20 @@
 <div class="col-md-12 col-sm-12 col-xs-12 calendar-month"><%= @date.strftime("%B %Y") %></div>
 <div class="col-md-12 col-sm-12 col-xs-12 calendar-each-row">
   <% ["Sun", "M", "T", "W", "Th", "F", "Sat"].each do |i| %>
-	  <div class="week"><%= i %></div>
+	  <div class="week">
+			<div><%= i %></div>
+	  </div>
   <% end %>
 </div>
 <% calendar.each_with_index do |items, index| %>
   <div class="col-md-12 col-sm-12 col-xs-12 calendar-each-row">
-	  <% items.each do |item| %>
-		  <%= each_day(item) %>
-	  <% end %>	
+	  <% items.each do |hash| %>
+		  <%= each_day(hash) %>
+	  <% end %>
   </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 calendar-each-row hide-row-box">
+		<div></div>
+	</div>
 <% end %>
 <div class="col-md-12 col-sm-12 col-xs-12" id="pre-next-month">
   <%= previous_and_next_month %>

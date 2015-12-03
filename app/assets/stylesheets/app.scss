@@ -20,10 +20,12 @@ body {
 	font-family: "Open Sans",Helvetica, Arial, "Microsoft JhengHei", sans-serif;
 	padding-top: 70px;
 	height: auto;
+	text-decoration: none;
 	@include box_sizing;
 	a {
 		font-family: Helvetica, "Microsoft JhengHei", sans-serif;
 		color: $blue1;
+		text-decoration: none;
 		&:hover {
 			text-decoration: none;
 			color: $blue2;
@@ -226,8 +228,7 @@ textarea {
   font-size: 0;
   border: 1px solid $gray3;
   margin: 20px 0 40px 0;
-}	
-
+}
 
 .CodeRay {
 	pre {

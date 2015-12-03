@@ -16,23 +16,22 @@ class Calendar < Array
 	class << self
 	  def user_calendar(date, special_days, settings)
 	  	c = new(date, special_days, settings)
-	  	c.map! { |i| {day: i} }
-	  	c.article.todo_event.today.normalize
+	  	c.map! { |i| {day: i, event: []} }
+	  	c.todo_event.article.today.normalize
 	  end
 
 	  def visitor_calendar(date, special_days, settings)
 	  	c = new(date, special_days, settings)
-	  	c.map! { |i| {day: i} }
-	  	c.article.today.normalize
+	  	c.map! { |i| {day: i, event: []} }
+	  	c.today.article.normalize
 	  end
 	end
 
 	def todo_event
 		if @settings[:event_days] == "1"
 		  @event_days.each do |i|
-		  	i[:stretch].times do |x|
-		    	self[i[:date_num] - 1 + x][:event] = "event"
-		    	self[i[:date_num] - 1 + x][:color] = i[:color]
+		  	i[:event].stretch.times do |x|
+		    	self[i[:day] - 1 + x][:event] << i[:event]
 		  	end		 
 		  end
 		end  
@@ -41,7 +40,7 @@ class Calendar < Array
 
 	def article
 		if @settings[:article_days] == "1"
-		  @article_days.each { |i| self[i - 1][:article_day] = "article_day"}
+		  @article_days.each { |i| self[i - 1][:article?] = true }
     end
     self  
 	end
@@ -60,9 +59,9 @@ class Calendar < Array
 	def normalize
 		new_calendar = []
 		first_day = @datetime.beginning_of_month
-		first_day.wday.times { unshift({day: nil}) } 
+		first_day.wday.times { unshift({day: nil, event: []}) } 
 		self.each_slice(7) { |group| new_calendar << group }		
-		new_calendar.last << {day: nil} until new_calendar.last.size == 7
+		new_calendar.last << {day: nil, event: []} until new_calendar.last.size == 7
 		new_calendar
 	end
 

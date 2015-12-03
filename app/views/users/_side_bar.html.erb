@@ -16,9 +16,12 @@
     <% end %>    
   </div>
 
-  <div class="col-md-12 col-sm-12 col-xs-12" id="todo-form-controller">
+  <%= show_link_if(current_user?(@user), "#", class: "col-md-12 col-sm-12 col-xs-12", 
+    id:"todo-form-controller") do %>
     <span class="glyphicon glyphicon-plus"></span>
-  </div>  
+    <span>New Event</span>
+  <% end %>  
+
 
   <div class="col-md-12 col-sm-12 col-xs-12" id="todo-form">
     <%= render 'todo_events/form' %>

@@ -63,6 +63,7 @@ class UsersController < ApplicationController
 		def user_params
 			a = [:name, :email, :password, :password_confirmation, :title, :about_me, :gravatar, 
 				   :event_days, :article_days, :today]
+			
 			params[:user].permit(*a)
 		end
 

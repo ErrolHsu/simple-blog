@@ -1,3 +1,74 @@
-#todo-form {
-	margin: 10px 0;
+/* to_do form */
+
+
+#todo-form-controller {
+	margin: 20px 0 0 0;
+	height: 50px;
+	background: $blue;
+	font-size: 22px;
+	text-align: center;
+	color: #444;
+	line-height: 50px;
+	text-decoration: none;
+	&:hover {
+		color: #fff;
+	}
 }
+
+#todo-form {
+	background: $blue;
+	padding: 20px;
+	color: #555;
+	form {
+	  input, select {
+	  	background: $gray2;
+	  }
+	  .btn {
+	  	background: $gray2;
+	  	color: #555;
+	  }
+	}
+}
+
+.event-description {
+	background: $gray2;
+	height: 120px;
+}
+
+#color-box {
+	background: $gray2;
+	padding: 15px;
+	margin-top: 10px;
+	border-radius: 7px;
+	.color-select {
+	  margin: 10px 20px 20px 10px;
+    display: inline-block;
+  }
+}
+
+.red-box {
+	background: $red;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+.blue-box {
+	background: $blue;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+
+.green-box {
+	background: $green;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
+
+

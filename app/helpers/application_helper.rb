@@ -52,9 +52,9 @@ module ApplicationHelper
     end 
   end
 
-  def show_link_if(condition=true, title = nil, path = nil, hash = nil, &block)
+  def show_link_if(condition=true, name = nil, options = nil, html_options = nil, &block)
   	if condition
-  		link_to title, path, hash, &block
+  		link_to name, options, html_options, &block
   	end	 
   end
 

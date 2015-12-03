@@ -1,8 +1,8 @@
-<% if current_user?(@user) %>
-	<%= form_for([current_user, @todo_event]) do |f| %>
+
+	<%= form_for([@user, @todo_event]) do |f| %>
 
 	  <%= f.label :event, "任務 :" %>
-	  <%= f.text_field :event, class: 'form-control' %>
+	  <%= f.text_field :event, class: 'form-control', id: "event-form", autofocus: true %>
   
 	  <%= f.label :description, "描述 :" %>
 	  <%= f.text_area :description, class: "event-description" %>
@@ -14,21 +14,20 @@
 		
 		<div id="color-box">
 	    <div class="color-select">
-	 	    <%= f.radio_button :color, "blue", CHECKED: true %>
-	      <div class="blue-box"></div>
+	 	    <%= f.radio_button :color, "blue", id: "color-1", CHECKED: true %>
+	      <label for="color-1"><div class="blue-box"></div></label>
       </div>	  
   
 	    <div class="color-select">
-	      <%= f.radio_button :color, "red" %>
-	      <div class="red-box"></div>
+	      <%= f.radio_button :color, "red", id: "color-2" %>
+	      <label for="color-2"><div class="red-box"></div></label>
       </div>
 	    	  
 	    <div class="color-select">
-	 	    <%= f.radio_button :color, "green" %>
-	      <div class="green-box"></div>
+	 	    <%= f.radio_button :color, "green", id: "color-3" %>
+	      <label for="color-3"><div class="green-box"></div></label>
       </div>
     </div><br>
 		
 		<%= f.submit "Save", class: "btn btn-default btn-custom" %>
 	<% end %>	
-<% end %>	
