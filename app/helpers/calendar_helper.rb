@@ -10,7 +10,7 @@ module CalendarHelper
 	end
 
 	def each_day(hash)
-		content_tag :div, class: "each-day have-article" do
+		content_tag :div, class: "each-day both" do
 			number_box(hash) +
 			event_box(hash)
 		end	
@@ -21,7 +21,7 @@ module CalendarHelper
 		active = params[:query_date] && params[:query_date] == query_date ? :active : nil		
 		if hash[:article?]
 			content_tag :div, class: "number-box #{hash[:today]} #{active}" do
-		    link_to hash[:day], user_path(@user, query_date: query_date), class: "link"
+		    link_to hash[:day], user_path(@user, query_date: query_date)
 	    end
 		else
 			content_tag :div, class: "number-box #{hash[:today]}" do 
@@ -32,7 +32,7 @@ module CalendarHelper
 
 	def event_box(hash)
 		color = hash[:event].last.color if !hash[:event].empty?
-		content_tag :div, class: "event #{color}" do
+		content_tag :div, class: "event-box  #{color}" do
 			content_tag :div, class: "hide-box" do
 				if !hash[:event].empty?
  	 		    hash[:event].each do |i|

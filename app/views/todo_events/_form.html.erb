@@ -1,32 +1,47 @@
 
 	<%= form_for([@user, @todo_event]) do |f| %>
 
-	  <%= f.label :event, "任務 :" %>
-	  <%= f.text_field :event, class: 'form-control', id: "event-form", autofocus: true %>
+		<div class="event-form-div" >
+			<%= f.label :event, "任務 :" %><br>
+	    <%= f.text_field :event,  class: "event-form", id: "event-event" %><br>
+		</div>
   
-	  <%= f.label :description, "描述 :" %>
-	  <%= f.text_area :description, class: "event-description" %>
-  
-	  <%= f.date_select :date %><br>
-
-	  <%= f.label :stretch, "持續(天) :" %><br>
-	  <%= f.text_field :stretch, placeholder: 1, class: 'form-control' %><br>
+		<div class="event-form-div" >
+			<%= f.label :description, "描述 :" %><br>
+	    <%= f.text_area :description, class: "event-description-form" %>
+		</div>  
 		
+		<div class="event-form-div" >
+			<%= f.label :date, "日期 : " %><br>
+	  	<%= f.date_select :date %><br>
+	  </div>  
+
+		<div class="event-form-div" >
+			<%= f.label :stretch, "持續(天) :" %><br>
+	  	<%= f.text_field :stretch, placeholder: 1, class: 'event-form' %><br>
+		</div>
+
 		<div id="color-box">
 	    <div class="color-select">
 	 	    <%= f.radio_button :color, "blue", id: "color-1", CHECKED: true %>
-	      <label for="color-1"><div class="blue-box"></div></label>
+	      <label for="color-1"><div id="blue-box"></div></label>
       </div>	  
   
 	    <div class="color-select">
 	      <%= f.radio_button :color, "red", id: "color-2" %>
-	      <label for="color-2"><div class="red-box"></div></label>
+	      <label for="color-2"><div id="red-box"></div></label>
       </div>
 	    	  
 	    <div class="color-select">
 	 	    <%= f.radio_button :color, "green", id: "color-3" %>
-	      <label for="color-3"><div class="green-box"></div></label>
+	      <label for="color-3"><div id="green-box"></div></label>
       </div>
+
+       <div class="color-select">
+	 	    <%= f.radio_button :color, "purple", id: "color-4" %>
+	      <label for="color-4"><div id="purple-box"></div></label>
+      </div>
+
     </div><br>
 		
 		<%= f.submit "Save", class: "btn btn-default btn-custom" %>

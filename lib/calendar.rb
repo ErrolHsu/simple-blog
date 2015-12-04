@@ -4,7 +4,7 @@ class Calendar < Array
 	
 	def initialize(date, special_days, settings)
 		days = Time.days_in_month(date.month, date.year)
-    array = Array.new(days) { |i| i + 1 }	
+    array = Array.new(days) { |i| i + 1 }
     @settings = settings
 		@datetime = date
 		@article_days = special_days[:article_days]

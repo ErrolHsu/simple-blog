@@ -41,13 +41,9 @@
 	border-radius: 10px;
 	padding:  0 30px 40px 30px;
   background: #fff;
-}
-
-.article-head {
-  border-radius: 5px;
-  height: 20px;
-  margin: 0 -30px 0 -30px;
-  background: $blue6;
+  .article-head {
+  	background: $blue6;
+  }
 }
 
 .article-title {

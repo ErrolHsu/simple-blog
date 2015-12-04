@@ -1,5 +1,5 @@
 <div class="user-articles">
-	<div class="user-article-head"></div>
+	<div class="article-head"></div>
 	<%= link_to article.title, user_article_path(@user, article), class: "user-article-title" %>
 	<div class="created-at">
 		<span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>

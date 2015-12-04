@@ -4,7 +4,7 @@ $(document).on('ready page:load',function() {
   	evt.preventDefault();
     $('.glyphicon-plus').toggleClass('glyphicon-minus');
     $('#todo-form').slideToggle(300, 'linear', function() {
-      $('#event-form').focus();
+      $('#event-event').focus();
     }); // end slide
   }); // end click
 }); // end ready

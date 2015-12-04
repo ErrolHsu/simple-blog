@@ -4,7 +4,6 @@
 
 #gravatar-1 {
   float:right;
-  border-radius: 7px; 
   border-left: 2px solid #fff;
 }
 
@@ -52,9 +51,9 @@
   padding: 5px;
 }
 
-.user-article-head {
-  border-radius: 5px;
-  height: 20px;
+.article-head {
+  border-radius: 2px;
+  height: 40px;
   margin: 0 -30px 40px -30px;
 }
 
@@ -65,7 +64,7 @@
       color: lighten($blue6, 10%);
     }
   }
-  .user-article-head {
+  .article-head {
     background: $blue6;
   }
 
@@ -91,7 +90,7 @@
       color: darken($green1, 15%);
     }
   }
-  .user-article-head {
+  .article-head {
     background: $green1;
   }
 
@@ -115,7 +114,7 @@
       color: darken($blue1, 10%);
     }
   }
-  .user-article-head {
+  .article-head {
     background: $blue1;
   }
 
@@ -161,58 +160,46 @@
   padding: 0;
 }
 
-#box-hidden {
-  height: 40px;
-  background: #f1f2f3;
-  border-radius: 7px 0 0 7px;
-  color: red;
-  
+.box-hidden {
+  height: 30px;
+  background: $background;
 }
 
 
 #box-1 {
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  border-bottom-left-radius: 7px;
-
+  height: 130px;
   font-size: 25px;
-  padding: 0;
-  margin: 0 0 0 0;
-  color: $gray5;
+  padding: 5px;
+  margin: 0;
+  color: #fff;
   background: #3b5a6f;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
 }
 
 
 #box-2 {
-  border-radius: 7px;
   padding: 0;
+  font-size: 24px;
   a {
-    font-weight: bolder;
+    font-weight: normal;
     color: #fff;
   }
   #box-2-1 {
-    border-radius: 7px;
-    font-size: 32px;
+    padding: 0 0 0 35px;
+    letter-spacing: 1px;
     height: 50px;
-    text-align: center;
+    line-height: 50px;
+    text-align: left;
     background: $green2;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
     &:hover {
       background: lighten($green2, 3%);
     }
   }
   #box-2-2 {
-    border-radius: 7px;
     background: #ced7df;
+    height: 80px;
+    padding: 0;
     letter-spacing: -1px;
-    height: 82px;
-    padding: 5px 0 7px 0;
-    text-align: center;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+    text-align: left;
     .glyphicon-book {
       transform:scale(0.9);
       -webkit-transform:scale(0.9);
@@ -229,10 +216,8 @@
     }
   }
   #box-2-2-1 {
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: bolder;
-    width: 140px;
+    padding: 0 0 0 30px;
+    line-height: 80px;
     background: #ced7df;
     margin: auto;
     .glyphicon-book {
@@ -246,7 +231,6 @@
   margin: 40px 0;
   padding: 30px 5px 100px 5px;
   background: #f5f5f5;
-  border-radius: 7px;
   border: 2px solid #fff;
   #tags {
     color: $gray6;
@@ -257,7 +241,6 @@
     font-size: 16px;
     font-weight: 500;
     width: 180px;
-    border-radius: 5px;
   } 
   .user-show-tags {
     margin: 15px 0;

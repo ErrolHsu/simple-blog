@@ -1,10 +1,10 @@
-/* to_do form */
+/* event form */
 
 
 #todo-form-controller {
-	margin: 20px 0 0 0;
+	margin: 0;
 	height: 50px;
-	background: $blue;
+	background: $purple;
 	font-size: 22px;
 	text-align: center;
 	color: #444;
@@ -16,37 +16,49 @@
 }
 
 #todo-form {
-	background: $blue;
+	background: $purple;
 	padding: 20px;
 	color: #555;
 	form {
 	  input, select {
-	  	background: $gray2;
+	  	background: $purple;
+	  	border: 2px solid $gray3;
 	  }
 	  .btn {
-	  	background: $gray2;
-	  	color: #555;
-	  }
+	    background: #555;
+			color: #fff;
+			border: none;
+		}
+	}
+	.event-form-div {
+		margin: 15px 0;
+		padding: 0;
 	}
 }
 
-.event-description {
+.event-form {
+  color: #fff;
+  width: 80%;
+}
+
+.event-description-form {
 	background: $gray2;
 	height: 120px;
+	border-radius: 3px;
 }
 
 #color-box {
 	background: $gray2;
 	padding: 15px;
 	margin-top: 10px;
-	border-radius: 7px;
+	border-radius: 3px;
 	.color-select {
 	  margin: 10px 20px 20px 10px;
     display: inline-block;
   }
 }
 
-.red-box {
+#red-box {
 	background: $red;
 	padding: 0 auto;
 	width: 40px;
@@ -54,7 +66,7 @@
   display: inline-block;
 }
 
-.blue-box {
+#blue-box {
 	background: $blue;
 	padding: 0 auto;
 	width: 40px;
@@ -63,7 +75,7 @@
 }
 
 
-.green-box {
+#green-box {
 	background: $green;
 	padding: 0 auto;
 	width: 40px;
@@ -71,4 +83,12 @@
   display: inline-block;
 }
 
+
+#purple-box {
+	background: $purple;
+	padding: 0 auto;
+	width: 40px;
+	height: 10px;
+  display: inline-block;
+}
 
