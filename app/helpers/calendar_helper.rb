@@ -9,34 +9,27 @@ module CalendarHelper
 		end	
 	end
 
-	def each_day(hash)
-		content_tag :div, class: "each-day both" do
-			number_box(hash) +
-			event_box(hash)
-		end	
-	end
-
-	def number_box(hash)
+	def number_cell(hash)
 		query_date = "#{@date.year}-#{@date.month}-#{hash[:day]}"
 		active = params[:query_date] && params[:query_date] == query_date ? :active : nil		
 		if hash[:article?]
-			content_tag :div, class: "number-box #{hash[:today]} #{active}" do
+			content_tag :div, class: "number-cell #{hash[:today]} #{active}" do
 		    link_to hash[:day], user_path(@user, query_date: query_date)
 	    end
 		else
-			content_tag :div, class: "number-box #{hash[:today]}" do 
+			content_tag :div, class: "number-cell #{hash[:today]}" do 
 				content_tag :div, hash[:day]
 			end	
 		end  
 	end
 
-	def event_box(hash)
+	def event_cell(hash)
 		color = hash[:event].last.color if !hash[:event].empty?
-		content_tag :div, class: "event-box  #{color}" do
-			content_tag :div, class: "hide-box" do
+		content_tag :div, class: "event-cell  #{color}" do
+			content_tag :div, class: "hide-events" do
 				if !hash[:event].empty?
  	 		    hash[:event].each do |i|
- 	 			  concat render 'layouts/test', i: i
+ 	 			  concat render 'calendar/event_box', i: i
  	 		    end	
 		    end 
 			end
@@ -52,10 +45,10 @@ module CalendarHelper
 		link_to( "#{next_month} 》", user_path(@user,  query_date: "#{date2.year}-#{date2.month}"), id: "next_month")
 	end
 
-	def stritch(event)
+	def stretch(event)
 		if event.stretch > 1
 			end_date = event.date + event.stretch.day - 1
-			"#{event.date.strftime('%B %d')} ~ #{end_date.strftime('%B %d')}" 
+			"#{event.date.strftime('%B %d')} - #{end_date.strftime('%B %d')}" 
 		else
 			event.date.strftime('%B %d')
 		end	

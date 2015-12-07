@@ -1,27 +1,58 @@
 
 /* 管理頁面 */
 
+
+.manage-menu, .recycling-bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid $gray6;
+  text-align: center;
+  background: $gray6;
+  font-size: 20px;  
+}
+
 .index-year {
   #manage-menu-all {
-    border-radius: 7px;
+    border-radius: 5px;
     width: 100%;
+    margin: 20px 0;
     padding: 0;
+    .link_active {
+      background: #fff !important;
+      color: darken($cyan, 20%) !important;
+    }
     .manage-menu {
-      color: #9bd9d9;
-      border-radius: 7px;
-      border-left: 2px solid #fff;
-      text-align: center;
+      color: $cyan;
       height: 35px;
-      line-height: 35px;
-      font-size: 20px;
-      margin: 20px 0 30px 0;
-      width: 25%;
-      background: $gray6;
+      margin: 0 0 10px 1%;
+      width: 24%;
       float: left;
       &:hover {
         background: lighten($gray6, 5%);
-        color: $red;
+        color: #fff;
       }
+    }
+    .recycling-bin {
+      color: $gray1;
+      height: 40px;
+      margin: 0 0 10px 0;
+      width: 40%;
+      float: right;
+      &:hover {
+        background: lighten($gray6, 5%);
+        color: #fff;
+      }
+      .glyphicon-trash {
+        margin: 0 20px 0 0;
+      }
+    }
+    .clear-trash {
+      color: $red;
+      margin: 10px 0 10px 10px;
+      float: left;
+      border-bottom: 2px solid $red;
     }
   }
 }

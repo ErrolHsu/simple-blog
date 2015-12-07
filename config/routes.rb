@@ -17,7 +17,10 @@ Rails.application.routes.draw do
       get 'about_me'
       get 'manage'
     end 
-    resources :articles 
+    resources :articles, except: :destroy do
+      post 'recycling_bin', on: :member
+      delete 'multiple_destroy', on: :collection
+    end    
     resources :tags, only: [:show, :destroy]
     resources :todo_events, except: :new
   end   

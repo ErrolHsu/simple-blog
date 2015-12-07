@@ -31,41 +31,13 @@
 
 /* 關於文章 */
 
-.article-show-page {
-	line-height: 1.6em;
-	margin-top: 0px;
-	padding: 20px 5px;
-}
-
-.article-show-all {
-	border-radius: 10px;
-	padding:  0 30px 40px 30px;
-  background: #fff;
+.article-page {
+	padding: 0;
   .article-head {
   	background: $blue6;
   }
 }
 
-.article-title {
-	margin: 40px 0 20px -25px;
-  font-size: 30px;
-  font-weight: bolder;
-  line-height: 40px;
-  padding: 0 0 0 20px;
-  color: #555;
-}
-
-.article-show-page-title {
-	border-radius: 10px;
-	background: $blue6;
-  margin: 0 -30px 0 -30px;
-  padding: 0 0 0 20px;
-  font-size: 25px;
-	height: 80px;
-	color: #fff;
-	font-weight: bolder;
-  line-height: 80px;
-}
 
 .article-show-edit {
 	float: right;
@@ -74,8 +46,6 @@
 		color: $green2;
 	}
 }
-
-
 
 
 .article-show-tags {

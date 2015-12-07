@@ -1,24 +1,24 @@
 
 	<%= form_for([@user, @todo_event]) do |f| %>
 
-		<div class="event-form-div" >
+		<div class="event-form" >
 			<%= f.label :event, "任務 :" %><br>
-	    <%= f.text_field :event,  class: "event-form", id: "event-event" %><br>
+	    <%= f.text_field :title,  class: "event-form-field" %><br>
 		</div>
   
-		<div class="event-form-div" >
+		<div class="event-form" >
 			<%= f.label :description, "描述 :" %><br>
 	    <%= f.text_area :description, class: "event-description-form" %>
 		</div>  
 		
-		<div class="event-form-div" >
+		<div class="event-form" >
 			<%= f.label :date, "日期 : " %><br>
 	  	<%= f.date_select :date %><br>
 	  </div>  
 
-		<div class="event-form-div" >
+		<div class="event-form" >
 			<%= f.label :stretch, "持續(天) :" %><br>
-	  	<%= f.text_field :stretch, placeholder: 1, class: 'event-form' %><br>
+	  	<%= f.text_field :stretch, placeholder: 1, class: 'event-form-field' %><br>
 		</div>
 
 		<div id="color-box">

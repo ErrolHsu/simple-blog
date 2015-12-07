@@ -1,5 +1,6 @@
 <% provide(:title, "index") %>
 <div class="row">
+
   <div class="col-md-5 col-sm-5 col-xs-11 index-year">  
     <% @articles_by_year.each do |year, articles| %>
       <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
@@ -11,17 +12,18 @@
   	    <% end %>	
   	  </div>  
     <% end %>
+    <div class="pagi">
+      <%= paginate @articles, :window => 2 %>
+    </div>
   </div>
+
   <div class="col-md-4 col-sm-4 hidden-xs" id="box-3">
     <div id="tags">
       <span class="glyphicon glyphicon-tags"></span>CATEGORIES
-        </div>
-          <div class="user-show-tags">
-            <%= render partial: 'shared/tags', collection: @tags, as: :tag %>
-          </div>
-      </div>
-    </div>  
+    </div>
+    <div class="user-show-tags">
+      <%= render partial: 'shared/tags', collection: @tags, as: :tag %>
+    </div>
   </div>
-<div class="pagi">
-  <%= paginate @articles, :window => 2 %>
-</div>
+  
+</div>  

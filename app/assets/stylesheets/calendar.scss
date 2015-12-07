@@ -9,6 +9,8 @@
 
 .calendar-each-row {
   height: 46px;
+  width: 100%;
+  margin: 0;
 	text-align: center;
 	border-bottom: 1px solid $gray3;
 	padding: 0 0 0 5px;
@@ -29,8 +31,6 @@
 }
 
 
-
-
 .each-day, .both, .week {
 	margin-right: 1%;
 	height: 45px;
@@ -41,7 +41,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0;
-	.number-box {
+	.number-cell {
 		height: 27px;
 		width: 27px;
 		margin: 8px 0 3px 0;
@@ -105,11 +105,12 @@
 /* event box */
 
 
-.event-box {
+.event-cell {
 	width: 33px;
 	height: 5px;
 	margin-top: 1px;
-	.hide-box {
+	.hide-events {
+		padding: 0;
 		display: none;
 	}
 }
@@ -131,34 +132,41 @@
 	background: $purple;
 }
 
-
 .hide-row-box {
 	display: none;
+	width: 100%;
 	height: auto;
-	background: $purple;
-	padding: 10px;
+	background: #dce1e1;
+	padding: 10px 0;
+	margin: 0;
 	.hide-event-box {
+		padding: 0;
 		width: 45%;
-		margin: 5px;
-		float: left;
+		height: 200px;
+		margin: 0 2% 10px 2%;
+    display: inline-block;
+		background: $background;
 		border: 2px solid $background;
+		overflow: scroll;
 		text-align: left;
-		.event-date {
-			margin: 5px 5px;
-		  font-size: 16px;
-			color: #fff;
-		}
-		.event-title {
-			font-size: 18px;
-			color: #666;
-			margin: 5px 5px;
+		.event-box-head {
+			padding: 5px;
+			.event-date {
+		  	font-size: 16px;
+				color: #fff;
+			}
+			.event-title {
+				font-size: 18px;
+				height: auto;
+				color: #555;
+				margin: 5px 5px;
+			}
 		}
 		.event-description {
-			background: $background;
 			padding: 10px 7px;
 			font-size: 16px;
 			color: $gray4;
-			height: 120px;
+			height: auto;
 		}
 	}
 }

@@ -1,27 +1,23 @@
 <% provide(:title, "manage") %>
 <div class="row">
   <div class="col-md-5 col-sm-5 col-xs-11 index-year">
+      
     <div id="manage-menu-all">
-      <%= link_to manage_user_path(@user) do %>
-        <%= content_tag(:div, '全部', class: "manage-menu") %>
-      <% end %>
-      <%= link_to manage_user_path(@user, state: 1) do %>
-        <%= content_tag(:div, '公眾', class: "manage-menu") %>
-      <% end %> 
-      <%= link_to manage_user_path(@user, state: 2) do %>
-        <%= content_tag(:div, '私人', class: "manage-menu") %>
-      <% end %>
-      <%= link_to manage_user_path(@user, state: 3) do %>
-        <%= content_tag(:div, '草稿', class: "manage-menu") %>
-      <% end %>  
+      <%= link_to_box('全部', manage_user_path(@user), class: "manage-menu") %>
+      <%= link_to_box('公眾', manage_user_path(@user, state: 1), class: "manage-menu") %>
+      <%= link_to_box('私人', manage_user_path(@user, state: 2), class: "manage-menu") %>
+      <%= link_to_box('草稿', manage_user_path(@user, state: 3), class: "manage-menu") %>
+      <%= show_link_if(params[:state] == "4" ,"清空垃圾桶 !", multiple_destroy_user_articles_path(@user), method: 'delete', class: "clear-trash") %>  
+      <%= trash %> 
     </div>
+    <hr class="hr-3">
     <% @articles_by_year.each do |year, articles| %>
       <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
   	  <div class="index-articles">
   	    <% for article in articles %>
   	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
   		    <%= link_to "#{article.title}", user_article_path(@user, article) %><br>
-          <%= link_to "刪除", user_article_path(@user, article), method: 'delete',
+          <%= link_to "刪除", recycling_bin_user_article_path(@user, article), method: 'post',
               data: {confirm: "確定刪除文章 - [ #{article.title} ] ?"}, 
               class: "delete-link" %>
           <span class="link-sym">---</span>   
@@ -31,7 +27,11 @@
   	    <% end %>	
   	  </div>  
     <% end %>
+    <div class="pagi">
+      <%= paginate @articles, :window => 2 %>
+    </div>
   </div>
+
   <div class="col-md-4 col-sm-4 hidden-xs" id="manage-tags-box">
     <div id="manage-tags">
       <span class="glyphicon glyphicon-tags"></span>TAGS
@@ -53,6 +53,4 @@
       </div>
     </div>  
   </div>
-<div class="pagi">
-  <%= paginate @articles, :window => 2 %>
-</div>
+</div>  

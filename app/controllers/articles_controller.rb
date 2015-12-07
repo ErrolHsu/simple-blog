@@ -15,11 +15,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		if current_user?(@user)
-		  @article = @user.articles.find(params[:id])
-		else
-		  @article = @user.articles.published.find(params[:id])
-		end  
+		@article = @user.articles.find(params[:id])
 	end
 
 	def new
@@ -50,15 +46,17 @@ class ArticlesController < ApplicationController
 		end	
 	end
 
-	def destroy
+	def recycling_bin
 		@article = current_user.articles.find(params[:id])
-		if @article.destroy
-			flash[:success] = "文章已刪除"
-			redirect_to manage_user_path(current_user)
-		else
-			flash[:danger] = "刪除失敗"
-			redirect_to manage_user_path(current_user)
-		end		
+		@article.to_trash
+		redirect_to manage_user_path(current_user)
+	end
+
+	def multiple_destroy
+		@articles = @user.articles.find_by_state(4)
+		@articles.each { |article| article.delete }
+		redirect_to manage_user_path(current_user, state: 4)
+ 
 	end
 
 

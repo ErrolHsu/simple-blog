@@ -8,6 +8,8 @@ class Article < ActiveRecord::Base
   
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 1) }
+  scope :except_recycling_bin, -> { where.not(state: 4)}
+  scope :find_by_state, -> (state) { where(state: state) }
   scope :in_this_month, -> (month) { where(created_at: (month.beginning_of_month)..month.end_of_month) }
   scope :in_this_day, -> (day) { where(created_at: (day.beginning_of_day)..day.end_of_day) }
 
@@ -28,6 +30,12 @@ class Article < ActiveRecord::Base
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize.to_s
   end
+
+  def to_trash
+    self.state = 4
+    self.save
+  end
+
 
   class << self
     def find_by_date(year=nil, month=nil, day=nil)

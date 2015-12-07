@@ -2,18 +2,15 @@
 /* blog title */
 
 #logo {
-	color: #fff;
+	color: #444;
 	font-weight: 900;
 	letter-spacing: 0px;
 	font-size: 22px;
 	display: inline;
-	background: #444;
-	padding: 0px 20px 0px 20px;
+	background: $gray2;
+	padding: 5px 20px;
 	margin-left: -10px;
-	border-top-left-radius: 30px;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 30px;
-	border-bottom-left-radius: 15px;
+	border-radius: 8px;
 	a {
 	  font-family: sans-serif;
 		&:hover {
@@ -32,9 +29,10 @@
 .navbar {
 	z-index: 2000 !important;
 	padding: 10px 5px 0px 5px;
-  background-color: $gray6;
+  background-color: $background;
 	font-weight: bold;
 	border-bottom: 2px solid $gray3;
+	margin-bottom: 0;
 }
 
 .nav-link {
@@ -43,14 +41,10 @@
 	padding: 0px 8px;
 		margin: -40px 0 5px 5px;
 		float: right;
-		background: $gray3;
 		border-radius: 15px;
 	  a {
-	  	color: $gray5;
-	  	font-size: 17px;
-	  	&:hover {
-	  		color: $green1;
-	  	}
+	  	color: #444;
+	  	font-size: 14px;
 	  }
 	}
 }
@@ -61,22 +55,20 @@
 .nav-menu {
 	.dropdown {
     .dropdown-toggle {
-	    margin: -40px 5px 0px 5px;
+	    margin: -40px 15px 0px 5px;
     	float: right;
-    	color: $gray1;
-	    background-color: $gray6;
+    	color: #444;
+	    background-color: $background;
 	    border: none;
 	    &:hover {
         transform:scale(1.2);
         -webkit-transform:scale(1.2);
       }
     }
-    .glyphicon-user {
+    .glyphicon-list {
       transform:scale(1.4);
       -webkit-transform:scale(1.4);
     }
-    .caret {
-    }  
   }
 }
 
@@ -103,9 +95,9 @@
 		  .dropdown-menu {
 		  	li {
 		  		a {
-		  			color: $gray1;
+		  			color: #555;
 		  			&:hover {
-		  				color: $gray3;
+		  				color: $cyan;
 		  			}
 		  		}
 		  	}

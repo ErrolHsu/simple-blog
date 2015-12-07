@@ -18,8 +18,7 @@ body {
   background: $background;
 	font-size: 1.8em;
 	font-family: "Open Sans",Helvetica, Arial, "Microsoft JhengHei", sans-serif;
-	padding-top: 70px;
-	height: auto;
+	padding-top: 75px;
 	text-decoration: none;
 	@include box_sizing;
 	a {
@@ -227,8 +226,21 @@ textarea {
   line-height: 1px;
   font-size: 0;
   border: 1px solid $gray3;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 20px 0;
 }
+
+.hr-3 {
+  background: $background;
+  color: $background;
+  clear:both;
+  float: none;
+  width: 100%;
+  line-height: 1px;
+  font-size: 0;
+  border: 1px solid $background;
+  margin: 20px 0 20px 0;
+}
+
 
 .CodeRay {
 	pre {

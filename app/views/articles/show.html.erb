@@ -1,22 +1,25 @@
 <% provide(:title, "#{@article.title}") %>
-<div class="row article-show-page">
-  <div class="col-md-10 col-xs-12 col-md-offset-1 article-show-all">
-    <div class="article-head"></div>
-	  <div class="article-title"><%= @article.title %> </div>
-      
-    <div class="created-at">
-      <span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>
-      <span> · </span><%= @article.created_at.to_s(:month_day_year) %>
-      <%= show_link_if(current_user?(@user), "編輯", edit_user_article_path(@user, @article),
-        class: "article-show-edit" ) %>
-    </div>
-
-		<%= markdown(@article.content) %>
-		<div class="article-show-tags">
-      <span class="glyphicon glyphicon-tags article-show-icon"></span>
-      <span><%= raw tag_list(@article.tags) %></span>
+<div class="row">
+  <div class="col-md-10 col-xs-12 col-md-offset-1 article-page">
+    <div class="user-articles">
+      <div class="article-head"></div>
+	    <div class="article-title"><%= @article.title %> </div>
+        
+      <div class="created-at">
+        <span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>
+        <span> · </span><%= @article.created_at.to_s(:month_day_year) %>
+        <%= show_link_if(current_user?(@user), "編輯", edit_user_article_path(@user, @article),
+          class: "article-show-edit" ) %>
+      </div>
+  
+		  <%= markdown(@article.content) %>
+		  <div class="article-show-tags">
+        <span class="glyphicon glyphicon-tags article-show-icon"></span>
+        <span><%= raw tag_list(@article.tags) %></span>
+      </div>
     </div>
   </div>
+
   <div class="col-md-12 col-xs-12" id="return">
     <%= link_to "return", request.referer %>
   </div>

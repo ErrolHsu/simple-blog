@@ -1,0 +1,33 @@
+<div class="calendar-month"><%= @date.strftime("%B %Y") %></div>
+
+<div class="calendar-each-row">
+  <% ["Sun", "M", "T", "W", "Th", "F", "Sat"].each do |i| %>
+	  <div class="week">
+			<div><%= i %></div>
+	  </div>
+  <% end %>
+</div>
+
+
+<% calendar.each_with_index do |rows, index| %>
+  <div class="calendar-each-row">
+	  <% rows.each do |hash| %>
+		  <div class="each-day both">
+		  	<%= number_cell(hash) %>
+		  	<%= event_cell(hash) %>
+		  </div>	  
+		<% end %>
+  </div>
+  <div class="calendar-each-row hide-row-box">
+		<div></div>
+	</div>
+<% end %>
+
+
+<div id="pre-next-month">
+  <%= previous_and_next_month %>
+</div>
+
+
+
+

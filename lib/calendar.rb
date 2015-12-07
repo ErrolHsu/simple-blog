@@ -17,17 +17,22 @@ class Calendar < Array
 	  def user_calendar(date, special_days, settings)
 	  	c = new(date, special_days, settings)
 	  	c.map! { |i| {day: i, event: []} }
-	  	c.todo_event.article.today.normalize
+	  	c.find_todo_event
+	  	 .find_article
+	  	 .find_today
+	  	 .normalize
 	  end
 
 	  def visitor_calendar(date, special_days, settings)
 	  	c = new(date, special_days, settings)
 	  	c.map! { |i| {day: i, event: []} }
-	  	c.today.article.normalize
+	  	c.find_today
+	  	 .find_article
+	  	 .normalize
 	  end
 	end
 
-	def todo_event
+	def find_todo_event
 		if @settings[:event_days] == "1"
 		  @event_days.each do |i|
 		  	i[:event].stretch.times do |x|
@@ -38,14 +43,14 @@ class Calendar < Array
 		self
 	end
 
-	def article
+	def find_article
 		if @settings[:article_days] == "1"
 		  @article_days.each { |i| self[i - 1][:article?] = true }
     end
     self  
 	end
 
-	def today
+	def find_today
 		if @settings[:today] == "1"
     	now = Time.zone.now
     	if @datetime.beginning_of_month == now.beginning_of_month 
