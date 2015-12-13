@@ -11,6 +11,6 @@ class TodoEventsController < ApplicationController
 
 	private
 		def todo_event_params
-			params[:todo_event].permit(:event, :description, :date, :stretch, :color)
+			params[:todo_event].permit(:title, :description, :date, :stretch, :color)
 		end
 end
