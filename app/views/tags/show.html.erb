@@ -5,11 +5,16 @@
   		<span class="glyphicon glyphicon-tag"></span>
   		<%= "#{@tag.name}(#{@tag.articles.size})" %>
   	</h5>
-  	<div class="tag-articles">
-  		<% @tag.articles.each do |article| %>
-  	  	<%= "#{article.created_at.to_s(:simple_month_day)}-" %>
-  		  <%= link_to "#{article.title}", user_article_path(article) %>
-  		  <HR class="hr-2">
+  	<div class="articles-list">
+  		<% @articles.each do |article| %>
+        <%= "#{article.created_at.to_s(:simple_month_day)}" %><br>
+        <div class="articles-list-each-item">
+          <%= article_state(article) %>
+          <%= link_to "#{article.title}", user_article_path(@user, article),
+           class: "index-article-title" %><br>
+          <%= article_option(article) %>
+        </div>  
+        <HR class="hr-2">
   	  <% end %>	
   	</div>  
 	</div>

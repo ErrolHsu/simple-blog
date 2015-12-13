@@ -13,7 +13,7 @@ module UsersHelper
   end
 
   def trash
-    path = manage_user_path(@user, state: 4) 
+    path = manage_user_path(@user, state: "trash") 
     active = request.original_fullpath == path ? "link_active" : "not_active"
     link_to path do
       content_tag :div, class: "recycling-bin #{active}" do

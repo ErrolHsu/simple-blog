@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
   
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 1) }
-  scope :except_recycling_bin, -> { where.not(state: 4)}
+  scope :except_recycling_bin, -> { where(state: [1, 2, 3])}
   scope :find_by_state, -> (state) { where(state: state) }
   scope :in_this_month, -> (month) { where(created_at: (month.beginning_of_month)..month.end_of_month) }
   scope :in_this_day, -> (day) { where(created_at: (day.beginning_of_day)..day.end_of_day) }
@@ -32,12 +32,27 @@ class Article < ActiveRecord::Base
   end
 
   def to_trash
-    self.state = 4
+    ids = self.tags.ids
+    Tag.update_counters(ids, articles_count: -1)
+    self.state += 10
     self.save
+  end
+
+  def return_state
+    ids = self.tags.ids
+    Tag.update_counters(ids, articles_count: +1)    
+    self.state -= 10
+    self.save
+  end
+
+  def delete_it
+    self.delete
+    Tagging.where(article_id: self.id).each { |i| i.delete}
   end
 
 
   class << self
+
     def find_by_date(year=nil, month=nil, day=nil)
       if month
         date = Time.zone.local(year, month, day)

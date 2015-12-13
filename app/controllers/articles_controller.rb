@@ -40,28 +40,42 @@ class ArticlesController < ApplicationController
 		@article = current_user.articles.find(params[:id])
 		if @article.update_attributes(article_params)
 			flash[:success] = "編輯完成"
-			redirect_to user_article_path(@article)
+			redirect_to user_article_path(@user, @article)
 		else
 			render :edit
 		end	
 	end
 
-	def recycling_bin
+	def to_recycling_bin
 		@article = current_user.articles.find(params[:id])
 		@article.to_trash
-		redirect_to manage_user_path(current_user)
+		flash[:success] = "移動 '#{@article.title}' 至垃圾桶"
+		redirect_to request.referer
+	end
+
+	def return_state
+		@article = current_user.articles.find(params[:id])
+		hash = {'1' => '公眾', '2' => '私人', '3' => '草稿'}
+		state = (@article.state - 10).to_s
+		@article.return_state
+		flash[:success] = "移動 '#{@article.title}' 至 '#{hash[state]}'"
+		redirect_to request.referer
 	end
 
 	def multiple_destroy
-		@articles = @user.articles.find_by_state(4)
-		@articles.each { |article| article.delete }
-		redirect_to manage_user_path(current_user, state: 4)
- 
+		@articles = @user.articles.find_by_state([11, 12, 13])
+		@articles.each { |article| article.delete_it }
+		flash[:success] = "垃圾桶已清空"
+		redirect_to request.referer
 	end
 
+	def destroy
+		@article = current_user.articles.find(params[:id])
+		@article.delete_it
+		flash[:success] = "'#{@article.title}' 已刪除"
+		redirect_to request.referer
+	end
 
-
-	
 
 	private
 		def find_user

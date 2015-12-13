@@ -49,12 +49,16 @@ class UsersController < ApplicationController
 	end	
 
 	def manage
-		if params[:state].nil?
-			@select_articles = @user.articles.except_recycling_bin
-		else	
-		  @select_articles = @user.articles.find_by_state(params[:state].to_i)
-		end  
-		@articles = @select_articles.page(params[:page]).per(25)
+		case params[:state]
+		when nil
+			select_articles = @user.articles.except_recycling_bin
+		when "1", "2", "3"	
+		  select_articles = @user.articles.find_by_state(params[:state].to_i)
+		when "trash"  
+			select_articles = @user.articles.find_by_state([11, 12, 13])
+		end
+
+		@articles = select_articles.page(params[:page]).per(25)
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
 		@tags = @user.tags.all
 	end

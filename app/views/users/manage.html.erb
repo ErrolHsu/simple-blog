@@ -7,29 +7,11 @@
       <%= link_to_box('公眾', manage_user_path(@user, state: 1), class: "manage-menu") %>
       <%= link_to_box('私人', manage_user_path(@user, state: 2), class: "manage-menu") %>
       <%= link_to_box('草稿', manage_user_path(@user, state: 3), class: "manage-menu") %>
-      <%= show_link_if(params[:state] == "4" ,"清空垃圾桶 !", multiple_destroy_user_articles_path(@user), method: 'delete', class: "clear-trash") %>  
+      <%= show_link_if(params[:state] == "trash" ,"清空垃圾桶 !", multiple_destroy_user_articles_path(@user),  data: {confirm: "確定要清空垃圾桶 ?"}, method: 'delete', class: "clear-trash") %>  
       <%= trash %> 
     </div>
     <hr class="hr-3">
-    <% @articles_by_year.each do |year, articles| %>
-      <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
-  	  <div class="index-articles">
-  	    <% for article in articles %>
-  	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
-  		    <%= link_to "#{article.title}", user_article_path(@user, article) %><br>
-          <%= link_to "刪除", recycling_bin_user_article_path(@user, article), method: 'post',
-              data: {confirm: "確定刪除文章 - [ #{article.title} ] ?"}, 
-              class: "delete-link" %>
-          <span class="link-sym">---</span>   
-          <%= link_to "編輯", edit_user_article_path(@user, article), 
-              class: "edit-link" %>
-  		    <HR class="hr-2">
-  	    <% end %>	
-  	  </div>  
-    <% end %>
-    <div class="pagi">
-      <%= paginate @articles, :window => 2 %>
-    </div>
+    <%= render 'articles/articles_list' %>
   </div>
 
   <div class="col-md-4 col-sm-4 hidden-xs" id="manage-tags-box">

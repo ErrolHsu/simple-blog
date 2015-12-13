@@ -7,8 +7,13 @@ class TagsController < ApplicationController
 
 	def show
 		@user = User.find(params[:user_id])
-		@tag = @user.tags.find(params[:id])
 		@tags = @user.tags.all
+		@tag = @user.tags.find(params[:id])
+		if current_user?(@user)
+			@articles = @tag.articles
+		else	
+			@articles =  @tag.articles.published
+		end	
 	end
 
 	def destroy

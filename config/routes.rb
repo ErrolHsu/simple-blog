@@ -17,8 +17,9 @@ Rails.application.routes.draw do
       get 'about_me'
       get 'manage'
     end 
-    resources :articles, except: :destroy do
-      post 'recycling_bin', on: :member
+    resources :articles do
+      post 'to_recycling_bin', on: :member
+      post 'return_state', on: :member
       delete 'multiple_destroy', on: :collection
     end    
     resources :tags, only: [:show, :destroy]

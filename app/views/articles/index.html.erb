@@ -1,22 +1,8 @@
 <% provide(:title, "index") %>
 <div class="row">
-
-  <div class="col-md-5 col-sm-5 col-xs-11 index-year">  
-    <% @articles_by_year.each do |year, articles| %>
-      <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
-  	  <div class="index-articles">
-  	    <% for article in articles %>
-  	  	  <%= "#{article.created_at.to_s(:simple_month_day)}-" %>
-  		    <%= link_to "#{article.title}", user_article_path(article) %><br>
-  		    <HR class="hr-2">
-  	    <% end %>	
-  	  </div>  
-    <% end %>
-    <div class="pagi">
-      <%= paginate @articles, :window => 2 %>
-    </div>
-  </div>
-
+	<div class="col-md-5 col-sm-5 col-xs-11 index-year">  
+  	<%= render 'articles_list' %>
+  </div>	
   <div class="col-md-4 col-sm-4 hidden-xs" id="box-3">
     <div id="tags">
       <span class="glyphicon glyphicon-tags"></span>CATEGORIES
@@ -24,6 +10,5 @@
     <div class="user-show-tags">
       <%= render partial: 'shared/tags', collection: @tags, as: :tag %>
     </div>
-  </div>
-  
+  </div> 
 </div>  

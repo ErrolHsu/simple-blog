@@ -14,10 +14,11 @@
 }
 
 .index-year {
+  padding: 0 10px;
   #manage-menu-all {
     border-radius: 5px;
     width: 100%;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     padding: 0;
     .link_active {
       background: #fff !important;
@@ -49,39 +50,17 @@
       }
     }
     .clear-trash {
-      color: $red;
+      color: $blue1;
+      letter-spacing: -1px;
       margin: 10px 0 10px 10px;
       float: left;
-      border-bottom: 2px solid $red;
     }
   }
 }
 
-.edit-link {
-	float: right;
-	font-size: 15px;
-	color: $green;
-	&:hover {
-		color: darken($green, 20%)
-	}
-}
-
-.link-sym {
-	float: right;
-	font-size: 15px;
-}
-
-.delete-link {
-	float: right;
-	font-size: 15px;
-	color: $gray4;
-	&:hover {
-		color: $red;
-	}
-}
 
 #manage-tags-box {
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 10px 5px;
   background: #f5f5f5;
   border-radius: 7px;

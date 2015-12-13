@@ -1,0 +1,17 @@
+<% @articles_by_year.each do |year, articles| %>
+  <h5><%= "#{year.strftime('%Y')} (#{articles.count})" %></h4>
+  <div class="articles-list">
+  <% for article in articles %>
+  	<%= "#{article.created_at.to_s(:simple_month_day)}" %><br>
+  	<div class="articles-list-each-item">
+  	  <%= article_state(article) %>
+	    <%= link_to "#{article.title}", user_article_path(@user, article), class: "index-article-title" %><br>
+		  <%= article_option(article) %>
+		</div>  
+	  <HR class="hr-2">
+  <% end %>	
+ </div>  
+<% end %>
+<div class="pagi">
+  <%= paginate @articles, :window => 2 %>
+</div>

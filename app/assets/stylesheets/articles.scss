@@ -22,9 +22,70 @@
   h5 {
     margin: 0 0 25px 0;
   }
-  .index-articles {
-    margin: 0 0 0 15px;
+}
+
+.articles-list {
+  margin: 0 0 0 15px;
+  .articles-list-each-item {
+  	margin: 5px 0 0 15px;
+  	padding: 0;
+  	.index-article-title {
+  		line-height: 30px;
+  	}
   }
+}
+
+
+.state-1, .state-2, .state-3, .state-11, .state-12, .state-13 {
+  border-radius: 3px;
+  margin: 0 10px 0 0;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.state-1, .state-11 {
+	border: 2px solid #444;
+  background: #444;
+  color: #FFF;
+}
+
+.state-2, .state-12 {
+	border: 2px solid $cyan;
+  background: $cyan;
+  color: #444;
+}
+
+.state-3, .state-13 {
+	border: 2px solid $red;
+  background: $red;
+  color: #FFF;
+}
+
+
+.edit-link {
+	float: right;
+	font-size: 15px;
+	color: $green;
+  margin: 10px 0;
+	&:hover {
+		color: darken($green, 20%)
+	}
+}
+
+.link-sym {
+	float: right;
+	font-size: 15px;
+  margin: 10px 3px;
+}
+
+.delete-link {
+	float: right;
+	font-size: 15px;
+	color: $gray4;
+  margin: 10px 0;
+	&:hover {
+		color: $red;
+	}
 }
 
 
