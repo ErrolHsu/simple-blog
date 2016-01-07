@@ -1,0 +1,35 @@
+<div class="row">
+  <%= render 'side_bar/option_list' %>
+  <%= hidden_box("small", "xs") %>
+  
+<!--   <div id="todo-box">
+    <%= show_link_if(current_user?(@user), "#", class: "col-md-11 col-sm-12 col-xs-7", 
+      id:"todo-form-controller") do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      <span>New Event</span>
+    <% end %>  
+    <div class="col-md-11 col-sm-12 col-xs-12" id="todo-form">
+      <%= render 'todo_events/form' %>
+    </div> 
+  </div>   -->
+
+  <div class="col-md-12 col-xs-12 hidden-xs" id="recent-articles">
+    <% @recent_articles.each do |i| %>
+      <div><%= link_to i[1], user_article_path(@user, i[0]) %></div>
+    <% end %> 
+  </div>
+
+
+  <div class="col-md-11 col-xs-11 hidden-sm hidden-xs" id="calendar">
+    <%= render 'calendar/calendar' %>
+  </div>
+
+  <div class="col-md-12 col-sm-12 hidden-xs" id="tag-box">
+		<div id="tag-box-head">
+			<span class="glyphicon glyphicon-tags"></span>TAGS
+		</div>
+		<div class="tag-box-body">
+			<%= render partial: 'shared/tags', collection: @tags, as: :tag %>
+	  </div>
+  </div>
+</div> 

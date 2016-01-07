@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 		query_date = params[:query_date] ? params[:query_date].split("-").map(&:to_i) : []
 		
 		@articles = @user.articles.find_by_date(*query_date).page(params[:page]).per(5)
+		@recent_articles = @user.articles.published.limit(10).pluck(:id, :title)
 		@date = params[:query_date] ? Time.zone.local(*query_date) : Time.zone.now
 		@special_days = @user.special_days(@date)
 		@todo_event = @user.todo_events.build

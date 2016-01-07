@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   friendly_id :slug_candidates, use: [:slugged, :finders] 
 	
   has_many :articles, dependent: :destroy
-  has_many :todo_events
-  has_many :tags
+  has_many :categories, dependent: :destroy
+  has_many :todo_events, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
 	attr_accessor :remember_token
 
@@ -71,11 +72,10 @@ class User < ActiveRecord::Base
   end
 
   def find_article_days(date)
-    @article_days = []
     now = Time.zone.now
-    articles.where(created_at: (date.beginning_of_month)..date.end_of_month).published.each do |i|
-      @article_days << i.created_at.day 
-    end
+    @article_days = articles.where(created_at: (date.beginning_of_month)..date.end_of_month)
+                    .published.pluck(:created_at)
+    @article_days.map! { |i| i.day }    
   end
 
   def find_event_days(date)

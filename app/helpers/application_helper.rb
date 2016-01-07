@@ -52,10 +52,14 @@ module ApplicationHelper
     end 
   end
 
-  def show_link_if(condition=true, name = nil, options = nil, html_options = nil, &block)
+  def show_link_if(condition, name = nil, options = nil, html_options = nil, &block)
   	if condition
   		link_to name, options, html_options, &block
   	end	 
+  end
+
+  def hidden_box(size, option)
+    content_tag :div, "", class: " hidden-#{option} box-hidden-#{size}"
   end
 
 

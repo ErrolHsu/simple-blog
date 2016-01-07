@@ -1,21 +1,19 @@
 class ArticlesController < ApplicationController
 	
 	before_action :find_user
-
-	before_action :can_write, except: [:index, :show]
+	before_action :find_articles, only: [:index]
+	before_action :admin_user, except: [:index, :show, :article_series]
+	before_action :check_user_and_state, only: [:show]
 
 	def index
-		if current_user?(@user)
-		  @articles = @user.articles.page(params[:page]).per(25)
-		else  
-		  @articles = @user.articles.published.page(params[:page]).per(25)
-		end  
+		@articles = @articles.page(params[:page]).per(15)
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
 		@tags = @user.tags.all 
 	end
 
 	def show
 		@article = @user.articles.find(params[:id])
+		@related_articles = @article.related_articles
 	end
 
 	def new
@@ -46,6 +44,10 @@ class ArticlesController < ApplicationController
 		end	
 	end
 
+	def article_series
+		@categories = @user.categories.includes(:articles).all
+	end
+
 	def to_recycling_bin
 		@article = current_user.articles.find(params[:id])
 		@article.to_trash
@@ -53,11 +55,11 @@ class ArticlesController < ApplicationController
 		redirect_to request.referer
 	end
 
-	def return_state
+	def undone
 		@article = current_user.articles.find(params[:id])
 		hash = {'1' => '公眾', '2' => '私人', '3' => '草稿'}
 		state = (@article.state - 10).to_s
-		@article.return_state
+		@article.original_state
 		flash[:success] = "移動 '#{@article.title}' 至 '#{hash[state]}'"
 		redirect_to request.referer
 	end
@@ -82,17 +84,33 @@ class ArticlesController < ApplicationController
 			@user = User.find(params[:user_id])
 		end
 
-
-		def article_params
-			params[:article].permit(:title, :content, :tag_names, {:tag_ids => []},
-				:state)
+		def find_articles
+			if current_user?(@user)
+		  	@articles = @user.articles
+			else  
+		  	@articles = @user.articles.published
+			end  
 		end
 
-		def can_write
+		def article_params
+			params[:article].permit(:title, :content, :tag_names, { :tag_ids => [] },
+				:state, :category_name, :category_id)
+		end
+
+		def admin_user
 			@user = User.find(params[:user_id])
 			unless current_user?(@user)
 			  flash[:danger] = "無此權限"
-			  redirect_to root_path 
+			  redirect_to root_path
 			end  
 		end
+		
+		def check_user_and_state
+			article = @user.articles.find(params[:id])
+			if article.state != 1 && !current_user?(@user)
+				flash[:danger] = "此為非公開文章"
+				redirect_to user_path(@user)
+			end
+		end
+
 end

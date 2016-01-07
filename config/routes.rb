@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     end 
     resources :articles do
       post 'to_recycling_bin', on: :member
-      post 'return_state', on: :member
+      post 'undone', on: :member
+      get 'article_series', on: :collection
       delete 'multiple_destroy', on: :collection
     end    
     resources :tags, only: [:show, :destroy]

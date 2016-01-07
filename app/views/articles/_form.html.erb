@@ -8,16 +8,34 @@
 <%= f.text_area :content %>
 <HR class="dark-hr">
 
-<%= f.label :state, "文章屬性 : " %><br>
-<%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %><br>
+<fieldset>
+	<legend>test</legend>
+  <div class="category-controller">
+    <%= link_to "新增分類", "#", id: "new-category" %>
+    <%= link_to "原有分類", "#", id: "old-category" %><br>
+  </div>
+
+  <div id="category-select">   
+    <%= f.label :category_id, "分類 : " %>
+    <%= collection_select(:article, :category_id, @user.categories.all, :id, :name) %><br>
+  </div>
+
+  <div id="category-form">  
+    <%= f.label :category_name, "新分類名稱 : " %>
+    <%= f.text_field :category_name %><br>
+  </div>
+
+  <%= f.label :state, "文章屬性 : " %>
+  <%= f.select :state ,[['公眾', 1], ['私人(不公開)', 2], ['草稿', 3]] %><br>
+</fieldset>
 
 
 <div class="tag-field">
   <%= f.label :tags, "Tags :" %><br>
   <%= collection_check_boxes(:article, :tag_ids, @user.tags.all, :id, :name) do |b| %>
-  <div class="check_box_item">
-    <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
-  </div>  
+    <div class="check_box_item">
+      <%= b.label(class: "check_box_label") {b.check_box(class: "check_box") + b.text} %>
+    </div>  
   <% end %>
 </div>
 

@@ -14,6 +14,30 @@
 	}
 }
 
+.related-left, .related-right {
+	font-size: 16px;
+	margin-top: 50px;
+}
+
+.related-left {
+	float: left;
+	a {
+		display: block;
+		color: $blue6;
+		margin-bottom: 15px;
+	}
+}
+.related-right {
+	float: right;
+	a {
+		display: block;
+		color: $blue6;
+		margin-bottom: 15px;
+	}		
+}
+
+
+
 /* articles index */
 
 .index-year {
@@ -116,15 +140,16 @@
 .tag_list {
 	border-radius: 5px;
 	font-size: 14px;
+	line-height: 14px;
 	float: left;
 	margin: 0px 5px 15px 5px;
+	border: 2px solid $blue1;
 	background: $blue1;
-	padding: 3px 15px;
+	padding: 7px 10px;
 	color: #fff;
 	&:hover {
 	  background: #fff;
 	  color: $blue1;
-	  border: 2px solid $blue1;
 	}
 }
 
@@ -170,6 +195,24 @@
 	}
 	&:hover {
 		color: #444;
+	}
+}
+
+/* article-series */
+
+#article-series {
+	padding: 10px 5px;
+	div {
+		fieldset {
+			margin: 0 0 25px 0;
+			padding: 20px 10px; 
+			min-height: 200px;
+			background: $gray3;
+			legend {
+				margin-left: 30px;
+				color: #fff;
+			}
+		}
 	}
 }
 

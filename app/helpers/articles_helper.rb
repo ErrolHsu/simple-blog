@@ -17,8 +17,16 @@ module ArticlesHelper
 			link_to("永久刪除 !", user_article_path(@user, article), 
 				method: 'delete', data: {confirm: "確定刪除文章 '#{article.title}' ?"}, class: "delete-link") +
 			content_tag(:span, "---", class: "link-sym") +
-			link_to("復原", return_state_user_article_path(@user, article), method: 'post', class: "edit-link")
+			link_to("復原", undone_user_article_path(@user, article), method: 'post', class: "edit-link")
 		end	
 	end
+
+	def related_articles(article)
+		if article.present?
+			link_to article.title, user_article_path(@user, article)
+		end	
+	end
+
+
 
 end

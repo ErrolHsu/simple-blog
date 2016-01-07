@@ -105,6 +105,7 @@ blockquote {
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
 	margin-bottom: 15px;
+	border-radius: 5px;
   @include box_sizing 
 }
 
@@ -124,8 +125,16 @@ input, textarea, select, .uneditable-input {
 }
 
 fieldset {
-	margin: 30px 0;
-	border: 2px solid black;
+	padding: 10px;
+	background: $gray3;
+	border-radius: 5px;
+	legend {
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		background: $blue1;
+	  border-radius: 5px;
+	}
 }
 
 
@@ -176,33 +185,22 @@ textarea {
 	color: #d7584f;
 }
 
+.box-hidden-small, .box-hidden-middle, .box-hidden-large {
+  width: 100%;
+  display: inline-block;
+  background: $background;
+}
 
-.redactor-box {
-	border-radius: 10px;
-	z-index: 0 !important;
-	margin: 5px 0;
-	height: 350px;
-	.redactor-toolbar {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-		z-index: 0 !important;
-		border-bottom: 2px solid $gray4;
-		background: $gray2;
-		.re-image {
-			display: none;
-		}
-	}
-	.redactor-editor {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-	  border: 1px solid $gray3;
-		height: 350px;
-	  background: #fff;
-		p {
-			font-size: 18px;
-			letter-spacing:01.0px;
-		}
-	}
+.box-hidden-small {
+  height: 25px;
+}
+
+.box-hidden-middle {
+  height: 50px;
+}
+
+.box-hidden-large {
+  height: 75px;
 }
 
 .dark-hr {

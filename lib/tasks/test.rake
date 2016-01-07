@@ -6,9 +6,10 @@ task :op => :environment do
 	end	
 end
 
-task :delete_event => :environment do
-	TodoEvent.all.each do |i|
-		i.delete
-		puts "刪除#{i.event}"
+task :set_series => :environment do
+	Article.all.each do |i|
+		i.series = "normal"
+		i.save
+		puts "#{i.title} series = normal"
 	end	
 end

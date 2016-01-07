@@ -40,6 +40,7 @@
 
 .user-articles {
   padding: 0 30px 20px 30px;
+  background: $background;
   margin: 0 0 30px  0;
   height: auto;
   width: 100%;
@@ -49,7 +50,7 @@
 
 .article-head {
   height: 25px;
-  margin: 0 -10px 40px -10px;
+  margin: 0 -20px 25px -20px;
 }
 
 
@@ -140,7 +141,7 @@
   font-weight: 200;
   font-size: 15px;
   text-align: left;
-  margin: 10px 0 50px 5px;
+  margin: 10px 0 25px 5px;
 }
 
 #user-name {

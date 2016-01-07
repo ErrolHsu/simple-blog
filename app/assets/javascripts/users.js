@@ -11,9 +11,9 @@ $(document).on('ready page:load',function() {
 		});
 	}); // end click
 	$('body').click(function(evt) {
-		var op = $('.hide-row-box')
-		if (!op.is(evt.target) && op.has(evt.target).length === 0) {
-			$('.hide-row-box').slideUp(200, function() {
+		var box = $('.hide-row-box')
+		if (!box.is(evt.target) && box.has(evt.target).length === 0) {
+			box.slideUp(200, function() {
 				$('.each-day').css('background', '#f1f2f3');
 			});
 		};

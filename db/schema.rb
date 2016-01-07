@@ -11,22 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206103106) do
+ActiveRecord::Schema.define(version: 20160105141624) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "state",      default: 1
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "state",       default: 1
     t.string   "slug"
+    t.integer  "category_id"
   end
 
+  add_index "articles", ["category_id"], name: "index_articles_on_category_id"
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
   add_index "articles", ["state"], name: "index_articles_on_state"
   add_index "articles", ["user_id", "created_at"], name: "index_articles_on_user_id_and_created_at"
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
