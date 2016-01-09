@@ -1,6 +1,6 @@
 <% provide(:title, "Setting") %>
 <div class="row article-new">
-	<%= form_for(@user) do |f| %>
+	<%= form_for(@user, html: { multipart: true }) do |f| %>
 	  <div class="col-md-6 col-xs-10">
       <%= render 'shared/error_messages', var: @user %>
 		
@@ -12,6 +12,15 @@
         <%= f.check_box :article_days %>
         <%= f.label :today, "標示今天" %>
         <%= f.check_box :today %>
+      </div>
+
+      <div>
+      	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      	<%= f.hidden_field :picture_cache %>
+      	<label>
+      		<%= f.check_box :remove_picture %>
+      		Remove picture
+      	</label>
       </div>
 		 
 	    <p class="account-setting">Blog Title</p>

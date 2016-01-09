@@ -75,6 +75,7 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.45.4)
     execjs (2.6.0)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -84,11 +85,38 @@ GEM
     faker (1.4.3)
       i18n (~> 0.5)
     ffi (1.9.10)
+    fog (1.23.0)
+      fog-brightbox
+      fog-core (~> 1.23)
+      fog-json
+      fog-softlayer
+      ipaddress (~> 0.5)
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.9.0)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-core (1.32.1)
+      builder
+      excon (~> 0.45)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-softlayer (1.0.0)
+      fog-core
+      fog-json
+    formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    inflecto (0.0.2)
+    ipaddress (0.8.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -107,9 +135,13 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.6.1)
+    mini_magick (4.2.7)
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -228,11 +260,13 @@ DEPENDENCIES
   database_cleaner (~> 1.3.0)
   factory_girl_rails (~> 4.4.1)
   faker (~> 1.4.3)
+  fog
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
   launchy (~> 2.4.2)
+  mini_magick
   pg
   puma (= 2.11.1)
   rails (= 4.2.3)

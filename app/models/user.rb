@@ -3,6 +3,10 @@ require "babosa"
 class User < ActiveRecord::Base
   extend FriendlyId
 
+  attr_accessor :remember_token
+
+  mount_uploader :picture, PictureUploader
+
   store :settings, accessors: [:event_days, :article_days, :today]
 
   friendly_id :slug_candidates, use: [:slugged, :finders] 
@@ -11,8 +15,6 @@ class User < ActiveRecord::Base
   has_many :categories, dependent: :destroy
   has_many :todo_events, dependent: :destroy
   has_many :tags, dependent: :destroy
-
-	attr_accessor :remember_token
 
 	before_create :email_downcase
   after_create :set_blog_title

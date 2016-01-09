@@ -3,6 +3,7 @@
 <head>
 	<%= favicon_link_tag 'ico.png' %>
 	<meta name="google-site-verification" content="kfeccGubyw1DGAsm3JtElAGzwD2xYc1h5PsbxoNqX28" >
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,7 +15,6 @@
 	  <%= render 'shared/flash' %>
 			<%= yield %>
 			<%= debug(params) if Rails.env.development? %>
-	</div>
-	
+	</div>	
 </body>
 </html>
