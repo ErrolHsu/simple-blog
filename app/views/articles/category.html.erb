@@ -1,4 +1,6 @@
-<div id="article-series" class="row">
+<% provide(:title, "Category") %>
+<div class="row">
+<%= render 'layouts/header' %>
   	<% @categories.each do |category| %>	
   	<div class="col-md-6 col-sm-6 col-xs-12">
   	    <fieldset>

@@ -1,107 +1,55 @@
+#nav {
+	border: none;
+}
 
-/* blog title */
-
-#logo {
-	color: #444;
-	font-weight: 900;
-	letter-spacing: 0px;
-	font-size: 22px;
-	display: inline;
-	background: $gray2;
-	padding: 5px 20px;
-	margin-left: -10px;
-	border-radius: 8px;
+#nav-gravatar {
+	padding: 0;
 	a {
-	  font-family: sans-serif;
-		&:hover {
-	    color: #d7584f;
-	  }
-	  &:active {
-      color: darken(#d7584f,15%);
-    }
-	}
-}
-
-
-
-/* navbar */
-
-.navbar {
-	z-index: 2000 !important;
-	padding: 10px 5px 0px 5px;
-  background-color: #333;
-	font-weight: bold;
-	border-bottom: 1px solid #333;
-	margin-bottom: 0;
-}
-
-.nav-link {
-	margin: 10px 0 0px 0;
-	#nav-login {
-	padding: 0px 8px;
-		margin: -40px 0 5px 5px;
-		float: right;
-		border-radius: 15px;
-	  a {
-	  	color: #444;
-	  	font-size: 14px;
-	  }
-	}
-}
-
-/* 下拉選單 */
-
-
-.nav-menu {
-	.dropdown {
-    .dropdown-toggle {
-	    margin: -40px 15px 0px 5px;
-    	float: right;
-    	color: #fff;
-	    background-color: #333;
-	    border: none;
-	    &:hover {
-        transform:scale(1.2);
-        -webkit-transform:scale(1.2);
-      }
-    }
-    .glyphicon-list {
-      transform:scale(1.4);
-      -webkit-transform:scale(1.4);
-    }
-  }
-}
-
-.dropdown-menu {
-	background: $green1;
-	li {
-		padding: 0px 40px 0 5px;
-	  a {
-	  	margin: 5px 0;
-	  	font-size: 1.6em;
-	  	&:hover {
-	  		background: darken($green1, 10%);
-	  	}
-	  }
-	}
-	.divider {
-		background: $gray3;
-	}
-}
-
-.navbar-default {
-	.navbar-nav {
-		.open {
-		  .dropdown-menu {
-		  	li {
-		  		a {
-		  			color: #555;
-		  			&:hover {
-		  				color: $cyan;
-		  			}
-		  		}
-		  	}
-		  }
+		padding: 0 10px;
+		line-height: 50px;
+		.gravatar {
+			margin-right: 5px;
+			margin-left: 2px;
+			img {
+				border-radius: 50%;
+			}
 		}
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+	#navbar-list ul li {
+		&:hover {
+			background: #333;
+		}
+		a {
+			color: $gray3;
+		}
+	}
+	.navbar-right {
+		margin-right: 5px;
+	}
+	.navbar-left {
+		margin-left: 100px;
+		#new {
+			float: left;
+			color: #222;
+			background: $yg;
+			&:hover {
+				background: darken($yg, 5%);
+				color: #fff;
+			}
+		}	
+	}
+	.active-new {
+		background: darken($yg, 5%);
+	}	
+}
+
+@media screen and (max-width: 768px) {
+	#navbar-list {
+	margin-top: 50px;
+	margin-left: 5px;
 	}
 }

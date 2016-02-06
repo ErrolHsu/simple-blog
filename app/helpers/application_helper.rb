@@ -1,15 +1,23 @@
 module ApplicationHelper
 
 
-  class CodeRayify < Redcarpet::Render::HTML
+  class MyRenderer< Redcarpet::Render::HTML
     def block_code(code, language)
       language ||= :plaintext
       CodeRay.scan(code, language).div
     end
+
+    def block_html(raw_html)
+      if raw_html =~ /^<iframe.*>$/
+        raw_html
+      end
+    end
   end
+
+
   
   def markdown(text)
-    coderayified = CodeRayify.new(:filter_html => true, 
+    coderayified = MyRenderer.new(:filter_html => true, 
                                   :hard_wrap => true)
     options = {
       :fenced_code_blocks => true,
@@ -61,7 +69,6 @@ module ApplicationHelper
   def hidden_box(size, option)
     content_tag :div, "", class: " hidden-#{option} box-hidden-#{size}"
   end
-
 
 
 end

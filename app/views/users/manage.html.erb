@@ -3,10 +3,10 @@
   <div class="col-md-5 col-sm-5 col-xs-11 index-year">
       
     <div id="manage-menu-all">
-      <%= link_to_box('全部', manage_user_path(@user), class: "manage-menu") %>
-      <%= link_to_box('公眾', manage_user_path(@user, state: 1), class: "manage-menu") %>
-      <%= link_to_box('私人', manage_user_path(@user, state: 2), class: "manage-menu") %>
-      <%= link_to_box('草稿', manage_user_path(@user, state: 3), class: "manage-menu") %>
+      <%= active_link('全部', manage_user_path(@user), active: "active-1", class: "manage-menu") %>
+      <%= active_link('公眾', manage_user_path(@user, state: 1), active: "active-1", class: "manage-menu") %>
+      <%= active_link('私人', manage_user_path(@user, state: 2), active: "active-1", class: "manage-menu") %>
+      <%= active_link('草稿', manage_user_path(@user, state: 3), active: "active-1", class: "manage-menu") %>
       <%= show_link_if(params[:state] == "trash" ,"清空垃圾桶 !", multiple_destroy_user_articles_path(@user),  data: {confirm: "確定要清空垃圾桶 ?"}, method: 'delete', class: "clear-trash") %>  
       <%= trash %> 
     </div>

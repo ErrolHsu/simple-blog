@@ -81,7 +81,7 @@ class Article < ActiveRecord::Base
 
   private
   	def assign_tags
-  		if !@tag_names.empty?
+  		if @tag_names && !@tag_names.empty?
   			self.tags += @tag_names.split(',').map do |name|       
           Tag.find_or_create_by(name: name, user_id: self.user_id)
         end  
@@ -89,7 +89,7 @@ class Article < ActiveRecord::Base
   	end
 
     def find_or_create_category
-      if !@category_name.empty?
+      if @category_name && !@category_name.empty?
         category = Category.find_by(name: @category_name, user_id: self.user.id)
         if category.nil?
           self.create_category(name: @category_name, user_id: self.user_id)

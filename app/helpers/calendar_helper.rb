@@ -11,9 +11,9 @@ module CalendarHelper
 
 	def number_cell(hash)
 		query_date = "#{@date.year}-#{@date.month}-#{hash[:day]}"
-		active = params[:query_date] && params[:query_date] == query_date ? :active : nil		
+		ac = params[:query_date] && params[:query_date] == query_date ? :ac : nil		
 		if hash[:article?]
-			content_tag :div, class: "number-cell #{hash[:today]} #{active}" do
+			content_tag :div, class: "number-cell #{hash[:today]} #{ac}" do
 		    link_to hash[:day], user_path(@user, query_date: query_date)
 	    end
 		else

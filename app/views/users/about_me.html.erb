@@ -1,2 +1,5 @@
 <%= provide(:title, "about_me") %>
-<%= markdown(@user.about_me) %>
+<div class="row">
+  <%= render 'layouts/header' %>
+	<%= markdown(@user.about_me) %>
+</div>	

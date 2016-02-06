@@ -1,0 +1,19 @@
+<div class="navar-header">
+  <button type="botton" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-list">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>      
+  </button>
+<!--   <%= link_to "Brand", root_path, class: "navbar-brand" %> -->
+</div>
+<div class="collapse navbar-collapse col-md-pull-1"  id="navbar-list">
+    <ul class="nav navbar-nav navbar-left">
+      <%= nav_li "NEW ARTICLE", new_user_article_path(@user), "clipboard", id: "new" %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right"> 
+      <%= nav_li_gravatar "#{current_user.name}的部落格", user_path(@user), current_user %>
+      <%= nav_li "部落格管理", manage_user_path(@user), "university" %>
+      <%= nav_li "設定", edit_user_path(@user), "gears" %>
+      <%= nav_li "登出", logout_path, "sign-out", method: :delete %>
+    </ul>
+</div>  

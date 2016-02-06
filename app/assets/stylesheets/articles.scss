@@ -14,25 +14,51 @@
 	}
 }
 
+#related-articles {
+	background: #fff;
+	padding: 10px 10%;
+	margin-top: 50px;
+	border-radius: 5px;
+	border: 1px solid $gray3;
+	span {
+		font-size: 24px;
+		color:#222;
+	}
+}
+
 .related-left, .related-right {
 	font-size: 16px;
 	margin-top: 50px;
+	display: inline-block;
+	width: 40%;
+	a {
+		display: block;	
+		margin-bottom: 30px;
+	}
 }
+
+
+@media screen and (max-width: 480px) {
+	#related-articles {
+		padding: 10px;
+	}
+	.related-left, .related-right {
+		width: 30%;
+	}
+}
+
 
 .related-left {
 	float: left;
 	a {
-		display: block;
 		color: $blue6;
-		margin-bottom: 15px;
 	}
 }
 .related-right {
 	float: right;
+	text-align: right;
 	a {
-		display: block;
 		color: $blue6;
-		margin-bottom: 15px;
 	}		
 }
 
@@ -117,12 +143,9 @@
 /* 關於文章 */
 
 .article-page {
-	padding: 0;
-  .article-head {
-  	background: $blue6;
-  }
+	margin-top: 50px;
+	padding: 0 5px;
 }
-
 
 .article-show-edit {
 	float: right;
@@ -198,23 +221,6 @@
 	}
 }
 
-/* article-series */
-
-#article-series {
-	padding: 10px 5px;
-	div {
-		fieldset {
-			margin: 0 0 25px 0;
-			padding: 20px 10px; 
-			min-height: 200px;
-			background: $gray3;
-			legend {
-				margin-left: 30px;
-				color: #fff;
-			}
-		}
-	}
-}
 
 
 

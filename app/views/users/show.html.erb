@@ -1,18 +1,15 @@
 <% provide(:title, "") %>
-<div class="row">
-	<div class="col-md-12 col-sm-12 col-xs-12" id="head" style="background-image: url(<%= @user.picture%>)">
-	</div>
+<div class="row user-show">
+  <%= render 'layouts/header' %>  
+  <HR class="hr-2"> 
 
-  <div class="col-md-3 col-sm-3 col-xs-12" id="side-bar">
+  <div class="col-md-4 hidden-sm hidden-xs" id="side-bar">
     <%= render 'side_bar/side_bar' %> 
   </div>
 
-  <div class="col-md-9 col-sm-9 col-xs-12 visible-xs-block box-hidden">
-  </div>
-
-	<div class="col-md-9 col-sm-9 col-xs-12 articles-page">
+	<article class="col-md-8 col-sm-12 col-xs-12 user-articles">
 	  <%= render partial: 'articles', collection: @articles, as: :article %>	
-	</div>
+	</article>
 </div>
 
 

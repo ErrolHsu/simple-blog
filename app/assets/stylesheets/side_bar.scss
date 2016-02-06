@@ -1,117 +1,37 @@
 /* box */
 
 #side-bar {
-}
-
-#option-list {
-  padding: 25px 10px;
-  margin-bottom: 25px;
-  margin-left: 10px;
-  font-size: 20px;
-  border: 1px solid $gray3;
-  border-radius: 5px;
-  background: #fff;
-  div {
-    background: #fff;
-  }
-  a {
-    font-weight: normal;
-    color: #555;
-  }
-  #box-1, #box-2, #box-3 {
-    padding: 0 0 0 25px;
-    color: #555;
-    height: 60px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-  }
-  #box-1 {
-    letter-spacing: 1px;
-    border-left: 12px solid $green2;
-    .glyphicon-info-sign {
-     margin-right: 10px; 
-    }
-    &:hover {
-      background: lighten($green2, 3%);
-      color: #fff;
-    }
-  }
-  #box-2 {
-    border-left: 12px solid darken(#ced7df, 5%);
-    letter-spacing: -1px;
-    .glyphicon-book {
-      margin-right: 10px;
-    }
-    &:hover {
-      color: #fff;
-      background: #ced7df;
-    }
-  }
-  #box-3 {
-    border-left: 12px solid $blue1;
-    &:hover {
-      background: lighten($blue1, 3%);
-      color: #fff;
-    }    
-    .glyphicon-list-alt {
-      margin-right: 10px;
-    }
-  }
-}
-
-#recent-articles {
-  margin-bottom: 50px;
-  border: 1px solid $gray3;
-  background: #fff;
-  div {
-    margin-bottom: 10px;
-    a {
-      font-size: 16px;
-      color: #555;
-      &:hover {
-        color: $blue1;
-      }
-    }
+  padding: 0;
+  #side-bar-container {
+    padding: 0;
+    width: 80%;
+    min-width: 300px;
   }
 }
 
 #tag-box {
-  margin: 40px 0;
-  padding: 30px 5px 100px 5px;
-  #tag-box-head {
-    display: inline-block;
-    color: #333;
-    margin: 0;
-    padding: 5px 0;
-    text-align: left;
+  margin-top: 75px;
+  background: #fff;
+  border: 1px solid $gray3;
+  border-radius: 5px;
+  padding: 20px 10px; 
+  overflow: auto;
+  legend {
+    color: #fff;
+    background: #555;
+    margin-left: 20px;
+    padding: 10px 10px 10px 0;
+    line-height: 16px;
     font-size: 16px;
     font-weight: 500;
-    width: 100%;
-  } 
-  .tag-box-body {
-    margin: 15px 0 0 10px;
-    padding: 0 0 0 15px;
-    .each-tag {
-      margin: 15px 5px;
-      padding: 3px 10px;
-      border: 2px solid $blue;
-      background: $blue;
-      width: auto;
-      float: left;
-      color: #fff;
-      font-size: 16px;
-      &:hover {
-        color: $blue;
-        background: #fff;
-        .tag-size {
-          color: $blue;
-        }
-      }
-      .tag-size {
-        color: #fff;
-      }
-    }
+    border-radius: 5px;
+  }
+  .each-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    margin-top: 5px;
+    color: #fff;
+    border-radius: 2px;
   }
 }
 

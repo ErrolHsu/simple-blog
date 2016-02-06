@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 	before_action :find_articles, only: [:index]
 	before_action :admin_user, except: [:index, :show, :article_series]
 	before_action :check_user_and_state, only: [:show]
+	before_action :find_recent_articles, only: [:index, :show, :category]
 
 	def index
 		@articles = @articles.page(params[:page]).per(15)
@@ -44,7 +45,7 @@ class ArticlesController < ApplicationController
 		end	
 	end
 
-	def article_series
+	def category
 		@categories = @user.categories.includes(:articles).all
 	end
 
@@ -112,5 +113,9 @@ class ArticlesController < ApplicationController
 				redirect_to user_path(@user)
 			end
 		end
+
+		def find_recent_articles
+    	@recent_articles = @user.articles.published.limit(5).pluck(:created_at, :title, :id)
+    end
 
 end

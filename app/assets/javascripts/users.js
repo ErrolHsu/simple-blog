@@ -14,7 +14,7 @@ $(document).on('ready page:load',function() {
 		var box = $('.hide-row-box')
 		if (!box.is(evt.target) && box.has(evt.target).length === 0) {
 			box.slideUp(200, function() {
-				$('.each-day').css('background', '#f1f2f3');
+				$('.each-day').css('background', 'none');
 			});
 		};
 	}); // end click

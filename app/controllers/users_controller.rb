@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	before_action :find_user, except: [:index, :new, :create]
 	before_action :correct_user, only: [:edit, :update, :manage]
+	before_action :find_recent_articles, only: [:show, :about_me]
 
 	def index
 		@users = User.all
@@ -27,7 +28,6 @@ class UsersController < ApplicationController
 		query_date = params[:query_date] ? params[:query_date].split("-").map(&:to_i) : []
 		
 		@articles = @user.articles.find_by_date(*query_date).page(params[:page]).per(5)
-		@recent_articles = @user.articles.published.limit(10).pluck(:id, :title)
 		@date = params[:query_date] ? Time.zone.local(*query_date) : Time.zone.now
 		@special_days = @user.special_days(@date)
 		@todo_event = @user.todo_events.build
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
 	private
 		def user_params
 			a = [:name, :email, :password, :password_confirmation, :title, :about_me, :gravatar, 
-				   :event_days, :article_days, :today, :picture, :picture_cache, :remove_avatar ]
+				   :event_days, :article_days, :today, :picture, :picture_cache, :remove_picture ]
 			
 			params[:user].permit(*a)
 		end
@@ -82,6 +82,10 @@ class UsersController < ApplicationController
     		flash[:danger] = "無此權限"
     		redirect_to root_path
     	end
+    end
+
+    def find_recent_articles
+    	@recent_articles = @user.articles.published.limit(5).pluck(:created_at, :title, :id)
     end
 
 end

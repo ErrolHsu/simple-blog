@@ -1,0 +1,19 @@
+<div id="header">
+  <div id="options">
+  	<%= active_link "Home", user_path(@user), active: "active-2", class: "header-options" %>
+    <%= active_link "About", about_me_user_path(@user), active: "active-2", class: "header-options" %>
+    <%= active_link "Archive", user_articles_path(@user), active: "active-2", class: "header-options" %>
+    <%= active_link "Category", category_user_articles_path(@user), active: "active-2", class: "header-options" %>
+  </div>  
+  <div id="bg" style="background-image: url(<%= @user.picture%>)">
+    <div class="row">
+      <div class="col-md-6"><div id="blog-title"><%= @user.title %></div></div>
+      <div class="col-md-6 ccol-sm-12 col-xs-12 visible-md-block visible-lg-block" id="recent_articles"> 
+        <span>最新文章</span>
+        <% @recent_articles.each do |i| %>
+          <%= link_to "#{i[0].strftime("%Y-%m-%d")} #{i[1]}", user_article_path(@user, i[2]) %>
+        <% end %> 
+      </div>
+    </div>  
+  </div>
+</div> 

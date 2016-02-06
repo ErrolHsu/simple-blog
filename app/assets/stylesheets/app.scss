@@ -8,7 +8,11 @@
 
 html, body{ margin:0; height:100%; }
 
+/* esle */
 
+.fa {
+	margin-right: 5px;
+}
 
 
 /* 通用 */
@@ -16,9 +20,9 @@ html, body{ margin:0; height:100%; }
 body {
   color: #444;
   background: $background;
-	font-size: 1.8em;
+	font-size: 16px;
 	font-family: "Open Sans",Helvetica, Arial, "Microsoft JhengHei", sans-serif;
-	padding-top: 50px;
+	padding: 50px 0 0 0;
 	text-decoration: none;
 	@include box_sizing;
 	a {
@@ -27,17 +31,27 @@ body {
 		text-decoration: none;
 		&:hover {
 			text-decoration: none;
-			color: $blue2;
 		}
 		&:active {
 			text-decoration: none;
 		}
 	}
 	.container-fluid {
-	  height: 100%;
-	  width: 100%;
-	  padding: 0 15px;
+		.user-show {
+		padding: 0 5px 0 5px;
+		}
   }
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		.container-fluid {
+		  .user-show {
+				padding-left: 4%;
+				padding-right: 4%;
+			}
+  	}
+	}
 }
 
 
@@ -126,14 +140,9 @@ input, textarea, select, .uneditable-input {
 
 fieldset {
 	padding: 10px;
-	background: $gray3;
-	border-radius: 5px;
 	legend {
 		margin: 0;
-		padding: 5px 10px;
 		width: auto;
-		background: $blue1;
-	  border-radius: 5px;
 	}
 }
 
@@ -147,11 +156,14 @@ fieldset {
 }
 
 .alert {	
-	background-color: transparent;
-	border: none;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 5px;
+	background: #222;
+	border-top: 2px groove #333;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	padding: 10px 15px;
+	margin: 0 -15px 0 -15px;
 }
 
 .alert-success {
@@ -160,8 +172,6 @@ fieldset {
 
 .alert-danger {
 	color: #d3505a;
-	margin-top: 10px;
-	line-height: 25px;
 }
 
 .field_with_errors {
@@ -185,23 +195,6 @@ textarea {
 	color: #d7584f;
 }
 
-.box-hidden-small, .box-hidden-middle, .box-hidden-large {
-  width: 100%;
-  display: inline-block;
-  background: $background;
-}
-
-.box-hidden-small {
-  height: 25px;
-}
-
-.box-hidden-middle {
-  height: 50px;
-}
-
-.box-hidden-large {
-  height: 75px;
-}
 
 .dark-hr {
   background: $gray3;
@@ -275,6 +268,43 @@ textarea {
 		}
 	}
 }
+
+
+/* color */
+
+.c0 {
+	background: #006e96;
+}
+
+.c1 {
+	background: #718087;
+}
+
+.c2 {
+	background: #ffcc00;
+}
+
+.c3 {
+	background: #ff8a00;
+}
+
+.c4 {
+	background: #79afc1;
+}
+
+.c5 {
+	background: #ad5f7d;
+}
+
+.c6 {
+	background: #449a88;
+}
+
+.c7 {
+	background: #e0393e;
+}
+
+
 
 
 

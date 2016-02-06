@@ -1,13 +1,9 @@
-<div class="user-articles">
-	<div class="article-head"></div>
-	<%= link_to article.title, user_article_path(@user, article), class: "article-title" %>
-	<div class="created-at">
-		<span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>
-		<span> · </span><%= article.created_at.to_s(:month_day_year) %>
-	</div>
-	
-		<%= markdown(article.content.truncate(750)) %></pre><br>
-		<%= link_to "Read more..", user_article_path(@user, article), 
-				class: "btn btn-default btn-custom" %><br>
-		<HR class="hr-2">		
+<%= link_to article.title, user_article_path(@user, article), class: "article-title" %>
+<div class="created-at">
+	<span>By </span><%= link_to "#{@user.name}", about_me_user_path(@user), id: "user-name" %>
+	<span> · </span><%= article.created_at.to_s(:month_day_year) %>
 </div>
+
+<%= markdown(article.content.truncate(750)) %></pre><br>
+<%= link_to "Read more...", user_article_path(@user, article), class: "read-more" %><br>
+<HR class="hr-2">	

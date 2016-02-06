@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="container-fluid">
-		<%= render 'layouts/nav'  %>
+		<%= render 'layouts/nav' %>
 	  <%= render 'shared/flash' %>
 			<%= yield %>
 			<%= debug(params) if Rails.env.development? %>

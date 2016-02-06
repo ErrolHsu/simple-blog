@@ -1,40 +1,120 @@
 
 /* 雜 */
 
-
 #gravatar-1 {
   float:right;
   border-left: 2px solid #fff;
 }
 
-#head {
-  height: 400px;
-  background-size: 100% 400px;
-  background-repeat: no-repeat;
-  background-position: center;
+/* header */
+
+#header {
+  margin-top: 15px;
   margin-bottom: 25px;
 }
 
-@media  (max-width: 480px) {
-  #head {
-    height: 200px;
-    background-size: 100% 200px;
+#options {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  .header-options {
+    color: #333;
+    margin: 0 10px;
+    padding: 3px;
+    border: 3px solid $background;
+    &:hover {
+      border-bottom: 3px solid #333;
+    }
   }
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
-  #head {
-    height: 250px;
-    background-size: 100% 250px;
+.active-2 {
+  color: #fff !important;
+  border: 3px solid #333 !important;
+  background: #333 !important;
+}
+
+#bg {
+  margin-top: 15px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 25px;
+  #blog-title {
+    display:inline-block;
+    font-size: 60px;
+    color: #FFF;
+    background: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  #recent_articles {
+    opacity: 0.9;
+    background: $gray3;
+    height: auto;
+    width:  450px;
+    float: right;
+    padding: 15px;
+    border-radius: 5px;
+    span {
+      font-weight: bold;
+    }
+    a {
+      margin-top: 5px;
+      color: #333;
+      display: block;
+      &:hover {
+        color: $blue1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #header {
+    width: 100%;
+    margin-top: 50px;
+    #options {
+      justify-content:flex-start;
+      padding: 0;
+    }
+    #bg {
+      background-size: 100% 300px;  
+      height: 300px;
+    }
   }  
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-  #head {
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #bg {
     height: 300px;
     background-size: 100% 300px;
   }  
 }
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  #bg {
+    height: 250px;
+    background-size: 100% 250px;
+    #blog-title {
+      font-size: 55px;
+    }    
+  }  
+}
+
+
+
+@media screen and (max-width: 480px) {
+  #bg {
+    height: 200px;
+    background-size: 100% 200px;
+    #blog-title {
+      font-size: 45px;
+    }
+  }
+}
+
 
 
 /* 帳號設定 */
@@ -63,105 +143,17 @@
 
 /* user-show-page */
 
-.articles-page {
-  padding: 0;
-}
 
 .user-articles {
-  padding: 0 30px 20px 30px;
-  background: $background;
-  margin: 0 0 30px  0;
-  height: auto;
-  width: 100%;
-  line-height: 1.6em;
-}
-
-
-.article-head {
-  height: 25px;
-  margin: 0 -20px 25px -20px;
-}
-
-
-.articles-page .user-articles:nth-child(3n+1) {
-  .article-title {
-    color: $blue6;
-    &:hover {
-      color: lighten($blue6, 10%);
-    }
-  }
-  .article-head {
-    background: $blue6;
-  }
-
-  .btn-custom {
-    background: $blue6;
-    &:hover {
-      background: lighten($blue6, 10%);
-      color: #fff;
-    }
-  }
-  #user-name {
-    color: $blue6;
-    font-weight: bolder;
-  }
-}
-
-
-
-.articles-page .user-articles:nth-child(3n+2) {
-  .article-title {
-    color: $green1;
-    &:hover {
-      color: darken($green1, 15%);
-    }
-  }
-  .article-head {
-    background: $green1;
-  }
-
-  .btn-custom {
-    background: $green1;
-    &:hover {
-      background: darken($green1, 10%);
-      color: #fff;
-    }
-  }
-  #user-name {
-    color: $green1;
-    font-weight: bolder;
-  }
-}
-
-.articles-page .user-articles:nth-child(3n) {
-  .article-title {
-    color: $blue1;
-    &:hover {
-      color: darken($blue1, 10%);
-    }
-  }
-  .article-head {
-    background: $blue1;
-  }
-
-  .btn-custom {
-    background: $blue1;
-    &:hover {
-      background: darken($blue1, 10%);
-      color: #fff;
-    }
-  }
-  #user-name {
-    color: $blue1;
-    font-weight: bolder;
-  }
+  padding: 0 3px;
 }
 
 .article-title {
   text-align: left;
   font-size: 30px;
-  font-weight: bolder;
+  font-weight: bold;
   line-height: 40px;
+  color: #444;
 }
 
 
@@ -174,5 +166,12 @@
 }
 
 #user-name {
-  color: $blue1;
+  color: $yg;
 }
+
+.read-more {
+  color: $yg;
+  font-family: fantasy;
+  font-size: 18px;
+}
+
