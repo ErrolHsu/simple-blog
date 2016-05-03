@@ -2,14 +2,14 @@ class ArticlesController < ApplicationController
 	
 	before_action :find_user
 	before_action :find_articles, only: [:index]
-	before_action :admin_user, except: [:index, :show, :article_series]
+	before_action :admin_user, except: [:index, :show, :article_series, :category]
 	before_action :check_user_and_state, only: [:show]
 	before_action :find_recent_articles, only: [:index, :show, :category]
+	before_action :set_side_bar, only: [:index]
 
 	def index
 		@articles = @articles.page(params[:page]).per(15)
 		@articles_by_year = @articles.group_by { |article| article.created_at.beginning_of_year}
-		@tags = @user.tags.all 
 	end
 
 	def show
@@ -81,9 +81,7 @@ class ArticlesController < ApplicationController
 
 
 	private
-		def find_user
-			@user = User.find(params[:user_id])
-		end
+
 
 		def find_articles
 			if current_user?(@user)
@@ -113,9 +111,5 @@ class ArticlesController < ApplicationController
 				redirect_to user_path(@user)
 			end
 		end
-
-		def find_recent_articles
-    	@recent_articles = @user.articles.published.limit(5).pluck(:created_at, :title, :id)
-    end
 
 end

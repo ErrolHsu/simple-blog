@@ -1,4 +1,4 @@
-<%= link_to user_tag_path(@user, tag) do %>
+<%= link_to user_path(@user, tag: tag.name) do %>
 	<div class="each-tag <%= "c#{rand(8)}" %>">
   	<%= "#{tag.name}" %>
   	<span><%= "(#{tag.articles.size})" %></span>

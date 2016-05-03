@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	before_action :find_user, except: [:index, :new, :create]
 	before_action :correct_user, only: [:edit, :update, :manage]
 	before_action :find_recent_articles, only: [:show, :about_me]
+	before_action :set_side_bar, only: [:show]
 
 	def index
 		@users = User.all
@@ -25,13 +26,11 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		query_date = params[:query_date] ? params[:query_date].split("-").map(&:to_i) : []
-		
-		@articles = @user.articles.find_by_date(*query_date).page(params[:page]).per(5)
-		@date = params[:query_date] ? Time.zone.local(*query_date) : Time.zone.now
-		@special_days = @user.special_days(@date)
-		@todo_event = @user.todo_events.build
-		@tags = @user.tags.all
+		if params[:tag]
+			@articles = @user.tags.find_by(name: params[:tag]).articles.published.page(params[:page]).per(5)
+		else	
+			@articles = @user.articles.find_by_date(*@query_date).page(params[:page]).per(5)
+		end	
 	end
 
 	def edit
@@ -84,9 +83,6 @@ class UsersController < ApplicationController
     	end
     end
 
-    def find_recent_articles
-    	@recent_articles = @user.articles.published.limit(5).pluck(:created_at, :title, :id)
-    end
 
 end
 

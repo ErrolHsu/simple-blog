@@ -54,7 +54,7 @@ class Article < ActiveRecord::Base
 
   def related_articles
     population, sample = [], []
-    self.tags.each { |tag| population << tag.articles.pluck(:id) }
+    self.tags.each { |tag| population << tag.articles.published.pluck(:id) }
     population.flatten!
     population.delete(self.id) 
     4.times do |i|

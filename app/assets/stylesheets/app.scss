@@ -37,8 +37,8 @@ body {
 		}
 	}
 	.container-fluid {
-		.user-show {
-		padding: 0 5px 0 5px;
+		.head-and-sidebar {
+			padding: 0 5px 0 5px;
 		}
   }
 }
@@ -46,7 +46,7 @@ body {
 @media screen and (min-width: 992px) {
 	body {
 		.container-fluid {
-		  .user-show {
+		  .head-and-sidebar {
 				padding-left: 4%;
 				padding-right: 4%;
 			}

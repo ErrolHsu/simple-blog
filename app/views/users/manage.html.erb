@@ -1,6 +1,6 @@
 <% provide(:title, "manage") %>
 <div class="row">
-  <div class="col-md-5 col-sm-5 col-xs-11 index-year">
+  <div class="col-md-5 col-sm-6 col-xs-12" id="manage-page">
       
     <div id="manage-menu-all">
       <%= active_link('全部', manage_user_path(@user), active: "active-1", class: "manage-menu") %>
@@ -14,7 +14,7 @@
     <%= render 'articles/articles_list' %>
   </div>
 
-  <div class="col-md-4 col-sm-4 hidden-xs" id="manage-tags-box">
+  <div class="col-md-4 col-sm-4 col-md-push-2 col-sm-push-1 hidden-xs" id="manage-tags-box">
     <div id="manage-tags">
       <span class="glyphicon glyphicon-tags"></span>TAGS
       </div>

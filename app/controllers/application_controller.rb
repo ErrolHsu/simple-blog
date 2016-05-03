@@ -26,5 +26,24 @@ class ApplicationController < ActionController::Base
 		user == current_user
 	end
 
+	private 
+
+		def find_user
+			@user = User.find(params[:user_id])
+		end
+
+		def set_side_bar
+			@query_date = params[:query_date] ? params[:query_date].split("-").map(&:to_i) : []
+	
+			@date = params[:query_date] ? Time.zone.local(*@query_date) : Time.zone.now
+			@special_days = @user.special_days(@date)
+			@tags = @user.tags.all	
+			@todo_event = @user.todo_events.build	
+		end
+
+		def find_recent_articles
+    	@recent_articles = @user.articles.published.limit(5).pluck(:created_at, :title, :id)
+    end
+
 
 end

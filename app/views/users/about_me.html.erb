@@ -1,5 +1,6 @@
 <%= provide(:title, "about_me") %>
-<div class="row">
+<div class="row head-and-sidebar">
   <%= render 'layouts/header' %>
+  <HR class="hr-2"> 
 	<%= markdown(@user.about_me) %>
 </div>	

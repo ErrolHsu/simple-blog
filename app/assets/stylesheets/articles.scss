@@ -21,6 +21,8 @@
 	border-radius: 5px;
 	border: 1px solid $gray3;
 	span {
+		display: block;
+		text-align: center;	
 		font-size: 24px;
 		color:#222;
 	}
@@ -28,12 +30,12 @@
 
 .related-left, .related-right {
 	font-size: 16px;
-	margin-top: 50px;
+	margin-top: 10px;
 	display: inline-block;
 	width: 40%;
 	a {
 		display: block;	
-		margin-bottom: 30px;
+		margin-top: 15px;
 	}
 }
 
@@ -43,7 +45,7 @@
 		padding: 10px;
 	}
 	.related-left, .related-right {
-		width: 30%;
+		width: 40%;
 	}
 }
 
@@ -56,7 +58,6 @@
 }
 .related-right {
 	float: right;
-	text-align: right;
 	a {
 		color: $blue6;
 	}		
@@ -67,7 +68,6 @@
 /* articles index */
 
 .index-year {
-  margin: 20px 140px 20px 5px;
   padding: 20px 10px;
   h5 {
     margin: 0 0 25px 0;

@@ -1,9 +1,9 @@
 <div id="header">
   <div id="options">
   	<%= active_link "Home", user_path(@user), active: "active-2", class: "header-options" %>
-    <%= active_link "About", about_me_user_path(@user), active: "active-2", class: "header-options" %>
     <%= active_link "Archive", user_articles_path(@user), active: "active-2", class: "header-options" %>
     <%= active_link "Category", category_user_articles_path(@user), active: "active-2", class: "header-options" %>
+    <%= active_link "About", about_me_user_path(@user), active: "active-2", class: "header-options" %>
   </div>  
   <div id="bg" style="background-image: url(<%= @user.picture%>)">
     <div class="row">

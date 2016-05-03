@@ -1,7 +1,13 @@
 <% provide(:title, "index") %>
-<div class="row">
+<div class="row head-and-sidebar">
   <%= render 'layouts/header' %>
-	<div class="col-md-11 col-sm-11 col-xs-11 index-year">  
+  <HR class="hr-2"> 
+
+  <div class="col-md-4 hidden-sm hidden-xs" id="side-bar">
+    <%= render 'side_bar/side_bar' %> 
+  </div>
+
+	<div class="col-md-8 col-sm-12 col-xs-12 index-year">  
   	<%= render 'articles_list' %>
   </div>	
 </div>  

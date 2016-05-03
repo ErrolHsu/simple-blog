@@ -1,16 +1,16 @@
 <% provide(:title, "Category") %>
-<div class="row">
+<div class="row head-and-sidebar">
 <%= render 'layouts/header' %>
   	<% @categories.each do |category| %>	
-  	<div class="col-md-6 col-sm-6 col-xs-12">
+  	<div class="col-md-6 col-sm-6 col-xs-12 category">
   	    <fieldset>
   	    	<legend><%= category.name %></legend>
   	    	<% category.articles.each do |article| %>
   	    		<ul>
   	    			<li><%= link_to article.title,user_article_path(@user, article) %></li>
   	    		</ul>
-  	    </fieldset>
-  	  <% end %>  
-  </div>
+  	      <% end %>  
+        </fieldset>
+      </div>
   	<% end %>    
 </div>  

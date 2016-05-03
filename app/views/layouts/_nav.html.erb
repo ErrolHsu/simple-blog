@@ -1,9 +1,7 @@
 <nav class="navbar navbar-fixed-top navbar-default navbar-inverse" id="nav">
 	<div class="container-fluid">
     <% if !logged_in? %>
-    	<%= content_tag(:div, id: "nav-login") do %>
-        <%= link_to "Login", login_path %>
-    	<% end %>
+      <%= nav_li "Login", login_path, "sign-in", id: "nav-login" %>
     <% end %>  
 		<%= render 'layouts/user_options' if logged_in? %> 
   </div>

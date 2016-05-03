@@ -4,7 +4,7 @@
 	  <div class="col-md-6 col-xs-10">
       <%= render 'shared/error_messages', var: @user %>
 		
-			<div>
+<!-- 			<div>
 				關於calendar<br>
         <%= f.label :event_days, "顯示任務" %>
         <%= f.check_box :event_days %>
@@ -13,15 +13,7 @@
         <%= f.label :today, "標示今天" %>
         <%= f.check_box :today %>
       </div>
-
-      <div>
-      	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-      	<%= f.hidden_field :picture_cache %>
-      	<label>
-      		<%= f.check_box :remove_picture %>
-      		Remove picture
-      	</label>
-      </div>
+ -->
 		 
 	    <p class="account-setting">Blog Title</p>
 		  <p class="account-old-setting"><%= "#{@user.title}" %></p>
@@ -49,6 +41,18 @@
 		 	 <a href="https://zh-tw.gravatar.com/emails/" target="_blank">上傳或變更自訂頭像</a>
 		  </p>
 			<HR class="hr-2"> 
+
+			<div>
+				<p class="account-setting">首頁圖</p>
+      	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      	<%= f.hidden_field :picture_cache %>
+      	<label>
+      		<%= f.check_box :remove_picture %>
+      		Remove picture
+      	</label>
+      	<HR class="hr-2">
+      </div>
+      	
 		</div>
 
 		<div class="col-md-6 col-xs-11 edit_about_me">
@@ -60,5 +64,6 @@
 		<div class="col-md-12 col-xs-12  user-edit-submit">
 		  <%= f.submit "Save", class: "btn btn-default btn-custom" %>
 	  </div>
+
 	<% end %>
 </div>
